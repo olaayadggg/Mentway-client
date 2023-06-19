@@ -1,0 +1,38 @@
+.Mentway{
+    color: #62D2A2;
+}
+
+.Explore{
+    border-radius: 48px;
+    background: #1FAB89;
+    border: 1px solid #1FAB89;
+    color: beige;
+}
+
+.cover-img{
+    width: 500px;
+    height: 500px;
+}
+.card{
+width: 250px;
+height: 300px;
+border-width: 0px 0px 3px 3px;
+border-style: solid;
+border-color: #62D2A2;
+box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
+border-radius: 32px;
+}
+
+.categories .card{
+    width: 180px;
+    height: 150px;
+}
+
+.card-body p{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.h{
+    border-bottom: 2px solid #1FAB89;width: fit-content; font-weight: 700;
+}
