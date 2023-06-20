@@ -1,1 +1,101 @@
-<p>upcoming-sessions works!</p>
+    <div class="container upcoming" style="width: 100%;">
+        <div class="booking-summary" style="">
+        <h2 class="title">Booking Summary</h2>
+        <div class="breadcrumbs">
+            <a href="#" class="aa">Home</a>/<a href="#" class="aa">Profile</a>/ <span class="currentLink">{{currentLinkText}}</span>
+        </div>
+        </div>
+        <div class="row mb-5">
+        <div class="col-lg-4 col-md-5 col-sm-5 col-xs-12" id="container">
+            <main class="profile-page">
+            <div class="profile-container">
+                <div class="profile-header d-flex">
+                <div class="profile-image">
+                    <img src="./assets/img/theme/team-4-800x800.jpg" alt="Profile Image" class="rounded-circle profile-picture">
+                </div>
+                <div class="profile-info">
+                    <h2 class="name">Samira Samir</h2>
+                    <p class="job">DevOps Designer</p>
+                    <p class="country">Egypt</p>
+                </div>
+                </div>
+                <div class="profile-links">
+                <a [class.is-active]="currentLink === 'booking'" (click)="showDiv('booking','Booking')">Booking</a>
+                <a  [class.is-active]="currentLink === 'upcoming'" (click)="showDiv('upcoming','Upcoming Session')" class="is-active">Upcoming Session</a>
+                <a [class.is-active]="currentLink === 'message'" (click)="showDiv('message','Message')">Message</a>
+                <a [class.is-active]="currentLink === 'reviews'" (click)="showDiv('reviews','Reviews')">Reviews</a>
+                <a [class.is-active]="currentLink === 'personal'" (click)="showDiv('personal','Personal Information')">Personal Information</a>
+                <a [class.is-active]="currentLink === 'wallet'" (click)="showDiv('wallet','Wallet')">Wallet</a>
+                </div>
+            </div>
+            </main>
+        </div>
+    
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+            <table class="custom-table bottom-border-radius" *ngIf="currentDiv === 'upcoming'">
+            <thead>
+                <tr>
+                <th *ngFor="let header of headers">{{header}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of rows">
+                <td class="user-cell">
+                    <div class="user-info">
+                    <img [src]="row['profile-pic']" alt="User Image" class="user-image">
+                    <span class="user-name">{{ row.mentor }}</span>
+                    </div>
+                </td>
+                <td>{{ row.scheduledDate1 }}</td>
+                <td><div class="date">{{ row.scheduledDate2 }}</div></td>
+                <td><button (click)="viewDetails()"  style="border: none; background-color: #EDFFF6; border-radius: 8px;"><i class="fas fa-eye" style="color: #1FAB89;"></i><span class="view-text"> view</span></button></td>
+                </tr>
+            </tbody>
+            </table>
+            <div *ngIf="currentDiv === 'booking'" class="new-div">
+                <p>Booking part content</p>
+            </div>
+
+            <div *ngIf="currentDiv === 'message'" class="message-div">
+                <p>message part content</p>
+            </div>
+
+            <div *ngIf="currentDiv === 'reviews'" class="reviews-div">
+                <p>reviews part content</p>
+            </div>
+
+            <div *ngIf="currentDiv === 'personal'" class="personal-div">
+                    <form id="registrationForm" onsubmit="submitForm(event)">
+                        <div>
+                        <label for="name" class="formData" style="width: 44px; height: 24px;">Name</label>
+                        <input type="text" id="name" required class="input" placeholder="Abdullah Hammad">
+                        </div>
+                        <div>
+                        <label for="email" class="formData" style="width: 47px; height: 24px;">Email</label>
+                        <input type="email" id="email" required class="input" placeholder="abdullahhammad1000@gmail.com">
+                        </div>
+                        <div>
+                        <label for="phone" class="formData" style="width: 48px; height: 24px;">Phone</label>
+                        <input type="tel" id="phone" required class="input" placeholder="+0201099671450">
+                        </div>
+                        <div>
+                        <label for="password" class="formData" style="width: 73px; height: 24px;">Password</label>
+                        <input type="password" id="password" required class="input" placeholder="************************************">
+                        </div>
+                        <div>
+                        <label for="confirmPassword" class="formData" style="width: 135px; height: 24px;">Confirm Password</label>
+                        <input type="password" id="confirmPassword" required class="input" placeholder="************************************">
+                        </div>
+                        <div class="">
+                        <button type="submit">Submit</button>
+                        </div>
+                    </form>
+            </div>
+
+            <div *ngIf="currentDiv === 'wallet'" class="wallet-div">
+                <p>wallet part content</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    

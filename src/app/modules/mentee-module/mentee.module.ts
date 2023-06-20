@@ -8,6 +8,7 @@ import { ProfileMenteeComponent } from "./components/profile-mentee/profile-ment
 import { MyBalanceComponent } from "./components/my-balance/my-balance.component";
 import { SearchMentorsComponent } from "./components/search-mentors/search-mentors.component";
 import { RequestSessionComponent } from './components/request-session/request-session.component';
+import { UpcomingSessionsComponent } from "./components/upcoming-sessions/upcoming-sessions.component";
 // import {MatFormFieldModule } from '@angular/material/form-field';
 // import {MatInputModule } from '@angular/material/input';
 // import { MatDatePickerModule } from '@angular/material/datePicker';
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: "my-balance", component: MyBalanceComponent },
       { path: "search", component: SearchMentorsComponent},
       { path: "date-pick", component: RequestSessionComponent},
+      { path: "upcomingsession", component: UpcomingSessionsComponent},
     ],
   },
 ];
@@ -34,6 +36,7 @@ const routes: Routes = [
     EditProfileComponent,
     MyBalanceComponent,
     RequestSessionComponent,
+    UpcomingSessionsComponent,
   ],
   imports: [
     CommonModule,
