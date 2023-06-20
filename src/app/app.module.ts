@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -19,6 +18,7 @@ import { mentorModule } from './modules/mentor-module/mentor.module';
 import { SessionComponent } from './modules/session-module/components/session/session.component';
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginComponent,
     SessionComponent,
     RateComponent,
+    AboutUsComponent,
 
 
 
