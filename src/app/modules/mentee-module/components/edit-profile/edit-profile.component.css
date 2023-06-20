@@ -1,28 +1,68 @@
-.profileImage img{
-  object-fit: cover;
-  border: 2px solid #A1E3D8;
+input
+{
+  height: 51px;
+  width: 497px;
+  left: 0px;
+  top: 32px;
+  border-radius: 16px;
+  padding: 16px;
 }
-
-.profileImage{
-  text-align: center;
+button{
+  height: 55px;
+  width: 497px;
+  left: 0px;
+  top: 491px;
   justify-content: center;
+  border-radius: 48px;
+  background: #1FAB89;
+  font-size: x-large;
+  color: #FFFFFF;
 }
-h3{
-  font-weight: bold;
+.container
+{
+  padding-top: 40px;
+  height: 744px;
+width: 623px;
+left: 0px;
+top: 0px;
+border-radius: 19.005781173706055px;
+justify-content: center;
+
 }
-.buttons .btn{
-width: 100px !important;
-height: auto;
+img
+{
+height: 42px;
+width: 42px;
+left: 0px;
+top: 0px;
+border-radius: 0px;
+background: #005555;
+height: 42px;
+width: 42px;
+left: 0px;
+top: 0px;
+border-radius: 0px;
+
+
 }
-.buttons{
-   display: flex;
-   justify-content: end;
+.icon{
+  height: 20.839012145996094px;
+width: 20.839012145996094px;
+
+border-radius: 0px;
+margin: auto;
+
+
+color: #FFFFFF;
+
 }
-.BtnSave{
-  background-color: #069A8E;
-  color: antiquewhite;
-}
-.BtnCancle{
-  background-color: rgb(212, 7, 7);
-  color: antiquewhite;
+.profileImage
+{
+background-color: #005555;
+height: 42px;
+width: 42px;
+left: 0px;
+top: 0px;
+border-radius: 0px;
+
 }

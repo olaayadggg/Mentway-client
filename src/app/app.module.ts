@@ -18,7 +18,7 @@ import { menteeModule } from './modules/mentee-module/mentee.module';
 import { mentorModule } from './modules/mentor-module/mentor.module';
 import { SessionComponent } from './modules/session-module/components/session/session.component';
 import { RateComponent } from './shared/rate/rate/rate.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     adminModule,
     menteeModule,
     mentorModule,
-    NgbModule,
+    // NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

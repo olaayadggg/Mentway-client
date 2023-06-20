@@ -12,6 +12,7 @@ import { RequestSessionComponent } from './components/request-session/request-se
 // import {MatInputModule } from '@angular/material/input';
 // import { MatDatePickerModule } from '@angular/material/datePicker';
 // import {MatNativeDateModel} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 const routes: Routes = [
   {
     path: "mentee",
@@ -42,6 +43,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
   ],
 })
 export class menteeModule {}
