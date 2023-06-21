@@ -1,4 +1,4 @@
-    <div class="container upcoming" style="width: 100%;">
+    <div class="container upcoming" style="">
         <div class="booking-summary" style="">
         <h2 class="title">Booking Summary</h2>
         <div class="breadcrumbs">
@@ -57,7 +57,7 @@
             </div>
 
             <div *ngIf="currentDiv === 'message'" class="message-div">
-                <p>message part content</p>
+                <app-chat></app-chat>
             </div>
 
             <div *ngIf="currentDiv === 'reviews'" class="reviews-div">
@@ -65,31 +65,7 @@
             </div>
 
             <div *ngIf="currentDiv === 'personal'" class="personal-div">
-                    <form id="registrationForm" onsubmit="submitForm(event)">
-                        <div>
-                        <label for="name" class="formData" style="width: 44px; height: 24px;">Name</label>
-                        <input type="text" id="name" required class="input" placeholder="Abdullah Hammad">
-                        </div>
-                        <div>
-                        <label for="email" class="formData" style="width: 47px; height: 24px;">Email</label>
-                        <input type="email" id="email" required class="input" placeholder="abdullahhammad1000@gmail.com">
-                        </div>
-                        <div>
-                        <label for="phone" class="formData" style="width: 48px; height: 24px;">Phone</label>
-                        <input type="tel" id="phone" required class="input" placeholder="+0201099671450">
-                        </div>
-                        <div>
-                        <label for="password" class="formData" style="width: 73px; height: 24px;">Password</label>
-                        <input type="password" id="password" required class="input" placeholder="************************************">
-                        </div>
-                        <div>
-                        <label for="confirmPassword" class="formData" style="width: 135px; height: 24px;">Confirm Password</label>
-                        <input type="password" id="confirmPassword" required class="input" placeholder="************************************">
-                        </div>
-                        <div class="">
-                        <button type="submit">Submit</button>
-                        </div>
-                    </form>
+                <app-edit-profile></app-edit-profile>
             </div>
 
             <div *ngIf="currentDiv === 'wallet'" class="wallet-div">

@@ -9,6 +9,7 @@ import { MyBalanceComponent } from "./components/my-balance/my-balance.component
 import { SearchMentorsComponent } from "./components/search-mentors/search-mentors.component";
 import { RequestSessionComponent } from './components/request-session/request-session.component';
 import { UpcomingSessionsComponent } from "./components/upcoming-sessions/upcoming-sessions.component";
+import { ChatComponent } from "./components/chat/chat.component";
 // import {MatFormFieldModule } from '@angular/material/form-field';
 // import {MatInputModule } from '@angular/material/input';
 // import { MatDatePickerModule } from '@angular/material/datePicker';
@@ -37,6 +38,7 @@ const routes: Routes = [
     MyBalanceComponent,
     RequestSessionComponent,
     UpcomingSessionsComponent,
+    ChatComponent,
   ],
   imports: [
     CommonModule,

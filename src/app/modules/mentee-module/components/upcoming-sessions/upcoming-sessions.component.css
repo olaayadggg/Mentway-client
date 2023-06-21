@@ -249,7 +249,7 @@
     font-weight: bold;
     }
     .user-cell{
-        display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     }
@@ -316,14 +316,14 @@
         background-color: #1D9D85;
       }
       .personal-div {
-        background-color: #fff;
+        /* background-color: #fff; */
         box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08); 
-        padding: 20px; 
-        width: 623px;
-        height: 744px;
+        /* padding: 20px;  */
+        /* width: 623px; */
+        /* height: 644px; */
         border: 1.18786px solid #EDFFF6;
         border-radius: 19.01px;
-        background: #FFFFFF;
+        /* background: #FFFFFF; */
         /* margin-left: 125px; */
         margin-top: 44px;
         display: flex;
@@ -357,4 +357,34 @@
         order: 1;
         flex-grow: 1;
     }
-    
+    .btn {
+        /* display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; */
+        padding: 15px 24px;
+        gap: 8px;
+
+        /* position: absolute; */
+        width: 497px;
+        height: 62px;
+        /* left: calc(50% - 497px/2); */
+        margin-top: 20px;
+
+        /* primary/400 */
+
+        background: #1FAB89;
+        border-radius: 48px;
+    }
+    .d-flex.nn {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    /* label.formData {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-right: 453px;
+    } */
