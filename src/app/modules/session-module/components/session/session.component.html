@@ -1,1 +1,48 @@
-<p>session works!</p>
+<div class="vh-100 d-flex flex-column  ">
+<div class="w-100  d-flex justify-content-center   " style="height: 80%;">
+
+    <div class="w-75 h-100 d-flex flex-column  align-slef-center ">
+        <div class="align-self-end d-flex  align-items-center ">
+
+            <mat-icon class="text-danger m-1 ">fiber_manual_record</mat-icon>
+
+            <div class="align-self-end lead">{{ hours?hours:'00' }}:{{ minutes?minutes:'00' }}:{{ seconds }}</div>
+        </div>
+        <div id="main" class="w-100 h-100 p-2 border border-secondary d-flex justify-content-center rounded">
+
+        </div>
+
+        <!-- controls -->
+        <div class="w-50 mt-2 m-2 align-self-center d-flex justify-content-evenly ">
+            <div class="w-25 d-flex justify-content-center">
+                <mat-icon [ngClass]="{
+                        'scale-1-5':true,
+                        'text-success':videoIcon==true,
+                        'text-danger':videoIcon==false,
+                    }" style="cursor: pointer;"
+                    (click)="toggleCamera()">{{videoIcon?'videocam':'videocam_off'}}</mat-icon>
+            </div>
+
+            <div class="w-25 d-flex justify-content-center">
+
+                <mat-icon class="abc scale-1-5 text-danger" style="cursor: pointer;"
+                    (click)="leave()">call_end</mat-icon>
+            </div>
+
+            <div class="w-25 d-flex justify-content-center">
+
+                <mat-icon [ngClass]="{
+                        'scale-1-5':true,
+                        'text-success':micIcon==true,
+                        'text-danger':micIcon==false,
+                    }" style="cursor: pointer;" (click)="toggleAudio()">{{micIcon?'mic':'mic_off'}}</mat-icon>
+            </div>
+
+            <!-- <div class="w-25 d-flex justify-content-center">
+                    <mat-icon class="text-success scale-1-5" style="cursor: pointer;" (click)="maxmizeScreen()">crop_square</mat-icon>
+                </div> -->
+
+        </div>
+    </div>
+</div>
+</div>
