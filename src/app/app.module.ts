@@ -15,10 +15,11 @@ import { LoginComponent } from './modules/auth-module/login/login.component';
 import { adminModule } from './modules/admin-module/admin.module';
 import { menteeModule } from './modules/mentee-module/mentee.module';
 import { mentorModule } from './modules/mentor-module/mentor.module';
-import { SessionComponent } from './modules/session-module/components/session/session.component';
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { sessionModule } from './modules/session-module/session.module';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    SessionComponent,
     RateComponent,
     AboutUsComponent,
 
@@ -43,7 +43,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
     adminModule,
     menteeModule,
     mentorModule,
-    // NgbModule,
+    MatIconModule,
+    sessionModule,
+    NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
