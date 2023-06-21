@@ -46,6 +46,7 @@ import { MatIconModule } from '@angular/material/icon'
     MatIconModule,
     sessionModule,
     NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

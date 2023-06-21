@@ -12,8 +12,6 @@ const routes: Routes =[
     { path: 'landing',          component: LandingComponent },
     { path: 'login',          component: LoginComponent },
     { path: 'about-us',          component: AboutUsComponent },
-
-
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
