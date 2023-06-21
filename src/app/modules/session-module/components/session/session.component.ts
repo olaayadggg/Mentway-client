@@ -241,7 +241,13 @@ export class SessionComponent implements OnInit,AfterViewInit {
     localPlayerContainerName.classList.add('position-absolute', 'top-0', 'end-0', 'px-2', 'lead')
     localPlayerContainerName.textContent = `local ${this.options.uid}`;
     localPlayerContainer.append(localPlayerContainerName);
-    localPlayerContainer.classList.add('local', 'm-2', 'w-100', 'position-relative', 'rounded-5')
+    if(this.client.remoteUsers){
+
+      localPlayerContainer.classList.add('local', 'm-2', 'w-50', 'position-relative', 'rounded-5')
+    }else{
+      localPlayerContainer.classList.add('local', 'm-2', 'w-100', 'position-relative', 'rounded-5')
+
+    }
 
     if (this.mainDiv != null) {
       this.mainDiv.append(localPlayerContainer);

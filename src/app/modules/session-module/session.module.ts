@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SessionComponent } from "./components/session/session.component";
 import { MatIconModule } from '@angular/material/icon'
+import { MatCardModule } from '@angular/material/card';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     MatIconModule,
+    MatCardModule,
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
