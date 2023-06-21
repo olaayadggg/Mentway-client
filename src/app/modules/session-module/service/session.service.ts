@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import AgoraRTC, { IAgoraRTCClient, IAgoraRTCRemoteUser } from 'agora-rtc-sdk-ng';
+import AgoraRTC, { IAgoraRTCClient } from 'agora-rtc-sdk-ng';
 
 @Injectable({
   providedIn: 'root'
