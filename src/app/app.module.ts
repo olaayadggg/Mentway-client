@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,9 +15,11 @@ import { LoginComponent } from './modules/auth-module/login/login.component';
 import { adminModule } from './modules/admin-module/admin.module';
 import { menteeModule } from './modules/mentee-module/mentee.module';
 import { mentorModule } from './modules/mentor-module/mentor.module';
-import { SessionComponent } from './modules/session-module/components/session/session.component';
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { sessionModule } from './modules/session-module/session.module';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -28,8 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavbarComponent,
     FooterComponent,
     LoginComponent,
-    SessionComponent,
     RateComponent,
+    AboutUsComponent,
 
 
 
@@ -42,6 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     adminModule,
     menteeModule,
     mentorModule,
+    MatIconModule,
+    sessionModule,
     NgbModule,
   ],
   providers: [],
