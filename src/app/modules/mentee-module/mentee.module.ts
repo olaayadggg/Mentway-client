@@ -43,7 +43,6 @@ const routes: Routes = [
     ProfileMenteeComponent,
     EditProfileComponent,
     MyBalanceComponent,
-    // RequestSessionComponent,
     UpcomingSessionsComponent,
     ChatComponent,
 
