@@ -25,7 +25,7 @@ export class SessionComponent implements OnInit,AfterViewInit {
   channel: any;
   userId: any;
 
-  // timer and call duration 
+  // timer and call duration
   time: number = 0;
   hours: number = 0;
   minutes: number = 0;
@@ -256,15 +256,15 @@ export class SessionComponent implements OnInit,AfterViewInit {
 
 
     this.localVideoTrack.play(localPlayerContainer, { mirror: false });
-    // 
+    //
     const videoParent = document.querySelector(`#agora-video-player-${this.localVideoTrack._ID}`)! as HTMLDivElement;
     const video = document.querySelector(`#video_${this.localVideoTrack._ID}`)! as HTMLVideoElement;
-    // 
+    //
     videoParent.removeAttribute('style')
     videoParent.classList.add('w-100', 'h-100', 'rounded-3')
 
     video.removeAttribute('style');
-    //  
+    //
     videoParent.style.height = '100%';
     videoParent.style.width = '100%';
     // video.style.height = "100%";
