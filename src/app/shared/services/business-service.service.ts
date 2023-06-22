@@ -34,4 +34,11 @@ export class BusinessServiceService {
       .set('size', size.toString());
     return this.http.get(`${this.baseUrl}/services/mentor/${mentorId}`,{params})
   }
+
+  getAllMentorReviewsbyHisId(mentorId: number, page = 0, size = 5) {
+    let params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString());
+    return this.http.get(`${this.baseUrl}/services/review/mentors/${mentorId}`, { params })
+  }
 }
