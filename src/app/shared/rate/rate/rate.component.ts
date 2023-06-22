@@ -28,28 +28,28 @@ export class RateComponent implements OnInit {
   }
 
   rateMentor() {
-    if(!this.userRate){
-      this.mentorService.rate(Number(this.id), this.rate).subscribe(
-        {
-          next: (res) => {
-            console.log(res);
-          },
-          error: (err) => {
-            console.log(err);
-          }
-        }
-      )
-    }else{
-      this.mentorService.rateUpdate(Number(this.userRate.id),Number(this.id), this.rate).subscribe(
-        {
-          next: (res) => {
-            console.log(res);
-          },
-          error: (err) => {
-            console.log(err);
-          }
-        }
-      )
-    }
+    // if(!this.userRate){
+    //   this.mentorService.rate(Number(this.id), this.rate).subscribe(
+    //     {
+    //       next: (res) => {
+    //         console.log(res);
+    //       },
+    //       error: (err) => {
+    //         console.log(err);
+    //       }
+    //     }
+    //   )
+    // }else{
+    //   this.mentorService.rateUpdate(Number(this.userRate.id),Number(this.id), this.rate).subscribe(
+    //     {
+    //       next: (res) => {
+    //         console.log(res);
+    //       },
+    //       error: (err) => {
+    //         console.log(err);
+    //       }
+    //     }
+    //   )
+    // }
   }
 }
