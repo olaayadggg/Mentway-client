@@ -19,6 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { PaymentMethodComponent } from './shared/payment-method/payment-method.component';
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { ViewServiceComponent } from './shared/view-service/view-service.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { ViewServiceComponent } from './shared/view-service/view-service.compone
 
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     RouterModule,
