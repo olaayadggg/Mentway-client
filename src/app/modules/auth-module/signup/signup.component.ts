@@ -10,6 +10,13 @@ export class SignupComponent implements OnInit {
     // focus;
     // focus1;
     // focus2;
+    /**
+   * ========================
+   *   After signup success
+   *    use (set) auth.service.loggedUser(user) 
+   *    use (set) auth.service.loggedUserToken(token) 
+   * 
+   */
     constructor() { }
 
     ngOnInit() {}
