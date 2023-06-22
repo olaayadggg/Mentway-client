@@ -8,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   // focus;
   // focus1;
+  /**
+   * ========================
+   *   After login success
+   *    use (set) auth.service.loggedUser(user) 
+   *    use (set) auth.service.loggedUserToken(token) 
+   * 
+   */
   constructor() { }
 
   ngOnInit() {
