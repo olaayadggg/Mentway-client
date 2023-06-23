@@ -8,7 +8,6 @@ import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
-import { ReviewsComponent } from './components/reviews/reviews.component';
 const routes: Routes = [
   {
     path: "mentor",
@@ -27,7 +26,6 @@ const routes: Routes = [
     EditProfileMentorComponent,
     AddServiceComponent,
     IndexComponent,
-    ReviewsComponent,
   ],
   imports: [
     CommonModule,
