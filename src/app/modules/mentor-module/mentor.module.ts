@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProfileMentorComponent } from "./components/profile-mentor/profile-mentor.component";
 import { EditProfileMentorComponent } from "./components/edit-profile-mentor/edit-profile-mentor.component";
 import { AddServiceComponent } from './components/add-service/add-service.component';
@@ -30,11 +29,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
     RouterModule.forRoot(routes),
-    FormsModule,
-    ReactiveFormsModule,
   ],
 })
 export class mentorModule {}

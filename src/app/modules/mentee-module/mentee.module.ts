@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { EditProfileComponent } from "./components/edit-profile-mentee/edit-profile.component";
 import { ProfileMenteeComponent } from "./components/profile-mentee/profile-mentee.component";
 import { SearchMentorsComponent } from "./components/search-mentors/search-mentors.component";
@@ -38,11 +37,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
     RouterModule.forRoot(routes),
-    FormsModule,
-    ReactiveFormsModule,
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,
