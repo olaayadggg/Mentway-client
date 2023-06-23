@@ -10,19 +10,54 @@
               </div>
             </div>
             <div class="card-body px-lg-5 py-lg-5">
-
-              <form role="form">
+              <form [formGroup]="Form" (submit)="submit($event)">
                 <div class="form-group mb-3" >
-                  <label>E-Mail</label>
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="Email" type="email" >
+                    <input class="form-control" placeholder="User Name" id="UserName" formControlName="UserName">
                   </div>
+                  <ng-container *ngIf="this.getUserName.touched">
+                    <div
+                      *ngIf="this.getUserName.hasError('required')"
+                      class="invalid-feedback d-block"
+                    >
+                      User name is Required
+                    </div>
+                    <div
+                      *ngIf="this.getUserName.hasError('UserName')"
+                      class="invalid-feedback d-block"
+                    >
+                     Invalid User name
+                    </div>
+                  </ng-container>
                 </div>
                 <div class="form-group" >
-                  <label>Password</label>
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="Password" type="password" >
+                    <input class="form-control" placeholder="Password" type="password" id="Password">
                   </div>
+                  <ng-container *ngIf="this.getPassword.touched">
+                    <div
+                      *ngIf="this.getPassword.hasError('required')"
+                      class="invalid-feedback d-block"
+                    >
+                      Password is required
+                    </div>
+                    <div
+                      *ngIf="this.getPassword.hasError('minlength')"
+                      class="invalid-feedback d-block"
+                    >
+                      Password must be at least 8 characters
+                    </div>
+
+                    <div
+                      *ngIf="this.getPassword.hasError('pattern')"
+                      class="invalid-feedback d-block"
+                    >
+                      Password must contain uppercase lowercase and special character
+                    </div>
+                    <div *ngIf="this.errors" class="invalid-feedback d-block">
+                      {{this.errors[0]}}
+                    </div>
+                  </ng-container>
                 </div>
                 <div class="d-flex justify-content-between mt-5">
                   <div class="custom-control custom-control-alternative custom-checkbox ">
@@ -36,7 +71,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="button " class="btn btn-block my-4">Log in</button>
+                  <button type="submit" class="btn btn-block my-4">Log in</button>
                 </div>
               </form>
             </div>
