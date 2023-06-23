@@ -5,10 +5,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProfileMentorComponent } from "./components/profile-mentor/profile-mentor.component";
 import { EditProfileMentorComponent } from "./components/edit-profile-mentor/edit-profile-mentor.component";
 import { AddServiceComponent } from './components/add-service/add-service.component';
-import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
+import { IndexComponent } from "src/app/shared/index/index.component";
 const routes: Routes = [
   {
     path: "mentor",
