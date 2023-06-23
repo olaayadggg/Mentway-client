@@ -57,15 +57,15 @@
 
 
        <ul class="navbar-nav align-items-lg-center justify-content-between">
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link nav-link-icon"
+        <li class="nav-link nav-link-icon dropdown bi bi-bell" style="color: #1FAB89;" data-toggle="dropdown"
+        role="button">
+          <!-- <a
+            class=" "
             data-toggle="dropdown"
             role="button"
           >
           <i class="bi bi-bell" style="color: #1FAB89;"></i>
-
-          </a>
+          </a> -->
           <div class="dropdown-menu">
             <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
             <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
@@ -87,9 +87,8 @@
                 alt=""
               />
             </a>
-            <!-- <div class="dropdown">
+            <div class="dropdown">
               <a class=" dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #1FAB89;">
-
               </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a [routerLink]="['/mentee/dashboard']" class="dropdown-item">Dashboard</a></li>
@@ -99,12 +98,8 @@
               </ul>
 
 
-          </div> -->
-          <select class="form-select mt-3 p-2 " aria-labelledby="dropdownMenuButton1">
-            <option value="available">Available</option>
-            <option value="not available">Not Available</option>
-            <option value="all">All</option>
-        </select>
+          </div>
+
           </div>
         </li>
       </ul>

@@ -6,24 +6,27 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class MenteeService {
-  private baseUrl:string=`${environment.API_URL}/api`
+  private baseUrl: string = `${environment.API_URL}/api/v1`;
   private service: any;
   constructor(private http:HttpClient) {}
 
-  setData(data: any) {
-    this.service = data;
+  getMenteeById(id: string){
+    return this.http.get(`${this.baseUrl}/mentees/${id}`);
   }
 
-  getData(): any {
-    return this.service;
+  deleteMenteeById(id: number) {
+    return this.http.delete(`${this.baseUrl}/mentees/${id}`)
+  }
+
+  createMentee(mentee: any) {
+    return this.http.post(`${this.baseUrl}/mentees`, mentee)
+  }
+
+  updateMentee(updatedMentee: any) {
+    return this.http.put(`${this.baseUrl}/mentees`, updatedMentee)
   }
 
 
-  setStartDate():any{
-
-  }
-  SetApplicationDetails():any{
 
 
-  }
 }
