@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { PaymentMethodComponent } from './shared/payment-method/payment-method.c
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { ViewServiceComponent } from './shared/view-service/view-service.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     sessionModule,
     NgbModule,
+    ReactiveFormsModule,
+    CommonModule
+
 
 
   ],
