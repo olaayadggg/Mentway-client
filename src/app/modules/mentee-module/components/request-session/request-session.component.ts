@@ -5,6 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
 import { MenteeService } from '../../mentee-service/mentee.service';
+import { BusinessServiceService } from 'src/app/shared/services/business-service.service';
 import {NgFor} from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
@@ -22,8 +23,7 @@ export class RequestSessionComponent implements OnInit {
   events: string[] = [];
   activatedRoute: any;
 
-  constructor(menteeService: MenteeService) {
-    // this.menteeService = menteeService;
+  constructor(private menteeService: MenteeService, private businessService:BusinessServiceService) {
 
   }
   ngOnInit(): void {

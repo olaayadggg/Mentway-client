@@ -42,7 +42,7 @@
 
       <div class="navbar-nav">
 
-        <ul class="navbar-nav  justify-content-between">
+        <!-- <ul class="navbar-nav  justify-content-between">
           <li class="nav-item d-none d-lg-block ml-lg-4">
            <a [routerLink]="['/register']"class="btn btn-neutral register ">
              <span class="nav-link-inner--text">Create account</span>
@@ -53,19 +53,19 @@
              <span class="nav-link-inner--text">Login</span>
            </a>
          </li>
-       </ul>
+       </ul> -->
 
 
-       <!-- <ul class="navbar-nav align-items-lg-center justify-content-between">
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link nav-link-icon"
+       <ul class="navbar-nav align-items-lg-center justify-content-between">
+        <li class="nav-link nav-link-icon dropdown bi bi-bell" style="color: #1FAB89;" data-toggle="dropdown"
+        role="button">
+          <!-- <a
+            class=" "
             data-toggle="dropdown"
             role="button"
           >
           <i class="bi bi-bell" style="color: #1FAB89;"></i>
-
-          </a>
+          </a> -->
           <div class="dropdown-menu">
             <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
             <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
@@ -89,7 +89,6 @@
             </a>
             <div class="dropdown">
               <a class=" dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #1FAB89;">
-
               </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a [routerLink]="['/mentee/dashboard']" class="dropdown-item">Dashboard</a></li>
@@ -103,7 +102,7 @@
 
           </div>
         </li>
-      </ul> -->
+      </ul>
       </div>
 
 
