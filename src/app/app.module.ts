@@ -27,6 +27,9 @@ import { IndexComponent } from './modules/dashboard/components/index/index.compo
 import { RequestsComponent } from './modules/dashboard/components/requests/requests.component';
 import { EditProfileMentorComponent } from './modules/mentor-module/components/edit-profile-mentor/edit-profile-mentor.component';
 import { EditProfileComponent } from './modules/mentee-module/components/edit-profile-mentee/edit-profile.component';
+import { IndexComponent } from './shared/index/index.component';
+import { UpcomingSessionsComponent } from './shared/upcoming-sessions/upcoming-sessions.component';
+import { RequestsComponent } from './shared/requests/requests.component';
 
 import { CommonModule } from '@angular/common';
 
@@ -62,7 +65,6 @@ import { CommonModule } from '@angular/common';
     mentorModule,
     MatIconModule,
     sessionModule,
-    DashboardModule,
     NgbModule,
     ReactiveFormsModule,
     CommonModule
