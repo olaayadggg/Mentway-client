@@ -15,14 +15,12 @@ import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
-import { UpcomingSessionsComponent } from "../dashboard/components/upcoming-sessions/upcoming-sessions.component";
 const routes: Routes = [
   {
     path: "mentee",
     canActivate: [],
     children: [
       { path: "dashboard", component: IndexComponent },
-      { path: "dashboard/upcomingsessions", component: UpcomingSessionsComponent },
       { path: "profile-mentee", component: ProfileMenteeComponent },
       { path: "edit-profile", component: EditProfileComponent },
       { path: "search", component: SearchMentorsComponent},
@@ -35,7 +33,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
-    EditProfileComponent,
+    // EditProfileComponent,
 
   ],
   imports: [

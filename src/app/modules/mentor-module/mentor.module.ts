@@ -24,9 +24,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMentorComponent,
-    EditProfileMentorComponent,
+    // EditProfileMentorComponent,
     AddServiceComponent,
-    IndexComponent,
+    // IndexComponent,
   ],
   imports: [
     CommonModule,
