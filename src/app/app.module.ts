@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,11 +20,19 @@ import { PaymentMethodComponent } from './shared/payment-method/payment-method.c
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { ViewServiceComponent } from './shared/view-service/view-service.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { UpcomingSessionsComponent } from './modules/dashboard/components/upcoming-sessions/upcoming-sessions.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { IndexComponent } from './modules/dashboard/components/index/index.component';
+import { RequestsComponent } from './modules/dashboard/components/requests/requests.component';
 import { EditProfileMentorComponent } from './modules/mentor-module/components/edit-profile-mentor/edit-profile-mentor.component';
 import { EditProfileComponent } from './modules/mentee-module/components/edit-profile-mentee/edit-profile.component';
 import { IndexComponent } from './shared/index/index.component';
 import { UpcomingSessionsComponent } from './shared/upcoming-sessions/upcoming-sessions.component';
 import { RequestsComponent } from './shared/requests/requests.component';
+
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -58,6 +66,9 @@ import { RequestsComponent } from './shared/requests/requests.component';
     MatIconModule,
     sessionModule,
     NgbModule,
+    ReactiveFormsModule,
+    CommonModule
+
 
 
   ],
