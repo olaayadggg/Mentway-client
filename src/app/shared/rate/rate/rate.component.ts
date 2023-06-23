@@ -1,5 +1,6 @@
 import { Component, OnInit,Input, Output, EventEmitter, ViewEncapsulation, Directive  } from '@angular/core';
 import { MentorService } from 'src/app/modules/mentor-module/mentor-service/mentor.service';
+import { MenteeService } from 'src/app/modules/mentee-module/mentee-service/mentee.service';
 @Component({
   selector: 'app-rate',
   templateUrl: './rate.component.html',
@@ -10,13 +11,13 @@ import { MentorService } from 'src/app/modules/mentor-module/mentor-service/ment
 export class RateComponent implements OnInit {
   @Input() id: any
   @Input() userRate: any = null
-  
+
   @Input() avg_rate: any=null
   max = 5;
   rate = 0;
   @Input() isReadonly:boolean = false;
 
-  constructor(private mentorService: MentorService) {
+  constructor(private mentorService: MentorService , private menteeService: MenteeService) {
   }
   ngOnInit(): void {
     if (this.userRate) {
@@ -27,29 +28,31 @@ export class RateComponent implements OnInit {
     }
   }
 
+
   rateMentor() {
-    if(!this.userRate){
-      this.mentorService.rate(Number(this.id), this.rate).subscribe(
-        {
-          next: (res) => {
-            console.log(res);
-          },
-          error: (err) => {
-            console.log(err);
-          }
-        }
-      )
-    }else{
-      this.mentorService.rateUpdate(Number(this.userRate.id),Number(this.id), this.rate).subscribe(
-        {
-          next: (res) => {
-            console.log(res);
-          },
-          error: (err) => {
-            console.log(err);
-          }
-        }
-      )
-    }
+    // if(!this.userRate){
+    //   this.mentorService.rate(Number(this.id), this.rate).subscribe(
+    //     {
+    //       next: (res) => {
+    //         console.log(res);
+    //       },
+    //       error: (err) => {
+    //         console.log(err);
+    //       }
+    //     }
+    //   )
+    // }else{
+    //   this.mentorService.rateUpdate(Number(this.userRate.id),Number(this.id), this.rate).subscribe(
+    //     {
+    //       next: (res) => {
+    //         console.log(res);
+    //       },
+    //       error: (err) => {
+    //         console.log(err);
+    //       }
+    //     }
+    //   )
+    // }
   }
+
 }

@@ -13,53 +13,59 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/about-us']">About us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li>
-          <div class="input-group col-md-3">
-            <input
-              class="form-control py-2 search"
-              type="search"
-              placeholder="search"
-              id="example-search-input"
-            />
-            <span class="input-group-append" role="button">
-                <i class="bi bi-search" style="color: blue;"></i>
-            </span>
-          </div>
-
-        </li>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-lg-7 col-md-5 justify-content-between">
+        <ul class="d-flex">
+          <li class="nav-item">
+            <a class="nav-link active" [routerLink]="['/about-us']">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active ml-4" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <div class="input-group ">
+              <input
+                class="form-control py-2 search "
+                style="width: 360px;"
+                type="search"
+                placeholder="search"
+                id="example-search-input"
+              />
+              <!-- <span class="input-group-append" role="button">
+                  <i class="bi bi-search" style="color: blue;"></i>
+              </span> -->
+            </div>
+          </li>
+        </ul>
       </ul>
 
-      <ul>
-        <ul class="navbar-nav ml-lg-auto justify-content-between">
+      <div class="navbar-nav">
+
+        <!-- <ul class="navbar-nav  justify-content-between">
           <li class="nav-item d-none d-lg-block ml-lg-4">
            <a [routerLink]="['/register']"class="btn btn-neutral register ">
              <span class="nav-link-inner--text">Create account</span>
            </a>
          </li>
-         <li class="nav-item d-none d-lg-block ">
+         <li class="nav-item d-none d-lg-block ml-lg-4">
            <a [routerLink]="['/login']"  class="btn login ">
              <span class="nav-link-inner--text">Login</span>
            </a>
          </li>
-       </ul>
+       </ul> -->
 
 
-       <!-- <ul class="navbar-nav align-items-lg-center justify-content-between">
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link nav-link-icon"
+       <ul class="navbar-nav align-items-lg-center justify-content-between">
+        <li class="nav-link nav-link-icon dropdown bi bi-bell" style="color: #1FAB89;" data-toggle="dropdown"
+        role="button">
+          <!-- <a
+            class=" "
             data-toggle="dropdown"
             role="button"
           >
-            <i class="fa fa-bell" style="color: black;"></i>
-          </a>
+          <i class="bi bi-bell" style="color: #1FAB89;"></i>
+          </a> -->
           <div class="dropdown-menu">
             <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
             <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
@@ -83,7 +89,6 @@
             </a>
             <div class="dropdown">
               <a class=" dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #1FAB89;">
-                .
               </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                 <li><a [routerLink]="['/mentee/dashboard']" class="dropdown-item">Dashboard</a></li>
@@ -92,11 +97,15 @@
                 <li><a [routerLink]="['/login']" class="dropdown-item">Logout</a></li>
               </ul>
 
+
           </div>
+
           </div>
         </li>
-      </ul> -->
       </ul>
+      </div>
+
+
     </div>
   </div>
 </nav>
