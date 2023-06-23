@@ -32,7 +32,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
-    EditProfileComponent,
+    // EditProfileComponent,
 
   ],
   imports: [
