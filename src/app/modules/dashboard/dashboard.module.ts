@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { RequestsComponent } from './components/requests/requests.component';
-import { UpcomingSessionsComponent } from './components/upcoming-sessions/upcoming-sessions.component';
 import { Routes,RouterModule } from '@angular/router';
+import { UpcomingSessionsComponent } from './components/upcoming-sessions/upcoming-sessions.component';
+import { IndexComponent } from './components/index/index.component';
 
 const routes: Routes = [
   {
@@ -19,8 +20,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     SideMenuComponent,
-    RequestsComponent,
-    UpcomingSessionsComponent,
+    // RequestsComponent,
+    // IndexComponent
   ],
   imports: [
     CommonModule,
