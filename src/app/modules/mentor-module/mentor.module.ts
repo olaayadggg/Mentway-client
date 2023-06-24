@@ -9,6 +9,7 @@ import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
+import { MatIconModule} from '@angular/material/icon';
 const routes: Routes = [
   {
     path: "mentor",
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: "dashboard", component: IndexComponent },
       { path: "profile-mentor", component: ProfileMentorComponent },
       { path: "edit-profile", component: EditProfileMentorComponent },
+      { path: "add-service", component:AddServiceComponent},
     ],
   },
 ];
@@ -35,6 +37,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
   ],
 })
 export class mentorModule {}
