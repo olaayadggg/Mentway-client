@@ -1,0 +1,48 @@
+<!-- <p>requests works!</p> -->
+<div *ngIf="role === 'mentor'">
+    <div class="col-lg-4 col-md-5 col-sm-5 col-xs-12 request" id="container" *ngFor="let item of mentorData">
+        <main class="profile-page" *ngIf="!item.isRequestAccepted && !item.isRequestRejected">
+          <div class="profile-container">
+            <div class="d-flex justify-content-between">
+              <div class="profile-header d-flex">
+                <div class="profile-image">
+                  <img [src]="item['profile-pic']" alt="Profile Image" class="rounded-circle profile-picture">
+                </div>
+                <div class="profile-info">
+                  <h6 class="name d-flex align-items-center m-3">{{ item.name }}</h6>
+                  <p class="country ml-3">{{ item.bank }}</p>
+                </div>
+              </div>
+              <div style="padding-top: 3px;">
+                <button (click)="acceptRequest(item)" style="border: none; background-color: #EDFFF6; border-radius: 8px;" class="btn"><i class="fas fa-eye" style="color: #333;"></i><span class="view-text"> Accept</span></button>
+                <button (click)="rejectRequest(item)" style="border: none; background-color: lightcoral; border-radius: 8px;" class="btn"><i class="fas fa-eye" style="color: #333;"></i><span class="view-text"> Reject</span></button>
+              </div>
+            </div>
+            <div class="profile-links">
+              {{ item.coverLetter }}
+            </div>
+          </div>
+        </main>
+    </div>
+</div>
+
+<table class="custom-table bottom-border-radius" *ngIf="role === 'mentor'">
+    <thead>
+        <tr >
+        <th *ngFor="let header of headers">{{header}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of menteeData">
+        <td class="user-cell">
+            <div class="user-info">
+            <img [src]="row['profile-pic']" alt="User Image" class="user-image">
+            <span class="user-name">{{ row.mentor }}</span>
+            </div>
+        </td>
+        <td>{{ row.scheduledDate1 }}</td>
+        <td><div class="date">{{ row.scheduledDate2 }}</div></td>
+        <td><button  style="border: none; background-color: yellowgreen; border-radius: 8px;"><span class="view-text"> Pending  </span></button></td>
+        </tr>
+    </tbody>
+    </table>

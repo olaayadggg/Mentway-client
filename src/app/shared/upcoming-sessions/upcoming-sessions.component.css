@@ -1,35 +1,35 @@
     .upcoming {
-        
+
     }
     .profile-container {
         text-align: center;
     }
-    
+
     .profile-header {
         margin-bottom: 20px;
     }
-    
+
     .profile-image {
         display: inline-block;
         margin-right: 20px;
     }
-    
+
     .profile-info h2 {
         font-size: 21px;
         margin-bottom: 5px;
     }
-    
+
     .profile-links a {
         display: block;
         margin-bottom: 10px;
     }
-    
+
     .profile-picture {
         width: 92px;
         height: 92px;
         filter: drop-shadow(0px 4px 28px rgba(119, 113, 113, 0.08));
     }
-    
+
     h2.name {
         width: 145px;
         height: 32px;
@@ -65,16 +65,16 @@
         display: block;
         margin-bottom: 5px;
         padding: 10px 0;
-        margin-left: 0px !important; 
+        margin-left: 0px !important;
         transition: background-color 0.3s ease-in-out;
         text-decoration: none;
         cursor: pointer;
     }
-    
+
     .profile-links a:hover {
         background-color: #62D2A2;
     }
-    
+
     /* profile Booking */
     /* .booking-summary {
         text-align: left;
@@ -92,18 +92,18 @@
     } */
     .booking-summary {
         text-align: left;
-        padding: 20px;
+        /* padding: 20px; */
         background-color: white;
         /* margin: 20px 10px; */
     }
-    
+
     /* Responsive Adjustments */
     @media (max-width: 768px) {
         .booking-summary {
         margin: 20px 0;
         }
     }
-    
+
     .breadcrumbs {
         /* margin-top: 130px; */
         /* margin-left: 103px; */
@@ -114,7 +114,7 @@
         font-size: 16px;
         font-family: Rubik;
     }
-    
+
     .breadcrumbs a:hover {
         text-decoration: underline;
     }
@@ -145,13 +145,13 @@
         margin-right: 0;
         margin-bottom: 10px;
         }
-    
+
         .profile-links a {
         margin-left: 0;
         padding: 5px 0;
         cursor: pointer;
         }
-    
+
         .booking-summary {
         margin-left: 0;
         margin-right: 0;
@@ -159,8 +159,8 @@
     }
     .profile-page {
         background-color: #fff;
-        box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08); 
-        padding: 20px; 
+        box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
+        padding: 20px;
         width: 292px;
         height: 446px;
         border: 1px solid #EDFFF6;
@@ -174,7 +174,7 @@
     }
     @media (min-width: 992px) {
         .container {
-        margin-left: 90px;
+        /* margin-left: 90px; */
         }
     }
     .custom-table {
@@ -195,7 +195,7 @@
     table.custom-table {
     /* margin-left: 55px; */
     margin-top: 44px;
-    box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08); 
+    box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
     }
     .profile-links a:not(.is-active) {
     color: #1B1A1A;
@@ -281,13 +281,13 @@
         max-width: 400px;
         margin: 0 auto;
       }
-    
+
       /* Style for form labels */
       label {
         display: block;
         margin-bottom: 5px;
       }
-    
+
       /* Style for form input fields */
       input[type="text"],
       input[type="email"],
@@ -300,7 +300,7 @@
         border-radius: 16px;
         box-sizing: border-box;
       }
-    
+
       /* Style for the submit button */
       button[type="submit"] {
         background-color: #1FAB89;
@@ -310,14 +310,14 @@
         border-radius: 4px;
         cursor: pointer;
       }
-    
+
       /* Style for the submit button on hover */
       button[type="submit"]:hover {
         background-color: #1D9D85;
       }
       .personal-div {
         /* background-color: #fff; */
-        box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08); 
+        box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08);
         /* padding: 20px;  */
         /* width: 623px; */
         /* height: 644px; */

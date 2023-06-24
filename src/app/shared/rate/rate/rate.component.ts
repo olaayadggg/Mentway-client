@@ -30,6 +30,68 @@ export class RateComponent implements OnInit {
 
 
   rateMentor() {
+    if(!this.userRate){
+      // this.mentorService.rate(Number(this.id), this.rate).subscribe(
+      //   {
+      //     next: (res) => {
+      //       console.log(res);
+      //     },
+      //     error: (err) => {
+      //       console.log(err);
+      //     }
+      //   }
+      // )
+    }else{
+      // this.mentorService.rateUpdate(Number(this.userRate.id),Number(this.id), this.rate).subscribe(
+      //   {
+      //     next: (res) => {
+      //       console.log(res);
+      //     },
+      //     error: (err) => {
+      //       console.log(err);
+      //     }
+      //   }
+      // )
+    }
+  }
+  headers = ["Mentor lists","Scheduled Date","Scheduled Timing","Action"]
+  rows = [
+    {
+      "mentor": 'Mentor 1',
+      "profile-pic": './assets/img/theme/team-1-800x800.jpg',
+      "rating": 5,
+      "scheduledDate2": 'HTML',
+    },
+    {
+      "mentor": 'Mentor 2',
+      "profile-pic": './assets/img/theme/team-2-800x800.jpg',
+      "rating": 2,
+      "scheduledDate2": 'Docker',
+    },
+    {
+      "mentor": 'Mentor 3',
+      "profile-pic": './assets/img/theme/team-3-800x800.jpg',
+      "rating": 5,
+      "scheduledDate2": 'Interview Preparation',
+    },
+    {
+      "mentor": 'Mentor 4',
+      "profile-pic": './assets/img/theme/team-4-800x800.jpg',
+      "rating": 4,
+      "scheduledDate2": 'JavaScript',
+    },
+    {
+      "mentor": 'Mentor 5',
+      "profile-pic": './assets/img/theme/team-4-800x800.jpg',
+      "rating": 1,
+      "scheduledDate2": 'Java',
+    }
+  ];
+
+getRange(num: number): number[] {
+  return Array.from({ length: num }, (_, index) => index + 1);
+}
+
     // if(!this.userRate){
     //   this.mentorService.rate(Number(this.id), this.rate).subscribe(
     //     {
@@ -55,4 +117,4 @@ export class RateComponent implements OnInit {
     // }
   }
 
-}
+

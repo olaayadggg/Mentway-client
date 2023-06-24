@@ -1,15 +1,14 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProfileMentorComponent } from "./components/profile-mentor/profile-mentor.component";
 import { EditProfileMentorComponent } from "./components/edit-profile-mentor/edit-profile-mentor.component";
 import { AddServiceComponent } from './components/add-service/add-service.component';
-import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
 import { MatIconModule} from '@angular/material/icon';
+import { IndexComponent } from "src/app/shared/index/index.component";
 const routes: Routes = [
   {
     path: "mentor",
@@ -26,17 +25,13 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMentorComponent,
-    EditProfileMentorComponent,
+    // EditProfileMentorComponent,
     AddServiceComponent,
-    IndexComponent,
+    // IndexComponent,
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
     RouterModule.forRoot(routes),
-    FormsModule,
-    ReactiveFormsModule,
     MatIconModule,
   ],
 })

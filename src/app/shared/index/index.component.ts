@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RequestsComponent } from '../requests/requests.component';
+import { SideMenuComponent } from '../side-menu/side-menu.component';
+import { UpcomingSessionsComponent } from '../upcoming-sessions/upcoming-sessions.component';
 
 @Component({
-  selector: 'app-upcoming-sessions',
-  templateUrl: './upcoming-sessions.component.html',
-  styleUrls: ['./upcoming-sessions.component.css']
+  selector: 'app-index',
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.css']
 })
-export class UpcomingSessionsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class IndexComponent {
   currentDiv: string = 'upcoming';
   currentLink: string = 'upcoming';
   currentLinkText: string = 'Upcoming Session';
@@ -27,10 +25,7 @@ export class UpcomingSessionsComponent implements OnInit {
   viewDetails() {
     // this.selectedBooking = booking;
   }
-  data = {
-    d1:"Yaaam",
-    d2:"Wooow"
-  }
+  role = 'mentor';
   headers = ["Mentor lists","Scheduled Date","Scheduled Timing","Action"]
   rows = [
     {
@@ -64,5 +59,4 @@ export class UpcomingSessionsComponent implements OnInit {
         "scheduledDate2": '2023-06-19',
     }
 ]
-
 }
