@@ -1,4 +1,4 @@
-<div class="container upcoming" style="">
+<div class="container upcoming" style="width: 100%; overflow-x: auto;">
     <div class="booking-summary" style="">
     <h2 class="title">Booking Summary</h2>
     <div class="breadcrumbs">
@@ -6,10 +6,10 @@
     </div>
     </div>
     <div class="row mb-5">
-    <div class="col-lg-4 col-md-5 col-sm-5 col-xs-12" id="container">
+    <div class="column col-lg-3 col-md-6 col-sm-10" id="container">
         <main class="profile-page">
         <div class="profile-container">
-            <div class="profile-header d-flex">
+            <div class="profile-header d-flex justify-content-space-between">
             <div class="profile-image">
                 <img src="./assets/img/theme/team-4-800x800.jpg" alt="Profile Image" class="rounded-circle profile-picture">
             </div>
@@ -29,7 +29,7 @@
         </main>
     </div>
 
-    <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+    <div class="column col-lg-9 col-md-8 col-sm-7">
         <div *ngIf="currentDiv === 'upcoming'">
             <app-upcoming-sessions></app-upcoming-sessions>
         </div>

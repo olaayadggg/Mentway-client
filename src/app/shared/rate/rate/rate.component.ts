@@ -117,4 +117,4 @@ getRange(num: number): number[] {
     // }
   }
 
-}
+
