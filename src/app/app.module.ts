@@ -25,6 +25,8 @@ import { EditProfileComponent } from './modules/mentee-module/components/edit-pr
 import { IndexComponent } from './shared/index/index.component';
 import { UpcomingSessionsComponent } from './shared/upcoming-sessions/upcoming-sessions.component';
 import { RequestsComponent } from './shared/requests/requests.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -50,6 +52,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule,
     AppRoutingModule,
