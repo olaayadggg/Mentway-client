@@ -1,5 +1,5 @@
 <main>
-  <section class="section section-shaped section-lg ">
+  <section class="section section-shaped section-lg">
     <div class="container pt-lg-md">
       <div class="row justify-content-center">
         <div class="col-lg-6 mt-5">
@@ -11,58 +11,43 @@
             </div>
             <div class="card-body px-lg-5 py-lg-5">
               <form [formGroup]="Form" (submit)="submit($event)">
-                <div class="form-group mb-3" >
+                <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
                     <input class="form-control" placeholder="User Name" id="UserName" formControlName="UserName">
                   </div>
-                  <ng-container *ngIf="this.getUserName.touched">
-                    <div
-                      *ngIf="this.getUserName.hasError('required')"
-                      class="invalid-feedback d-block"
-                    >
-                      User name is Required
+                  <ng-container *ngIf="getUserName.touched">
+                    <div *ngIf="getUserName.hasError('required')" class="invalid-feedback d-block">
+                      User name is required
                     </div>
-                    <div
-                      *ngIf="this.getUserName.hasError('UserName')"
-                      class="invalid-feedback d-block"
-                    >
-                     Invalid User name
+                    <div *ngIf="getUserName.hasError('UserName')" class="invalid-feedback d-block">
+                      Invalid User name
                     </div>
                   </ng-container>
                 </div>
-                <div class="form-group" >
+                <div class="form-group">
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="Password" type="password" id="Password">
+                    <input class="form-control" placeholder="Password" type="password" id="Password"
+                      formControlName="Password">
                   </div>
-                  <ng-container *ngIf="this.getPassword.touched">
-                    <div
-                      *ngIf="this.getPassword.hasError('required')"
-                      class="invalid-feedback d-block"
-                    >
+                  <ng-container *ngIf="getPassword.touched">
+                    <div *ngIf="getPassword.hasError('required')" class="invalid-feedback d-block">
                       Password is required
                     </div>
-                    <div
-                      *ngIf="this.getPassword.hasError('minlength')"
-                      class="invalid-feedback d-block"
-                    >
-                      Password must be at least 8 characters
-                    </div>
-
-                    <div
-                      *ngIf="this.getPassword.hasError('pattern')"
-                      class="invalid-feedback d-block"
-                    >
-                      Password must contain uppercase lowercase and special character
-                    </div>
-                    <div *ngIf="this.errors" class="invalid-feedback d-block">
-                      {{this.errors[0]}}
+                    <div *ngIf="getPassword.hasError('pattern')" class="invalid-feedback d-block">
+                      Invalid Password
                     </div>
                   </ng-container>
+                  <div *ngIf="getPassword.valid" class="valid-feedback d-block">
+                    Password is valid
+                  </div>
+                  <div *ngIf="errors" class="invalid-feedback d-block">
+                    {{ errors[0] }}
+                  </div>
                 </div>
                 <div class="d-flex justify-content-between mt-5">
-                  <div class="custom-control custom-control-alternative custom-checkbox ">
-                    <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
-                    <label class="custom-control-label px-2" for=" customCheckLogin">
+                  <div class="custom-control custom-control-alternative custom-checkbox">
+                    <input class="custom-control-input" id="customCheckLogin" type="checkbox">
+                    <label class="custom-control-label px-2" for="customCheckLogin">
                       <span>Remember me</span>
                     </label>
                   </div>
@@ -78,7 +63,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </main>
