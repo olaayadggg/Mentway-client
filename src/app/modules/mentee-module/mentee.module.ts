@@ -10,10 +10,10 @@ import { MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule} from '@angular/material/core';
 import { MatIconModule} from '@angular/material/icon';
-import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
+import { IndexComponent } from "src/app/shared/index/index.component";
 const routes: Routes = [
   {
     path: "mentee",
@@ -32,7 +32,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
-    EditProfileComponent,
+    // EditProfileComponent,
 
   ],
   imports: [
