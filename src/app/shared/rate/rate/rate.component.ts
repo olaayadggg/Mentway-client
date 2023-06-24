@@ -87,7 +87,7 @@ export class RateComponent implements OnInit {
       "scheduledDate2": 'Java',
     }
   ];
-  
+
 getRange(num: number): number[] {
   return Array.from({ length: num }, (_, index) => index + 1);
 }
@@ -117,4 +117,4 @@ getRange(num: number): number[] {
     // }
   }
 
-}
+
