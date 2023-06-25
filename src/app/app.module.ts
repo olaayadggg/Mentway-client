@@ -20,6 +20,8 @@ import { PaymentMethodComponent } from './shared/payment-method/payment-method.c
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { ViewServiceComponent } from './shared/view-service/view-service.component';
 import { HttpClientModule } from '@angular/common/http';
+
+
 import { EditProfileMentorComponent } from './modules/mentor-module/components/edit-profile-mentor/edit-profile-mentor.component';
 import { EditProfileComponent } from './modules/mentee-module/components/edit-profile-mentee/edit-profile.component';
 import { IndexComponent } from './shared/index/index.component';

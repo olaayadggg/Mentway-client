@@ -18,9 +18,9 @@
           </div>
         </td>
         <td>
-          <div class="rating">
-            <span class="golden-star" *ngFor="let _ of getRange(row.rating)"></span>
-            <span class="white-star" *ngFor="let _ of getRange(5 - row.rating)"></span>
+          <div class="">
+            <span class="golden-star" *ngFor="let _ of getRange(row.rating)"><mat-icon class="golden-star">star</mat-icon></span>
+            <span class="white-star" *ngFor="let _ of getRange(5 - row.rating)"><mat-icon class="white-star">star</mat-icon></span>
           </div>
         </td>
         <td>
@@ -30,3 +30,4 @@
     </tbody>
   </table>
   
+  <app-pagination [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage" (pageChanged)="onPageChanged($event)"></app-pagination>

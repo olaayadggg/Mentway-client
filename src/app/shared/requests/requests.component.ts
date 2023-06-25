@@ -119,4 +119,18 @@ export class RequestsComponent {
 
     item.isRequestRejected = true;
   }
+
+  // set this numbers to 0 as default
+//  data from first time calling your api
+// don't forget to apply your design
+totalItems = 100;
+itemsPerPage = 10;
+currentPage = 1;
+
+onPageChanged(page: number) {
+  this.currentPage = page;
+  // call your api with page number
+  console.log("fetch page: ", this.currentPage)
+}
+
 }

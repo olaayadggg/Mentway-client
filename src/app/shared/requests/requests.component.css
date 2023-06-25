@@ -108,3 +108,6 @@ p.country {
             border-bottom-left-radius: 16px;
             border-bottom-right-radius: 16px;
         }
+        .btnn {
+            margin-right: 5px !important;
+        }
