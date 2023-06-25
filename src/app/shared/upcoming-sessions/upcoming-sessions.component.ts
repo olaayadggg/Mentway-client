@@ -17,7 +17,7 @@ export class UpcomingSessionsComponent implements OnInit {
   currentLinkText: string = 'Upcoming Session';
 
 
-  showDiv(divName: string,linkText: string) {
+  showDiv(divName: string, linkText: string) {
     this.currentDiv = divName;
     this.currentLink = divName;
     this.currentLinkText = linkText;
@@ -29,41 +29,54 @@ export class UpcomingSessionsComponent implements OnInit {
     // this.selectedBooking = booking;
   }
   data = {
-    d1:"Yaaam",
-    d2:"Wooow"
+    d1: "Yaaam",
+    d2: "Wooow"
   }
-  headers = ["Mentor lists","Scheduled Date","Scheduled Timing","Action"]
+  headers = ["Mentor lists", "Scheduled Date", "Scheduled Timing", "Action"]
   rows = [
     {
-        "mentor": 'Mentor 1',
-        "profile-pic": './assets/img/theme/team-1-800x800.jpg',
-        "scheduledDate1": '2023-06-18',
-        "scheduledDate2": '2023-06-19',
+      "mentor": 'Mentor 1',
+      "profile-pic": './assets/img/theme/team-1-800x800.jpg',
+      "scheduledDate1": '2023-06-18',
+      "scheduledDate2": '2023-06-19',
     },
     {
-        "mentor": 'Mentor 2',
-        "profile-pic": './assets/img/theme/team-2-800x800.jpg',
-        "scheduledDate1": '2023-06-18',
-        "scheduledDate2": '2023-06-19',
+      "mentor": 'Mentor 2',
+      "profile-pic": './assets/img/theme/team-2-800x800.jpg',
+      "scheduledDate1": '2023-06-18',
+      "scheduledDate2": '2023-06-19',
     },
     {
-        "mentor": 'Mentor 3',
-        "profile-pic": './assets/img/theme/team-3-800x800.jpg',
-        "scheduledDate1": '2023-05-22',
-        "scheduledDate2": '2023-06-26',
+      "mentor": 'Mentor 3',
+      "profile-pic": './assets/img/theme/team-3-800x800.jpg',
+      "scheduledDate1": '2023-05-22',
+      "scheduledDate2": '2023-06-26',
     },
     {
-        "mentor": 'Mentor 4',
-        "profile-pic": './assets/img/theme/team-4-800x800.jpg',
-        "scheduledDate1": '2023-06-18',
-        "scheduledDate2": '2023-06-19',
+      "mentor": 'Mentor 4',
+      "profile-pic": './assets/img/theme/team-4-800x800.jpg',
+      "scheduledDate1": '2023-06-18',
+      "scheduledDate2": '2023-06-19',
     },
     {
-        "mentor": 'Mentor 5',
-        "profile-pic": './assets/img/theme/team-4-800x800.jpg',
-        "scheduledDate1": '2023-06-18',
-        "scheduledDate2": '2023-06-19',
+      "mentor": 'Mentor 5',
+      "profile-pic": './assets/img/theme/team-4-800x800.jpg',
+      "scheduledDate1": '2023-06-18',
+      "scheduledDate2": '2023-06-19',
     }
-]
+  ]
+
+// set this numbers to 0 as default
+//  data from first time calling your api
+// don't forget to apply your design
+  totalItems = 100;
+  itemsPerPage = 10;
+  currentPage = 1;
+
+  onPageChanged(page: number) {
+    this.currentPage = page;
+    // call your api with page number
+    console.log("fetch page: ", this.currentPage)
+  }
 
 }

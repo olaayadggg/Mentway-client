@@ -28,3 +28,5 @@
         </tr>
     </tbody>
     </table>
+
+        <app-pagination [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage" (pageChanged)="onPageChanged($event)"></app-pagination>

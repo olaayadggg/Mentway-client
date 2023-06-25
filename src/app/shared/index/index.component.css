@@ -2,196 +2,222 @@
         
 }
 .breadcrumbs {
-    margin-top: 0 !important; /* Remove the margin-top */
+  margin-top: 0 !important; /* Remove the margin-top */
 }
 .profile-container {
-    text-align: center;
+  text-align: center;
 }
 
 .profile-header {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .profile-image {
-    display: inline-block;
-    margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 .profile-info h2 {
-    font-size: 21px;
-    margin-bottom: 5px;
+  font-size: 21px;
+  margin-bottom: 5px;
 }
 
 .profile-links a {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .profile-picture {
-    width: 92px;
-    height: 92px;
-    filter: drop-shadow(0px 4px 28px rgba(119, 113, 113, 0.08));
+  width: 92px;
+  height: 92px;
+  filter: drop-shadow(0px 4px 28px rgba(119, 113, 113, 0.08));
 }
 
 h2.name {
-    width: 145px;
-    height: 32px;
-    font-size: 20px;
-    font-family: rubik;
-    font-weight: 700;
-    line-height: 32px;
-    color: #1B1A1A;
-    margin-left: calc(50% - 145px/2);
+  width: 145px;
+  height: 32px;
+  font-size: 20px;
+  font-family: rubik;
+  font-weight: 700;
+  line-height: 32px;
+  color: #1B1A1A;
+  margin-left: calc(50% - 145px/2);
 }
 
 p.job {
-height: 23px;
-font-size: 14px;
-font-family: rubik;
-font-weight: 400;
-line-height: 23px;
-color: #707070;
+  height: 23px;
+  font-size: 14px;
+  font-family: rubik;
+  font-weight: 400;
+  line-height: 23px;
+  color: #707070;
 }
 
 p.country {
-width: 39px;
-height: 23px;
-font-size: 14px;
-font-family: rubik;
-font-weight: 400;
-line-height: 23px;
-color: #707070;
-margin-top: -12px;
+  width: 39px;
+  height: 23px;
+  font-size: 14px;
+  font-family: rubik;
+  font-weight: 400;
+  line-height: 23px;
+  color: #707070;
+  margin-top: -12px;
 }
 
 .profile-links a {
-    display: block;
-    margin-bottom: 5px;
-    padding: 10px 0;
-    margin-left: 0px !important; 
-    transition: background-color 0.3s ease-in-out;
-    text-decoration: none;
-    cursor: pointer;
+  display: block;
+  margin-bottom: 5px;
+  padding: 10px 0;
+  margin-left: 0px !important;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .profile-links a:hover {
-    background-color: #62D2A2;
+  background-color: #62D2A2;
 }
 
 .booking-summary {
-    text-align: left;
-    padding: 20px;
-    background-color: white;
-    /* margin: 20px 10px; */
+  text-align: left;
+  padding: 20px;
+  background-color: white;
+  /* margin: 20px 10px; */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .booking-summary {
+  .booking-summary {
     margin: 20px 0;
-    }
+  }
 }
 .breadcrumbs a {
-    text-decoration: none;
-    color: #000;
-    font-size: 16px;
-    font-family: Rubik;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-family: Rubik;
 }
 
 .breadcrumbs a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .title {
-    font-weight: 700;
-    width: 300px;
-    height: 39px;
-    font-family: Rubik;
-    /* margin-left: 103px; */
-    /* margin-top: 128px; */
-    font-size: 24px;
-    color: #1B1A1A;
+  font-weight: 700;
+  width: 300px;
+  height: 39px;
+  font-family: Rubik;
+  /* margin-left: 103px; */
+  /* margin-top: 128px; */
+  font-size: 24px;
+  color: #1B1A1A;
 }
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .profile-image {
+  .profile-image {
     margin-right: 0;
     margin-bottom: 10px;
-    }
+  }
 
-    .profile-links a {
+  .profile-links a {
     margin-left: 0;
     padding: 5px 0;
     cursor: pointer;
-    }
+  }
 
-    .booking-summary {
+  .booking-summary {
     margin-left: 0;
     margin-right: 0;
-    }
+  }
 }
 .profile-page {
-    background-color: #fff;
-    box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08); 
-    padding: 20px; 
-    width: 292px;
-    height: 446px;
-    border: 1px solid #EDFFF6;
-    border-radius: 16px;
-    background: #FFFFFF;
-    /* margin-left: 125px; */
-    margin-top: 44px;
+  background-color: #fff;
+  box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
+  padding: 20px;
+  width: 300px;
+  height: 446px;
+  border: 1px solid #edfff6;
+  border-radius: 16px;
+  background: #ffffff;
+  /* margin-left: 125px; */
+  margin-top: 44px;
 }
 .profile-links {
-    border: 1px solid #EDFFF6;
+  border: 1px solid #edfff6;
 }
+
+@media (max-width: 1440px) {
+  .profile-page {
+    width: 350px;
+    height: 290px;
+    margin: 0 auto;
+  }
+  .profile-header {
+    justify-content: center;
+  }
+
+  .mentors {
+    width: 200px !important;
+  }
+
+  .upcoming {
+    width: 100% !important;
+  }
+
+  .rating {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 /* @media (min-width: 992px) {
     .container {
     margin-left: 90px;
     }
 } */
 .profile-links a:not(.is-active) {
-color: #1B1A1A;
+  color: #1b1a1a;
 }
 
 .profile-links a:not(.is-active):hover {
-color: #fff;
+  color: #fff;
 }
 
 .profile-links a.is-active,
 .profile-links a.is-active:hover {
-color: #fff;
+  color: #fff;
 }
 
 .is-active {
-background-color: #62D2A2;
-color: #fff;
+  background-color: #62d2a2;
+  color: #fff;
 }
 .currentLink {
-    color: #707070;
-    font-family: Rubik;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+  color: #707070;
+  font-family: Rubik;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 .personal-div {
-    /* background-color: #fff; */
-    box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08); 
-    /* padding: 20px;  */
-    /* width: 623px; */
-    /* height: 644px; */
-    border: 1.18786px solid #EDFFF6;
-    border-radius: 19.01px;
-    /* background: #FFFFFF; */
-    /* margin-left: 125px; */
-    margin-top: 44px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+  /* background-color: #fff; */
+  box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08);
+  /* padding: 20px;  */
+  /* width: 623px; */
+  /* height: 644px; */
+  border: 1.18786px solid #edfff6;
+  border-radius: 19.01px;
+  /* background: #FFFFFF; */
+  /* margin-left: 125px; */
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .d-flex.nn {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
