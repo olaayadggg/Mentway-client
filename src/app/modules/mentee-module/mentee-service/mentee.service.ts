@@ -10,7 +10,7 @@ export class MenteeService {
   private service: any;
   constructor(private http:HttpClient) {}
 
-  getMenteeById(id: string){
+  getMenteeById(id: number){
     return this.http.get(`${this.baseUrl}/mentees/${id}`);
   }
 
