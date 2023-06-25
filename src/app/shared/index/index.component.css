@@ -149,7 +149,7 @@ p.country {
 @media (max-width: 1440px) {
   .profile-page {
     width: 350px;
-    height: 290px;
+    height: 355px;
     margin: 0 auto;
   }
   .profile-header {

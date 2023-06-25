@@ -1,0 +1,17 @@
+.card{
+  border-radius: .5rem;
+}
+.gradient-custom {
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  background: -webkit-linear-gradient(to right bottom, rgb(31, 171, 137,1), rgb(70, 214, 178,1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom,  rgb(31, 171, 137,1), rgba(70, 214, 178, 1))
+  }
+img
+{
+  width: 70%;
+  height: 35%;
+  border-radius: 50%;
+}
