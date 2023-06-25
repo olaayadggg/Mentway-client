@@ -7,6 +7,7 @@ import { AddServiceComponent } from './components/add-service/add-service.compon
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
+import { MatIconModule} from '@angular/material/icon';
 import { IndexComponent } from "src/app/shared/index/index.component";
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: "dashboard", component: IndexComponent },
       { path: "profile-mentor", component: ProfileMentorComponent },
       { path: "edit-profile", component: EditProfileMentorComponent },
+      { path: "add-service", component:AddServiceComponent},
     ],
   },
 ];
@@ -30,6 +32,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
+    MatIconModule,
   ],
 })
 export class mentorModule {}
