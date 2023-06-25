@@ -1,33 +1,15 @@
-/* img
-{
-  width: 200px;
-  height: 200px;
+.card{
+  border-radius: .5rem;
 }
-.container{
-  height: 50vh;
-  margin: 5% 5%;
-  padding: 5% 5%;
-  width: 600px;
-}
-.img{
-  border-right: 4px solid rgb(237, 236, 236);
-  padding-right: 15%;
-} */
+.gradient-custom {
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  background: -webkit-linear-gradient(to right bottom, rgb(31, 171, 137,1), rgb(70, 214, 178,1));
 
-.editbutton
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom,  rgb(31, 171, 137,1), rgba(70, 214, 178, 1))
+  }
+img
 {
-  display: flex;
-  justify-content: end;
-}
-
-button
-{
-  height: 45px;
-  width: auto;
-  justify-content: center;
-  border-radius: 48px;
-  background: #1FAB89;
-  font-size: large;
-  color: #FFFFFF;
-  
+  width: 55%;
 }
