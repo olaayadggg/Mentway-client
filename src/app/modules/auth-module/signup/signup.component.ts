@@ -26,10 +26,10 @@ export class SignupComponent {
       username: new FormControl('', [Validators.required]),
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
-      mobile: new FormControl('', [
-        Validators.required,
-        Validators.pattern('^(011|012|010)([0-9]+){8}$'),
-      ]),
+      // mobile: new FormControl('', [
+      //   Validators.required,
+      //   Validators.pattern('^(011|012|010)([0-9]+){8}$'),
+      // ]),
       image: new FormControl(null, [
         Validators.required,
         // imageValidator(1000000,['jpg','jpeg','png'])
@@ -114,7 +114,7 @@ export class SignupComponent {
         this.auth.register(this.data).subscribe({
           next: (res: any) => {
             console.log(res);
-            this.router.navigate([`/verifiy-email/${email}/${code}`]);
+            this.router.navigate(['/payment']);
           },
           error: (err) => {
             console.log(err);

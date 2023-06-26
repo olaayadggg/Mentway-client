@@ -147,6 +147,7 @@ export class RateComponent implements OnInit {
     this.getReviews(page)
     console.log("fetch page: ", this.currentPage)
   }
+//   
 
   // if(!this.userRate){
   //   this.mentorService.rate(Number(this.id), this.rate).subscribe(
