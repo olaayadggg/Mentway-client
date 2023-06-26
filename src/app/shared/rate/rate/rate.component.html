@@ -1,5 +1,66 @@
 <!-- <rating  style="color: #FFD700;font-size: 25px;" (click)="rateMentor()" [(ngModel)]="rate" [max]="max" [readonly]="isReadonly">
 </rating> -->
+<!-- <p>rate works!</p> -->
+<table class="custom-table bottom-border-radius">
+    <thead>
+      <tr>
+        <th>Mentee Name</th>
+        <th>Rate</th>
+        <th>Session</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td class="user-cell">
+          <div class="user-info">
+            <img [src]="row['profile-pic']" alt="User Image" class="user-image">
+            <span class="user-name">{{ row.mentor }}</span>
+          </div>
+        </td>
+        <td>
+          <div class="">
+            <span class="golden-star" *ngFor="let _ of getRange(row.rating)"><mat-icon class="golden-star">star</mat-icon></span>
+            <span class="white-star" *ngFor="let _ of getRange(5 - row.rating)"><mat-icon class="white-star">star</mat-icon></span>
+          </div>
+        </td>
+        <td>
+          <div class="">{{ row.scheduledDate2 }}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-pagination [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage" (pageChanged)="onPageChanged($event)"></app-pagination>
+
+<!-- <p>rate works!</p> -->
+<table class="custom-table bottom-border-radius">
+    <thead>
+      <tr>
+        <th>Mentee Name</th>
+        <th>Rate</th>
+        <th>Session</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td class="user-cell">
+          <div class="user-info">
+            <img [src]="row['profile-pic']" alt="User Image" class="user-image">
+            <span class="user-name">{{ row.mentor }}</span>
+          </div>
+        </td>
+        <td>
+          <div class="rating">
+            <span class="golden-star" *ngFor="let _ of getRange(row.rating)"></span>
+            <span class="white-star" *ngFor="let _ of getRange(5 - row.rating)"></span>
+          </div>
+        </td>
+        <td>
+          <div class="">{{ row.scheduledDate2 }}</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 <!-- <p>rate works!</p> -->
 <table class="custom-table bottom-border-radius">
