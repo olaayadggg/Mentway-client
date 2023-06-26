@@ -11,18 +11,23 @@
         <tr *ngFor="let row of rows">
             <td class="user-cell">
                 <div class="user-info">
-                    <img [src]="row['profile-pic']" alt="User Image" class="user-image">
+                    <!-- <img [src]="row['profile-pic']" alt="User Image" class="user-image"> -->
                     <span class="user-name">{{ row.title }}</span>
                 </div>
             </td>
             <td>{{row.duration}}</td>
-            <td><div>{{ row.price |currency }}</div></td>
+            <td>
+                <div>{{ row.price |currency }}</div>
+            </td>
             <td>
                 <button [routerLink]="['/user/jim']"
                     style="border: none; background-color: #EDFFF6; border-radius: 8px;">
                     <div class="join-session">
-                        <span class="view-text"><mat-icon style="color: #1FAB89;" class="pt-1">link</mat-icon> View
-                            Service</span>
+                        <!--  add router link -->
+                        <span *ngIf="path==='/mentor/dashboard'" class="view-text">
+                            <mat-icon style="color: #1FAB89;"class="pt-1">link</mat-icon> View Service</span>
+                        <span *ngIf="path!=='/mentor/dashboard'" class="view-text">
+                            <mat-icon style="color: #1FAB89;" class="pt-1">link</mat-icon>Request Service</span>
                     </div>
                 </button>
             </td>

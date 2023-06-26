@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -39,6 +39,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ListServicesComponent } from './shared/list-services/list-services.component';
+import { ViewMentorComponent } from './modules/mentee-module/components/view-mentor/view-mentor.component';
+import { SearchMentorsComponent } from './modules/mentee-module/components/search-mentors/search-mentors.component';
 
 @NgModule({
   declarations: [
@@ -59,29 +61,35 @@ import { ListServicesComponent } from './shared/list-services/list-services.comp
     IndexComponent,
     PaginationComponent,
     ListServicesComponent,
+    ViewMentorComponent,
+    PaginationComponent,
+    SearchMentorsComponent,
+
 
 
   ],
   imports: [
-    HttpClientModule,
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
+    // CommonModule,
+    HttpClientModule,
+    // FormsModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule,
     adminModule,
-    menteeModule,
     mentorModule,
-    MatIconModule,
+    menteeModule,
     sessionModule,
-    NgbModule,
     ReactiveFormsModule,
-    CommonModule, MatFormFieldModule,
+    MatIconModule,
+    MatFormFieldModule,
     MatInputModule,
-    FormsModule,
     MatSlideToggleModule,
     MatPaginatorModule,
-    JsonPipe
+    JsonPipe,
+    NgbModule,
+    AppRoutingModule,
 
 
 
@@ -96,11 +104,14 @@ import { ListServicesComponent } from './shared/list-services/list-services.comp
     EditProfileMentorComponent,
     EditProfileComponent,
     IndexComponent,
-    // PaginationComponent
+    PaginationComponent,
+    ListServicesComponent,
+    ViewMentorComponent,
+    SearchMentorsComponent,
 
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
- }
+}

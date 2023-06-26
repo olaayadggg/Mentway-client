@@ -1,30 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
 import { SessionService } from 'src/app/modules/session-module/service/session.service';
 import { environment } from 'src/environments/environment';
 import { BusinessServiceService } from '../services/business-service.service';
+import { Location } from '@angular/common';
 // impot BusinessServiceService
 @Component({
   selector: 'app-list-services',
   templateUrl: './list-services.component.html',
   styleUrls: ['./list-services.component.css']
 })
-
 export class ListServicesComponent implements OnInit {
-  id = 0;
+  @Input()  id:number = 0;
+  
+ 
   rows: any = []
   role = 'MENTOR'
   totalItems = 0;
   itemsPerPage = 0;
   currentPage = 1;
   headers = ["Title", "Duration", "price", "Action"]
+ path='';
   constructor(
     private bService: BusinessServiceService,
     private authService: AuthService,
+    private location:Location
 
 
   ) {
-    this.id = this.authService.getloggedUserId()
+    if(this.id===0){
+
+      this.id = this.authService.getloggedUserId()
+    }
+    this.path=this.location.path()
   }
   ngOnInit(): void {
     this.getMentorServices(0)
@@ -34,7 +42,7 @@ export class ListServicesComponent implements OnInit {
     return this.bService.getServiceByMentorId(this.id, page)
       .subscribe({
         next: (res: any) => {
-          console.log(res)
+          console.log('abdksada',res)
           this.totalItems = res?.totalElements
           this.itemsPerPage = res?.size
           this.currentPage = res?.number

@@ -25,23 +25,12 @@
               <a class="nav-link active ml-5" aria-current="page"
                 [routerLink]="['/landing']">Home</a>
             </li>
+            <!-- </li> -->
+            <li *ngIf="isLoggedIn && loggedUserRole==='MENTEE' " class="nav-item">
+              <a class="nav-link active ml-5" aria-current="page" [routerLink]="['/mentee/search']">Search</a>
+            </li>
         </ul>
-        <ul *ngIf="isLoggedIn">
-          <li>
-            <div class="input-group ">
-              <input
-                class="form-control py-2 search  "
-                style="width: 360px;"
-                type="search"
-                placeholder="search"
-                id="example-search-input"
-              />
-              <!-- <span class="input-group-append" role="button">
-                  <i class="bi bi-search" style="color: blue;"></i>
-              </span> -->
-            </div>
-          </li>
-        </ul>
+
       </ul>
 
       <div class="navbar-nav">

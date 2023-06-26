@@ -13,17 +13,21 @@ export class NavbarComponent implements OnInit {
   public isCollapsed = true;
   loggedUser: any
   loggedUserRole: any
-  isLoggedIn:boolean = false
+  isLoggedIn: boolean = false
   back_end_url: string = `${environment.API_URL}`;
-  constructor(public location: Location, private router: Router, private authService: AuthService) {
+  path=''
+  constructor(
+    public location: Location,
+    private router: Router, private authService: AuthService) {
     this.loggedUser = this.authService.getloggedUser();
     this.loggedUserRole = this.authService.getloggedUserRole();
-    this.isLoggedIn = this.authService.CheckIsLoggedIn();    
+    this.isLoggedIn = this.authService.CheckIsLoggedIn();
   }
 
-  
+
   ngOnInit() {
-    this.isLoggedIn = this.authService.CheckIsLoggedIn();    
+    this.isLoggedIn = this.authService.CheckIsLoggedIn();
+    this.path=this.location.path()
   }
 
   get getImageUrl() {
@@ -31,7 +35,8 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.isLoggedIn=false;
+    this.isLoggedIn = false;
     this.authService.logout()
   }
+
 }

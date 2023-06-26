@@ -11,6 +11,9 @@ import { MatIconModule} from '@angular/material/icon';
 import { IndexComponent } from "src/app/shared/index/index.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AuthGuard } from "src/app/guards/auth.guard";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppModule } from "src/app/app.module";
+import { menteeModule } from "../mentee-module/mentee.module";
 const routes: Routes = [
   {
     path: "mentor",
@@ -32,11 +35,15 @@ const routes: Routes = [
     // IndexComponent,
   ],
   imports: [
+    CommonModule,
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(routes),
     MatIconModule,
+    // AppModule,
+    // menteeModule
   ],
 })
 export class mentorModule {}

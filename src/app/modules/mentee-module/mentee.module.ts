@@ -15,6 +15,12 @@ import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
 import { IndexComponent } from "src/app/shared/index/index.component";
 import { AuthGuard } from "src/app/guards/auth.guard";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { PaginationComponent } from "src/app/shared/pagination/pagination.component";
+import { AppModule } from "src/app/app.module";
+import { ViewMentorComponent } from "./components/view-mentor/view-mentor.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { mentorModule } from "../mentor-module/mentor.module";
 const routes: Routes = [
   {
     path: "mentee",
@@ -25,7 +31,7 @@ const routes: Routes = [
       { path: "edit-profile", component: EditProfileComponent },
       { path: "search", component: SearchMentorsComponent},
       { path: "date-pick", component: RequestSessionComponent},
-      // { path: "payment", component: PaymentMethodComponent}
+      { path: "view-mentor/:id", component: ViewMentorComponent}
     ],
   },
 ];
@@ -33,17 +39,25 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
+    // SearchMentorsComponent,
+    // ViewMentorComponent
+    // PaginationComponent
     // EditProfileComponent,
 
   ],
   imports: [
     CommonModule,
+    // BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,
     MatNativeDateModule,
     MatIconModule,
+
+    
   ],
 })
 export class menteeModule {}
