@@ -15,7 +15,7 @@ export class SessionService {
       .set('page', page.toString())
       .set('size', size.toString());
 
-    return this.http.get(`${this.baseUrl}/services/upcoming/mentee/${id}`, { params: params })
+    return this.http.get(`${this.baseUrl}/services/upcoming/mentees/${id}`, { params: params })
 
   }
   getMentorSessions(page = 0, size = 5, id: number) {

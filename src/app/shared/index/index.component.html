@@ -30,7 +30,7 @@
               class="is-active">Upcoming Session</a>
             <a [class.is-active]="currentLink === 'reviews'" *ngIf="role === 'MENTOR'"
               (click)="showDiv('reviews', 'Reviews')">Reviews</a>
-            <a [class.is-active]="currentLink === 'services'"
+            <a [class.is-active]="currentLink === 'services'"  *ngIf="role === 'MENTOR'"
               (click)="showDiv('services', 'My Services')">My Services</a>
           </div>
         </div>
