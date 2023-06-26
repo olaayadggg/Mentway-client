@@ -13,7 +13,7 @@
               <form [formGroup]="Form" (submit)="submit($event)">
                 <div class="form-group mb-3" >
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="User Name" id="UserName" formControlName="UserName">
+                    <input class="form-control" placeholder="User Name" formControlName="UserName">
                   </div>
                   <ng-container *ngIf="this.getUserName.touched">
                     <div
@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group" >
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="Password" type="password" id="Password">
+                    <input class="form-control" placeholder="Password" type="password" formControlName="Password">
                   </div>
                   <ng-container *ngIf="this.getPassword.touched">
                     <div
