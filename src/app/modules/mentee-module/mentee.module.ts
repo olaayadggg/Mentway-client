@@ -10,23 +10,24 @@ import { MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule} from '@angular/material/core';
 import { MatIconModule} from '@angular/material/icon';
-import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
+import { IndexComponent } from "src/app/shared/index/index.component";
+import { AuthGuard } from "src/app/guards/auth.guard";
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {
     path: "mentee",
-    canActivate: [],
+    canActivate: [AuthGuard],
     children: [
       { path: "dashboard", component: IndexComponent },
       { path: "profile-mentee", component: ProfileMenteeComponent },
       { path: "edit-profile", component: EditProfileComponent },
       { path: "search", component: SearchMentorsComponent},
       { path: "date-pick", component: RequestSessionComponent},
-      { path: "payment", component: PaymentMethodComponent}
+      // { path: "payment", component: PaymentMethodComponent}
     ],
   },
 ];

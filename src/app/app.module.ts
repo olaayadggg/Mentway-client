@@ -21,15 +21,24 @@ import { RateComponent } from './shared/rate/rate/rate.component';
 import { ViewServiceComponent } from './shared/view-service/view-service.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { UpcomingSessionsComponent } from './modules/dashboard/components/upcoming-sessions/upcoming-sessions.component';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-import { IndexComponent } from './modules/dashboard/components/index/index.component';
-import { RequestsComponent } from './modules/dashboard/components/requests/requests.component';
+
 import { EditProfileMentorComponent } from './modules/mentor-module/components/edit-profile-mentor/edit-profile-mentor.component';
 import { EditProfileComponent } from './modules/mentee-module/components/edit-profile-mentee/edit-profile.component';
+import { IndexComponent } from './shared/index/index.component';
+import { UpcomingSessionsComponent } from './shared/upcoming-sessions/upcoming-sessions.component';
+import { RequestsComponent } from './shared/requests/requests.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CommonModule } from '@angular/common';
-
+import { PaginationComponent } from './shared/pagination/pagination.component';
+import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
+// import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
+import { JsonPipe } from '@angular/common';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+// import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ListServicesComponent } from './shared/list-services/list-services.component';
 
 @NgModule({
   declarations: [
@@ -47,13 +56,16 @@ import { CommonModule } from '@angular/common';
     RequestsComponent,
     EditProfileMentorComponent,
     EditProfileComponent,
-    IndexComponent
+    IndexComponent,
+    PaginationComponent,
+    ListServicesComponent,
 
 
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     RouterModule,
     AppRoutingModule,
@@ -62,10 +74,14 @@ import { CommonModule } from '@angular/common';
     mentorModule,
     MatIconModule,
     sessionModule,
-    DashboardModule,
     NgbModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule, MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatSlideToggleModule,
+    MatPaginatorModule,
+    JsonPipe
 
 
 
@@ -79,7 +95,8 @@ import { CommonModule } from '@angular/common';
     RequestsComponent,
     EditProfileMentorComponent,
     EditProfileComponent,
-    IndexComponent
+    IndexComponent,
+    // PaginationComponent
 
   ],
   bootstrap: [AppComponent]

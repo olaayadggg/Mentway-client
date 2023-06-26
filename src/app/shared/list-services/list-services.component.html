@@ -1,0 +1,37 @@
+<table class="custom-table bottom-border-radius">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Duration</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows">
+            <td class="user-cell">
+                <div class="user-info">
+                    <img [src]="row['profile-pic']" alt="User Image" class="user-image">
+                    <span class="user-name">{{ row.title }}</span>
+                </div>
+            </td>
+            <td>{{row.duration}}</td>
+            <td><div>{{ row.price |currency }}</div></td>
+            <td>
+                <button [routerLink]="['/user/jim']"
+                    style="border: none; background-color: #EDFFF6; border-radius: 8px;">
+                    <div class="join-session">
+                        <span class="view-text"><mat-icon style="color: #1FAB89;" class="pt-1">link</mat-icon> View
+                            Service</span>
+                    </div>
+                </button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="totalItems>itemsPerPage" class="pagination">
+    <app-pagination [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage"
+        (pageChanged)="onPageChanged($event)"></app-pagination>
+</div>
