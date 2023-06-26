@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { EditProfileComponent } from "./components/edit-profile-mentee/edit-profile.component";
 import { ProfileMenteeComponent } from "./components/profile-mentee/profile-mentee.component";
 import { SearchMentorsComponent } from "./components/search-mentors/search-mentors.component";
@@ -11,21 +10,22 @@ import { MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule} from '@angular/material/core';
 import { MatIconModule} from '@angular/material/icon';
-import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
+import { IndexComponent } from "src/app/shared/index/index.component";
+import { AuthGuard } from "src/app/guards/auth.guard";
 const routes: Routes = [
   {
     path: "mentee",
-    canActivate: [],
+    canActivate: [AuthGuard],
     children: [
       { path: "dashboard", component: IndexComponent },
       { path: "profile-mentee", component: ProfileMenteeComponent },
       { path: "edit-profile", component: EditProfileComponent },
       { path: "search", component: SearchMentorsComponent},
       { path: "date-pick", component: RequestSessionComponent},
-      { path: "payment", component: PaymentMethodComponent}
+      // { path: "payment", component: PaymentMethodComponent}
     ],
   },
 ];
@@ -33,16 +33,12 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
-    EditProfileComponent,
+    // EditProfileComponent,
 
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
     RouterModule.forRoot(routes),
-    FormsModule,
-    ReactiveFormsModule,
     MatDatepickerModule,
     MatInputModule,
     MatFormFieldModule,

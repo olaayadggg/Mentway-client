@@ -1,0 +1,113 @@
+/* .request {
+    width: 419px;
+    height: 403px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    border: 1.18786px solid #EDFFF6;
+    box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08);
+} */
+.profile-page {
+    background-color: #fff;
+    box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
+    padding: 20px;
+    width: 692px;
+    height: 250px;
+    border: 1px solid #EDFFF6;
+    border-radius: 16px;
+    background: #FFFFFF;
+    /* margin-left: 125px; */
+    margin-top: 44px;
+}
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0px 4px 28px rgba(119, 113, 113, 0.08));
+}
+.profile-header {
+    margin-bottom: 20px;
+}
+.profile-info h6 {
+    margin-bottom: 5px;
+}
+p.country {
+    width: 39px;
+    height: 23px;
+    font-size: 14px;
+    font-family: rubik;
+    font-weight: 400;
+    line-height: 23px;
+    color: #707070;
+    margin-top: -12px;
+    margin-left: 15px;
+    }
+    .btn {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .custom-table {
+        width: 919px;
+        border-collapse: collapse;
+    }
+
+    .custom-table thead {
+        background-color: #EDFFF6;
+        /* border-radius: 16px 16px 0px 0px !important; */
+    }
+
+    .custom-table th,
+    .custom-table td {
+        text-align: center;
+        padding: 16px;
+    }
+    table.custom-table {
+    /* margin-left: 55px; */
+    margin-top: 44px;
+    box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
+    }
+    .custom-table thead th:first-child {
+        border-top-left-radius: 16px;
+        }
+
+        .custom-table thead th:last-child {
+        border-top-right-radius: 16px;
+        }
+        .custom-table .date {
+        background-color: #F8F8F8;
+        padding: 3px 14px;
+        border-radius: 32px;
+        }
+        .custom-table td button {
+        /* color: #fff; */
+        padding: 3px 17px;
+        }
+        .user-info {
+        display: flex;
+        align-items: center;
+        }
+
+        .user-image {
+        height: 36px;
+        width: 36px;
+        left: 36px;
+        top: 0;
+        border-radius: 32px;
+        margin-right: 8px;
+        }
+
+
+        .user-name {
+        font-weight: bold;
+        }
+        .user-cell{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        table.bottom-border-radius {
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+        .btnn {
+            margin-right: 5px !important;
+        }

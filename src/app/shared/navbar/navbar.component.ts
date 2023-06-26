@@ -1,57 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { Location, PopStateEvent } from '@angular/common';
-
+import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.componentt.html',
-    styleUrls: ['./navbar.component.scss']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-    public isCollapsed = true;
-    // private lastPoppedUrl: string;
-    private yScrollStack: number[] = [];
+  public isCollapsed = true;
+  loggedUser: any
+  loggedUserRole: any
+  isLoggedIn:boolean = false
+  back_end_url: string = `${environment.API_URL}`;
+  constructor(public location: Location, private router: Router, private authService: AuthService) {
+    this.loggedUser = this.authService.getloggedUser();
+    this.loggedUserRole = this.authService.getloggedUserRole();
+    this.isLoggedIn = this.authService.CheckIsLoggedIn();    
+  }
 
-    constructor(public location: Location, private router: Router) {
-    }
+  
+  ngOnInit() {
+    this.isLoggedIn = this.authService.CheckIsLoggedIn();    
+  }
 
-    ngOnInit() {
-      this.router.events.subscribe((event) => {
-        this.isCollapsed = true;
-        // if (event instanceof NavigationStart) {
-        //    if (event.url != this.lastPoppedUrl)
-        //        this.yScrollStack.push(window.scrollY);
-      //  } else if (event instanceof NavigationEnd) {
-      //      if (event.url == this.lastPoppedUrl) {
-      //          this.lastPoppedUrl = undefined;
-      //          window.scrollTo(0, this.yScrollStack.pop());
-      //      } else
-               window.scrollTo(0, 0);
-      //}
-     });
-    //  this.location.subscribe((ev:PopStateEvent) => {
-    //      this.lastPoppedUrl = ev.url;
-    //  });
-    }
+  get getImageUrl() {
+    return this.loggedUser.imgUrl
+  }
 
-    isHome() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-
-        if( titlee === '#/home' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    isDocumentation() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-        if( titlee === '#/documentation' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+  logout() {
+    this.isLoggedIn=false;
+    this.authService.logout()
+  }
 }

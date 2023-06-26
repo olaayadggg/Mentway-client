@@ -8,23 +8,41 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
   private baseUrl: string = `${environment.API_URL}/api/v1/auth`;
-  private user: any;
+
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  public set loggedUser(user: any) {
-    this.user=user;
+  setloggedUser(user?: any) {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
-  public get loggedUser() {
-    return JSON.parse(localStorage.getItem('user') || '');
+  getloggedUser() {
+    const user: string | any = localStorage.getItem('user')
+    return JSON.parse(user);
   }
-  public get loggedUserRole() {
-    return this.user.role;
+  getloggedUserRole() {
+    const user = this.getloggedUser()
+    return user?.authorities[0];
   }
-  public set loggedUserToken(token: string) {
+
+  getloggedUserId() {
+    const user = this.getloggedUser()
+    return user?.id;
+  }
+  setIsloggedIn(value: boolean) {
+    localStorage.setItem('loggedIn', JSON.stringify(value));
+  }
+  CheckIsLoggedIn() {
+    const logged: boolean | any = localStorage.getItem('loggedIn')
+    return logged || false
+  }
+  setloggedUserToken(token: string) {
     localStorage.setItem('token', JSON.stringify(token));
+  }
+  getloggedUserToken() {
+    const user = this.getloggedUser()
+    return user?.jwt;
+
   }
 
   login(credentials: any) {
@@ -36,10 +54,10 @@ export class AuthService {
   }
 
   logout() {
-    this.user = undefined;
+
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    this.router.navigate(['/login'])
+    this.router.navigate(['/landing'])
   }
 
 }
