@@ -8,6 +8,10 @@ import { MenteeService } from '../../mentee-service/mentee.service';
 import { BusinessServiceService } from 'src/app/shared/services/business-service.service';
 import { NgFor } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { enableRipple } from '@syncfusion/ej2-base';
+enableRipple(false);
+import { TimePicker } from '@syncfusion/ej2-calendars';
+
 
 
 
@@ -32,6 +36,7 @@ export class RequestSessionComponent implements OnInit {
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.events.push(`${type}: ${event.value}`);
   }
+  
 
 }
 

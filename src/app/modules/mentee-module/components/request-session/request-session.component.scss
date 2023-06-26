@@ -48,6 +48,37 @@ img{
         font-size: 48px;
 }
 
+.control_wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  padding: 5% 0;
+}
+
+.tabs-wrap {
+  padding: 0 0px 10px;
+}
+
+.e-bigger .control-section {
+  margin-top: 60px;
+}
+
+#container {
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+.e-input-group .e-input-group-icon,
+.e-input-group.e-control-wrapper .e-input-group-icon,
+.e-input-group.e-control-wrapper:not(.e-disabled) .e-input-group-icon:hover {
+  background: none;
+}
+
+.e-input-group:not(.e-disabled) .e-input-group-icon:active,
+.e-input-group.e-control-wrapper:not(.e-disabled) .e-input-group-icon:active {
+  background: rgb(0, 120, 214);
+}
+
 
 
 
