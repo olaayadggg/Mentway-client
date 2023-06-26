@@ -13,26 +13,28 @@
               <form [formGroup]="Form" (submit)="submit($event)">
                 <div class="form-group mb-3" >
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="User Name" formControlName="UserName">
+                    <input class="form-control" placeholder="Email" id="email" formControlName="email">
                   </div>
-                  <ng-container *ngIf="this.getUserName.touched">
+                  <ng-container *ngIf="this.getEmail.touched">
                     <div
-                      *ngIf="this.getUserName.hasError('required')"
+                      *ngIf="this.getEmail.hasError('required')"
                       class="invalid-feedback d-block"
                     >
-                      User name is Required
+                      Email is Required
                     </div>
                     <div
-                      *ngIf="this.getUserName.hasError('UserName')"
+                      *ngIf="this.getEmail.hasError('email')"
                       class="invalid-feedback d-block"
                     >
-                     Invalid User name
+                     Invalid Email
                     </div>
                   </ng-container>
                 </div>
                 <div class="form-group" >
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="Password" type="password" formControlName="Password">
+
+                    <input class="form-control" placeholder="Password" formControlName="password" type="password" id="Password">
+
                   </div>
                   <ng-container *ngIf="this.getPassword.touched">
                     <div
@@ -54,8 +56,8 @@
                     >
                       Password must contain uppercase lowercase and special character
                     </div>
-                    <div *ngIf="this.errors" class="invalid-feedback d-block">
-                      {{this.errors[0]}}
+                    <div *ngIf="this.errors" class="text-center invalid-feedback d-block">
+                      {{this.errors?.message}}
                     </div>
                   </ng-container>
                 </div>

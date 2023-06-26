@@ -12,19 +12,29 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  public set loggedUser(user: any) {
-    this.user=user;
-    localStorage.setItem('user', JSON.stringify(user));
+ setloggedUser(user?: any) {
+   localStorage.setItem('user', JSON.stringify(user));
   }
 
-  public get loggedUser() {
+  getloggedUser() {
     return JSON.parse(localStorage.getItem('user') || '');
   }
-  public get loggedUserRole() {
-    return this.user.role;
+  getloggedUserRole() {
+    const user=this.getloggedUser()
+    return user?.authorities[0];
   }
-  public set loggedUserToken(token: string) {
+
+  getloggedUserId() {
+    const user = this.getloggedUser()
+    return user?.id;
+  }
+   setloggedUserToken(token: string) {
     localStorage.setItem('token', JSON.stringify(token));
+  }
+  getloggedUserToken() {
+    const user = this.getloggedUser()
+    return user?.jwt;
+    
   }
 
   login(credentials: any) {

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { RequestsComponent } from '../requests/requests.component';
 import { SideMenuComponent } from '../side-menu/side-menu.component';
 import { UpcomingSessionsComponent } from '../upcoming-sessions/upcoming-sessions.component';
-
+import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
+// AuthService
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -13,7 +14,9 @@ export class IndexComponent {
   currentLink: string = 'upcoming';
   currentLinkText: string = 'Upcoming Session';
 
-
+constructor(private authService:AuthService){
+  this.role=this.authService.getloggedUserRole()
+}
   showDiv(divName: string,linkText: string) {
     this.currentDiv = divName;
     this.currentLink = divName;

@@ -9,6 +9,7 @@ import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
 import { MatIconModule} from '@angular/material/icon';
 import { IndexComponent } from "src/app/shared/index/index.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 const routes: Routes = [
   {
     path: "mentor",
@@ -30,6 +31,8 @@ const routes: Routes = [
     // IndexComponent,
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(routes),
     MatIconModule,
