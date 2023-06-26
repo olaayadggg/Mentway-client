@@ -4,7 +4,7 @@
     <div class="breadcrumbs">
       <a href="/home" class="aa">Home</a>/<a
         [routerLink]="
-          role === 'mentor'
+          role === 'MENTOR'
             ? '/mentor/profile-mentor'
             : '/mentee/profile-mentee'
         "
@@ -47,15 +47,15 @@
             >
             <a
               [class.is-active]="currentLink === 'reviews'"
-              *ngIf="role === 'mentor'"
+              *ngIf="role === 'MENTOR'"
               (click)="showDiv('reviews', 'Reviews')"
               >Reviews</a
             >
-            <a
+            <!-- <a
               [class.is-active]="currentLink === 'personal'"
               (click)="showDiv('personal', 'Personal Information')"
               >Personal Information</a
-            >
+            > -->
           </div>
         </div>
       </main>
@@ -73,12 +73,12 @@
         <app-rate></app-rate>
       </div>
 
-      <div *ngIf="currentDiv === 'personal'" class="personal-div">
+      <!-- <div *ngIf="currentDiv === 'personal'" class="personal-div">
         <app-edit-profile-mentor
           *ngIf="role === 'mentor'"
         ></app-edit-profile-mentor>
         <app-edit-profile *ngIf="role === 'mentee'"></app-edit-profile>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
