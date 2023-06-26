@@ -18,11 +18,15 @@
           <li class="nav-item">
             <a class="nav-link active" [routerLink]="['/about-us']">About us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active ml-5" aria-current="page" href="#">Home</a>
+          <li *ngIf="isLoggedIn" class="nav-item">
+            <a class="nav-link active ml-5" aria-current="page" [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/dashboard':'/mentee/dashboard']">Dashbord</a>
           </li>
+            <li *ngIf="!isLoggedIn" class="nav-item">
+              <a class="nav-link active ml-5" aria-current="page"
+                [routerLink]="['/landing']">Home</a>
+            </li>
         </ul>
-        <ul>
+        <ul *ngIf="isLoggedIn">
           <li>
             <div class="input-group ">
               <input
@@ -43,12 +47,12 @@
       <div class="navbar-nav">
 
         <ul class="navbar-nav  justify-content-between">
-          <li class="nav-item d-none d-lg-block ">
+          <li *ngIf="!isLoggedIn" class="nav-item d-none d-lg-block ">
            <a [routerLink]="['/register']"class="btn btn-neutral register ">
              <span class="nav-link-inner--text">Create account</span>
            </a>
          </li>
-         <li class="nav-item d-none d-lg-block mx-2">
+         <li *ngIf="!isLoggedIn" class="nav-item d-none d-lg-block mx-2">
            <a [routerLink]="['/login']"  class="btn login ">
              <span class="nav-link-inner--text">Login</span>
            </a>
@@ -56,7 +60,7 @@
        </ul>
 
 
-       <!-- <ul class="navbar-nav align-items-lg-center justify-content-between">
+       <ul *ngIf="isLoggedIn" class="navbar-nav align-items-lg-center justify-content-between">
         <li class="nav-link nav-link-icon dropdown bi bi-bell" style="color: #1FAB89;" data-toggle="dropdown"
         role="button">
           <a
@@ -82,7 +86,7 @@
             >
               <img
                 class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                src="{{ back_end_url+''+getImageUrl }}"
+                src="{{ getImageUrl.length>10?back_end_url+''+getImageUrl:'./assets/img/theme/team-1-800x800.jpg' }}"
                 style="width: 50px"
                 alt=""
               />
@@ -91,10 +95,11 @@
               <a class=" dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #1FAB89;">
               </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a [routerLink]="['/mentee/dashboard']" class="dropdown-item">Dashboard</a></li>
+                <li><a [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/dashboard':'/mentee/dashboard']" class="dropdown-item">Dashboard</a></li>
+                <li><a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a></li>
                 <li><a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a [routerLink]="['/login']" (click)="logout() class="dropdown-item">Logout</a></li>
+                <li><a [routerLink]="['/login']" (click)="logout()" class="dropdown-item" >Logout</a></li>
               </ul>
 
 
@@ -102,7 +107,7 @@
 
           </div>
         </li>
-      </ul> -->
+      </ul>
       </div>
 
 

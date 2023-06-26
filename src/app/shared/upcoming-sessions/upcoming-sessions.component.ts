@@ -21,8 +21,8 @@ export class UpcomingSessionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('role', this.authService.getloggedUserRole())
-    console.log(this.authService.getloggedUserToken())
+    // console.log('role', this.authService.getloggedUserRole())
+    // console.log(this.authService.getloggedUserToken())
     if (this.authService.getloggedUserRole() === 'MENTOR') {
       this.getMentorSessions(0)
     }

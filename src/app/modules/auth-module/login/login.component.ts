@@ -49,6 +49,7 @@ export class LoginComponent {
           next: (res: any) => {
             this.auth.setloggedUser(res);
             this.auth.setloggedUserToken(res.jwt);
+            this.auth.setIsloggedIn(true)
             if (this.auth.getloggedUserRole() === 'MENTOR') {
               this.router.navigate(['/mentor/dashboard']);
 

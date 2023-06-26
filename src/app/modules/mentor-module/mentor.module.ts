@@ -10,10 +10,11 @@ import { ViewServiceComponent } from "src/app/shared/view-service/view-service.c
 import { MatIconModule} from '@angular/material/icon';
 import { IndexComponent } from "src/app/shared/index/index.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AuthGuard } from "src/app/guards/auth.guard";
 const routes: Routes = [
   {
     path: "mentor",
-    canActivate: [],
+    canActivate: [AuthGuard],
     children: [
       { path: "dashboard", component: IndexComponent },
       { path: "profile-mentor", component: ProfileMentorComponent },

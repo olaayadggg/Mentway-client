@@ -2,30 +2,21 @@
   <div class="booking-summary">
     <h2 class="title">Booking Summary</h2>
     <div class="breadcrumbs">
-      <a href="/home" class="aa">Home</a>/<a
-        [routerLink]="
+      <a href="/home" class="aa">Home</a>/<a [routerLink]="
           role === 'MENTOR'
             ? '/mentor/profile-mentor'
             : '/mentee/profile-mentee'
-        "
-        class="aa"
-        >Profile</a
-      >/ <span class="currentLink">{{ currentLinkText }}</span>
+        " class="aa">Profile</a>/ <span class="currentLink">{{ currentLinkText }}</span>
     </div>
   </div>
   <div class="row mb-5">
     <div class="column col-lg-3 col-md-6 col-sm-12 mx-auto" id="container">
       <main class="profile-page">
         <div class="profile-container col-sm-12">
-          <div
-            class="profile-header d-flex justify-content-space-between gap-3"
-          >
+          <div class="profile-header d-flex justify-content-space-between gap-3">
             <div class="profile-image">
-              <img
-                src="./assets/img/theme/team-4-800x800.jpg"
-                alt="Profile Image"
-                class="rounded-circle profile-picture"
-              />
+              <img src="./assets/img/theme/team-4-800x800.jpg" alt="Profile Image"
+                class="rounded-circle profile-picture" />
             </div>
             <div class="profile-info">
               <h2 class="name">Samira Samir</h2>
@@ -34,28 +25,13 @@
             </div>
           </div>
           <div class="profile-links">
-            <a
-              [class.is-active]="currentLink === 'booking'"
-              (click)="showDiv('booking', 'Requests')"
-              >Requests</a
-            >
-            <a
-              [class.is-active]="currentLink === 'upcoming'"
-              (click)="showDiv('upcoming', 'Upcoming Session')"
-              class="is-active"
-              >Upcoming Session</a
-            >
-            <a
-              [class.is-active]="currentLink === 'reviews'"
-              *ngIf="role === 'MENTOR'"
-              (click)="showDiv('reviews', 'Reviews')"
-              >Reviews</a
-            >
-            <!-- <a
-              [class.is-active]="currentLink === 'personal'"
-              (click)="showDiv('personal', 'Personal Information')"
-              >Personal Information</a
-            > -->
+            <a [class.is-active]="currentLink === 'booking'" (click)="showDiv('booking', 'Requests')">Requests</a>
+            <a [class.is-active]="currentLink === 'upcoming'" (click)="showDiv('upcoming', 'Upcoming Session')"
+              class="is-active">Upcoming Session</a>
+            <a [class.is-active]="currentLink === 'reviews'" *ngIf="role === 'MENTOR'"
+              (click)="showDiv('reviews', 'Reviews')">Reviews</a>
+            <a [class.is-active]="currentLink === 'services'"
+              (click)="showDiv('services', 'My Services')">My Services</a>
           </div>
         </div>
       </main>
@@ -73,12 +49,10 @@
         <app-rate></app-rate>
       </div>
 
-      <!-- <div *ngIf="currentDiv === 'personal'" class="personal-div">
-        <app-edit-profile-mentor
-          *ngIf="role === 'mentor'"
-        ></app-edit-profile-mentor>
-        <app-edit-profile *ngIf="role === 'mentee'"></app-edit-profile>
-      </div> -->
+      <div *ngIf="currentDiv === 'services'" class="personal-div">
+        <app-list-services></app-list-services>
+        <!-- <app-edit-profile *ngIf="role === 'mentee'"></app-edit-profile> -->
+      </div>
     </div>
   </div>
 </div>

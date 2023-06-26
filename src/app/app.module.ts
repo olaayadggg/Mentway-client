@@ -38,6 +38,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 // import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ListServicesComponent } from './shared/list-services/list-services.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     EditProfileComponent,
     IndexComponent,
     PaginationComponent,
+    ListServicesComponent,
 
 
   ],
