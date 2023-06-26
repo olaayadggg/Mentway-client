@@ -37,6 +37,7 @@ const routes: Routes = [
     // SearchMentorsComponent,
     // ViewMentorComponent
     // PaginationComponent
+    // SearchMentorsComponent,
     // EditProfileComponent,
 
   ],
@@ -52,6 +53,7 @@ const routes: Routes = [
     MatNativeDateModule,
     MatIconModule,
     BrowserModule,
+    FormsModule
   ],
 })
 export class menteeModule {}
