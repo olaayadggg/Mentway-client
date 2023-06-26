@@ -1,3 +1,393 @@
+    .upcoming {
+
+    }
+    .profile-container {
+        text-align: center;
+    }
+
+    .profile-header {
+        margin-bottom: 20px;
+    }
+
+    .profile-image {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    .profile-info h2 {
+        font-size: 21px;
+        margin-bottom: 5px;
+    }
+
+    .profile-links a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .profile-picture {
+        width: 92px;
+        height: 92px;
+        filter: drop-shadow(0px 4px 28px rgba(119, 113, 113, 0.08));
+    }
+
+    h2.name {
+        width: 145px;
+        height: 32px;
+        font-size: 20px;
+        font-family: rubik;
+        font-weight: 700;
+        line-height: 32px;
+        color: #1B1A1A;
+        margin-left: calc(50% - 145px/2);
+    }
+
+    p.job {
+    height: 23px;
+    font-size: 14px;
+    font-family: rubik;
+    font-weight: 400;
+    line-height: 23px;
+    color: #707070;
+    }
+
+    p.country {
+    width: 39px;
+    height: 23px;
+    font-size: 14px;
+    font-family: rubik;
+    font-weight: 400;
+    line-height: 23px;
+    color: #707070;
+    margin-top: -12px;
+    }
+
+    .profile-links a {
+        display: block;
+        margin-bottom: 5px;
+        padding: 10px 0;
+        margin-left: 0px !important;
+        transition: background-color 0.3s ease-in-out;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .profile-links a:hover {
+        background-color: #62D2A2;
+    }
+
+    /* profile Booking */
+    /* .booking-summary {
+        text-align: left;
+        padding: 20px;
+        background-color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        .booking-summary {
+        margin-left: 0;
+        margin-right: 0;
+        }
+    } */
+    .booking-summary {
+        text-align: left;
+        /* padding: 20px; */
+        background-color: white;
+        /* margin: 20px 10px; */
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .booking-summary {
+        margin: 20px 0;
+        }
+    }
+
+    .breadcrumbs {
+        /* margin-top: 130px; */
+        /* margin-left: 103px; */
+    }
+    .breadcrumbs a {
+        text-decoration: none;
+        color: #000;
+        font-size: 16px;
+        font-family: Rubik;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    /* h2 {
+        margin-bottom: 10px;
+    } */
+    /* .profile-info.h2 {
+        margin-bottom: 2px;
+        width: 145px;
+        height: 32px;
+        color: #1B1A1A;
+        font-size: 18px;
+    } */
+    .title {
+        font-weight: 700;
+        width: 300px;
+        height: 39px;
+        font-family: Rubik;
+        /* margin-left: 103px; */
+        margin-top: 128px;
+        font-size: 24px;
+        color: #1B1A1A;
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .profile-image {
+        margin-right: 0;
+        margin-bottom: 10px;
+        }
+
+        .profile-links a {
+        margin-left: 0;
+        padding: 5px 0;
+        cursor: pointer;
+        }
+
+        .booking-summary {
+        margin-left: 0;
+        margin-right: 0;
+        }
+    }
+    .profile-page {
+        background-color: #fff;
+        box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
+        padding: 20px;
+        width: 292px;
+        height: 446px;
+        border: 1px solid #EDFFF6;
+        border-radius: 16px;
+        background: #FFFFFF;
+        /* margin-left: 125px; */
+        margin-top: 44px;
+    }
+    .profile-links {
+        border: 1px solid #EDFFF6;
+    }
+    @media (min-width: 992px) {
+        .container {
+        /* margin-left: 90px; */
+        }
+    }
+    .custom-table {
+        width: 919px;
+        border-collapse: collapse;
+    }
+
+    .custom-table thead {
+        background-color: #EDFFF6;
+        /* border-radius: 16px 16px 0px 0px !important; */
+    }
+
+    .custom-table th,
+    .custom-table td {
+        text-align: center;
+        padding: 16px;
+    }
+    table.custom-table {
+    /* margin-left: 55px; */
+    margin-top: 44px;
+    box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
+    }
+    .profile-links a:not(.is-active) {
+    color: #1B1A1A;
+    }
+
+    .profile-links a:not(.is-active):hover {
+    color: #fff;
+    }
+
+    .profile-links a.is-active,
+    .profile-links a.is-active:hover {
+    color: #fff;
+    }
+
+    .is-active {
+    background-color: #62D2A2;
+    color: #fff;
+    }
+    .custom-table thead th:first-child {
+    border-top-left-radius: 16px;
+    }
+
+    .custom-table thead th:last-child {
+    border-top-right-radius: 16px;
+    }
+    .custom-table .date {
+    background-color: #F8F8F8;
+    padding: 3px 14px;
+    border-radius: 32px;
+    }
+    .custom-table td button {
+    /* color: #fff; */
+    padding: 3px 17px;
+    }
+    .user-info {
+    display: flex;
+    align-items: center;
+    }
+
+    .user-image {
+    height: 36px;
+    width: 36px;
+    left: 36px;
+    top: 0;
+    border-radius: 32px;
+    margin-right: 8px;
+    }
+
+
+    .user-name {
+    font-weight: bold;
+    }
+    .user-cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .view-button {
+    /* Your existing styles for the button */
+    }
+
+    .view-icon {
+    /* Your existing styles for the eye icon */
+    }
+
+    .view-text {
+    /* Your existing styles for the "View" text */
+    }
+    table.bottom-border-radius {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+    .currentLink {
+        color: #707070;
+        font-family: Rubik;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* form */
+    #registrationForm {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* Style for form labels */
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      /* Style for form input fields */
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="password"] {
+        width: 497px;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 16px;
+        box-sizing: border-box;
+      }
+
+      /* Style for the submit button */
+      button[type="submit"] {
+        background-color: #1FAB89;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Style for the submit button on hover */
+      button[type="submit"]:hover {
+        background-color: #1D9D85;
+      }
+      .personal-div {
+        /* background-color: #fff; */
+        box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08);
+        /* padding: 20px;  */
+        /* width: 623px; */
+        /* height: 644px; */
+        border: 1.18786px solid #EDFFF6;
+        border-radius: 19.01px;
+        /* background: #FFFFFF; */
+        /* margin-left: 125px; */
+        margin-top: 44px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    .formData {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #1B1A1A;
+        /* margin: auto; */
+    }
+    .input {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px;
+        /* gap: 8px; */
+
+        width: 497px;
+        height: 51px;
+        background: #F8F8F8;
+        border: 1px solid #D9D9D9;
+        border-radius: 32px;
+        flex: none;
+        order: 1;
+        flex-grow: 1;
+    }
+    .btn {
+        /* display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; */
+        padding: 15px 24px;
+        gap: 8px;
+
+        /* position: absolute; */
+        width: 497px;
+        height: 62px;
+        /* left: calc(50% - 497px/2); */
+        margin-top: 20px;
+
+        /* primary/400 */
+
+        background: #1FAB89;
+        border-radius: 48px;
+    }
+    .d-flex.nn {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    /* label.formData {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-right: 453px;
+    } */
 
     @media (min-width: 992px) {
         .container {
@@ -74,11 +464,113 @@
         align-items: center;
         text-align: center;
         }
-    
+
         .profile-image {
         margin-bottom: 1rem;
         }
-    
+
+        .name,
+        .job,
+        .country {
+        margin: 0;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+    .side-cart {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        background-color: #f9f9f9;
+        z-index: 999;
+        }
+    }
+
+
+    @media (min-width: 992px) {
+        .container {
+        /* margin-left: 90px; */
+        }
+    }
+    .custom-table {
+        width: 919px;
+        border-collapse: collapse;
+    }
+
+    .custom-table thead {
+        background-color: #EDFFF6;
+        /* border-radius: 16px 16px 0px 0px !important; */
+    }
+
+    .custom-table th,
+    .custom-table td {
+        text-align: center;
+        padding: 16px;
+    }
+    table.custom-table {
+    /* margin-left: 55px; */
+    margin-top: 44px;
+    box-shadow: 0px 4px 28px rgba(119, 113, 113, 0.08);
+    }
+    .custom-table thead th:first-child {
+    border-top-left-radius: 16px;
+    }
+
+    .custom-table thead th:last-child {
+    border-top-right-radius: 16px;
+    }
+    .custom-table .date {
+    background-color: #F8F8F8;
+    padding: 3px 14px;
+    border-radius: 32px;
+    }
+    .custom-table td button {
+    /* color: #fff; */
+    padding: 3px 17px;
+    }
+    .user-info {
+    display: flex;
+    align-items: center;
+    }
+
+    .user-image {
+    height: 36px;
+    width: 36px;
+    left: 36px;
+    top: 0;
+    border-radius: 32px;
+    margin-right: 8px;
+    }
+    .user-name {
+    font-weight: bold;
+    }
+    .user-cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    table.bottom-border-radius {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+
+    @media (max-width: 767px) {
+        .profile-header {
+
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        }
+
+        .profile-image {
+        margin-bottom: 1rem;
+        }
+
         .name,
         .job,
         .country {

@@ -21,7 +21,7 @@
               <form role="form" [formGroup]="form" (submit)="submit($event)" enctype="multipart/form-data">
                 <div class="form-group" >
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" id="username" placeholder="User Name" type="text" >
+                    <input class="form-control" formControlName="username" placeholder="User Name" type="text" >
                     <ng-container *ngIf="this.getUserName.touched">
                       <div
                         *ngIf="this.getUserName.hasError('required')"
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" id="firstName" placeholder="First Name" type="Text" >
+                    <input class="form-control" formControlName="firstName" placeholder="First Name" type="Text" >
                     <ng-container *ngIf="this.getFirstName.touched">
                       <div
                         *ngIf="this.getFirstName.hasError('required')"
@@ -54,7 +54,7 @@
 
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" id="lastName" placeholder="Last Name"  >
+                    <input class="form-control" formControlName="lastName" placeholder="Last Name"  >
                     <ng-container *ngIf="this.getLastName.touched">
                       <div
                         *ngIf="this.getLastName.hasError('required')"
@@ -71,7 +71,7 @@
 
                 <div class="form-group" >
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" id="email" placeholder="Email" type="email" >
+                    <input class="form-control" formControlName="email" placeholder="Email" type="email" >
                     <ng-container *ngIf="this.getEmail.touched">
                       <div
                         *ngIf="this.getEmail.hasError('required')"
@@ -93,7 +93,7 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" id="password" placeholder="Password" type="password" >
+                    <input class="form-control" formControlName="password" placeholder="Password" type="password" >
                     <ng-container *ngIf="this.getPassword.touched">
                       <div
                         *ngIf="this.getPassword.hasError('required')"
@@ -124,7 +124,7 @@
 
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" id="password2" placeholder="Confirm Password" type="password" >
+                    <input class="form-control" formControlName="password2" placeholder="Confirm Password" type="password" >
                     <ng-container *ngIf="this.getPassword2.touched">
                       <div
                         *ngIf="this.getPassword2.hasError('required')"
@@ -154,7 +154,7 @@
                   <input
                     class="form-control small-input"
                     type="file"
-                    id="formFile"
+                    formControlName="formFile"
                     (change)="readUrl($event)"
                     formControlName="image"
                   />
@@ -200,7 +200,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn create mt-4">Create account</button>
+                  <button type="submit" class="btn create mt-4" >Create account</button>
                 </div>
               </form>
             </div>
