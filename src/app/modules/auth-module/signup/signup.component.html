@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" id="firstName" placeholder="First Name" type="Text" >
+                    <input class="form-control" id="firstName" placeholder="First Name" type="Text" formControlName="firstName">
                     <ng-container *ngIf="this.getFirstName.touched">
                       <div
                         *ngIf="this.getFirstName.hasError('required')"
