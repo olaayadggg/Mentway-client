@@ -7,11 +7,11 @@ import { CategoryService } from 'src/app/shared/services/category.service';
   styleUrls: ['./search-mentors.component.css']
 })
 export class SearchMentorsComponent implements OnInit {
-  categories: any = [];
-  mentors: any = [];
+  categories: any = [{name:'cat1', id:1}, {name:'cat2', id:2}, {name:'cat3', id:3}];
+  mentors: any = [{name: "Hossam", rate:5, title:'JS Developer'}, {name: "Ahmed", rate:3, title:'PHP Developer'},{name: "Kasem", rate:2, title:'C++ Developer'},];
   name: string = '';
-  rate: string = '';
-  categoryID: string = '';
+  rate: number = -1;
+  categoryID: number = 0;
 
 
 
@@ -23,6 +23,13 @@ export class SearchMentorsComponent implements OnInit {
   }
 
   searchAndFileration(): void {
-    this.mentorService.getAllMentors().subscribe((response)=>{this.mentors=response; console.log(response)});
+    console.log(this.name)
+    console.log(Number(this.rate))
+    console.log( Number(this.categoryID))
+    if (this.name == '' && this.rate == -1 && this.categoryID == 0) {
+      this.mentorService.getAllMentors().subscribe((response)=>{this.mentors=response; console.log(response)});
+    }else{
+      this.mentorService.getAllMentors(0, 5, this.name, Number(this.rate), Number(this.categoryID)).subscribe((response)=>{this.mentors=response; console.log(response)});
+    }
   }
 }

@@ -1,45 +1,41 @@
-<div class="p-5 row  justify-content-between" style="background-color: #F8F8F8">
+<div class="p-5 row  justify-content-between" style="background-color: #F8F8F8; min-height: 23rem;">
   <div class="rounded col-2 pt-3 pb-3 h-50" style="background-color: #FFFFFF;">
       <h4 style="color: #1FAB89;">Filters</h4>
-      <label class="form-label" for="customRange1">Price</label>
-      <div class="range">
-        <input type="range" class="form-range" id="customRange1" min="0" max="50" />
-      </div>
-      <select class="form-select mt-3 p-2  w-100 rounded" style="background-color: #F8F8F8;" aria-label="Default select example">
-          <option selected>Category</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+      <select class="form-select mt-3 p-2  w-100 rounded" style="background-color: #F8F8F8;" aria-label="Default select example" [(ngModel)]="categoryID">
+          <option value="0" selected>Category</option>
+          <option *ngFor="let category of categories" value="{{ category.id }}">{{ category.name }}</option>
       </select>
-      <select class="form-select mt-3 p-2  w-100 rounded" style="background-color: #F8F8F8;" aria-label="Default select example">
-          <option selected>Rating</option>
+      <select class="form-select mt-3 p-2  w-100 rounded" style="background-color: #F8F8F8;" aria-label="Default select example" [(ngModel)]="rate">
+          <option value="-1" selected>Rating</option>
+          <option value="0">Zero or more</option>
           <option value="1">One or more</option>
           <option value="2">Two or more</option>
           <option value="3">Three or more</option> 
           <option value="4">Four or more</option>
           <option value="5">Five</option>
       </select>                
-      <button class="btn w-100 mt-3 rounded-pill" style="background: #1FAB89; color: #FFFFFF;">Result of Search</button>
+      <button (click)="searchAndFileration()" class="btn w-100 mt-3 rounded-pill" style="background: #1FAB89; color: #FFFFFF;">Result of Search</button>
   </div>
-  <div class="col-10 row rounded justify-content-between" style="background-color: #F8F8F8">
-      <div class="card col-sm-6 col-md-4 col-lg-3 p-1 mb-4" style="width: 17rem; background: white; height: 20rem; border-radius: 8px;">
+  <div class="col-10 row rounded justify-content-around" style="background-color: #F8F8F8">
+      <div class="card col-sm-6 col-md-4 col-lg-3 p-1 mb-4" style="width: 17rem; background: white; height: 20rem; border-radius: 8px;" *ngFor="let mentor of mentors">
           <img class="card-img-top" src="https://th.bing.com/th/id/OIP.Jx1lm0vaWB5JR08wnxxlpQHaE7?pid=ImgDet&rs=1" alt="Card image cap" style="min-height: 20vh; width: 100%; object-fit: fill;"> 
           <div class="card-body">
             <div class="row justify-content-between">
-              <h5 class="card-title mb-2 ml-3 fw-bold col-8">Hamok4a</h5>
+              <h5 class="card-title mb-2 ml-3 fw-bold col-8">{{ mentor.name }}</h5>
               <div class="col row ml-5">
                 <i class="bi bi-star-fill col-1" style="color: darkorange;"></i>
-                <p class="card-title mb-2 col">3/5</p>
+                <p class="card-title mb-2 col">{{ mentor.rate }}/5</p>
               </div>
             </div>
-            <p class="card-text">JS Developer</p>
+            <p class="card-text">{{ mentor.title }}</p>
             <div class="text-center">
-              <a href="#" class="btn w-100 rounded-pill" style="color: white ;background-color: #1FAB89;;" >More Details</a>
+              <a routerLink="/mentor/profile-mentor" class="btn w-100 rounded-pill" style="color: white ;background-color: #1FAB89;;" >More Details</a>
             </div>
           </div>
-      </div>
+      </div>  
 </div>
 </div>
+
 
 
 

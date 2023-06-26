@@ -14,6 +14,8 @@ import { IndexComponent } from "../dashboard/components/index/index.component";
 import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
 import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+
 const routes: Routes = [
   {
     path: "mentee",
@@ -32,6 +34,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
+    SearchMentorsComponent,
     // EditProfileComponent,
 
   ],
@@ -43,6 +46,7 @@ const routes: Routes = [
     MatFormFieldModule,
     MatNativeDateModule,
     MatIconModule,
+    FormsModule
   ],
 })
 export class menteeModule {}
