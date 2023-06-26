@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +21,16 @@ import { RateComponent } from './shared/rate/rate/rate.component';
 import { ViewServiceComponent } from './shared/view-service/view-service.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { UpcomingSessionsComponent } from './modules/dashboard/components/upcoming-sessions/upcoming-sessions.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { IndexComponent } from './modules/dashboard/components/index/index.component';
+import { RequestsComponent } from './modules/dashboard/components/requests/requests.component';
+import { EditProfileMentorComponent } from './modules/mentor-module/components/edit-profile-mentor/edit-profile-mentor.component';
+import { EditProfileComponent } from './modules/mentee-module/components/edit-profile-mentee/edit-profile.component';
+
+import { CommonModule } from '@angular/common';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +42,12 @@ import { HttpClientModule } from '@angular/common/http';
     AboutUsComponent,
     PaymentMethodComponent,
     RateComponent,
-    ViewServiceComponent
+    ViewServiceComponent,
+    UpcomingSessionsComponent,
+    RequestsComponent,
+    EditProfileMentorComponent,
+    EditProfileComponent,
+    IndexComponent
 
 
   ],
@@ -47,7 +62,11 @@ import { HttpClientModule } from '@angular/common/http';
     mentorModule,
     MatIconModule,
     sessionModule,
+    DashboardModule,
     NgbModule,
+    ReactiveFormsModule,
+    CommonModule
+
 
 
   ],
@@ -55,7 +74,13 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
     PaymentMethodComponent,
     RateComponent,
-    ViewServiceComponent
+    ViewServiceComponent,
+    UpcomingSessionsComponent,
+    RequestsComponent,
+    EditProfileMentorComponent,
+    EditProfileComponent,
+    IndexComponent
+
   ],
   bootstrap: [AppComponent]
 })

@@ -11,6 +11,7 @@ export class UpcomingSessionsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  role = 'mentor';
   currentDiv: string = 'upcoming';
   currentLink: string = 'upcoming';
   currentLinkText: string = 'Upcoming Session';
