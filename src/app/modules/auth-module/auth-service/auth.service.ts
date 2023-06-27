@@ -18,23 +18,28 @@ export class AuthService {
 
   getloggedUser() {
     const user: string | any = localStorage.getItem('user')
-    return JSON.parse(user);
+    const paresd = JSON.parse(user)
+    return paresd || null;
   }
   getloggedUserRole() {
     const user = this.getloggedUser()
-    return user?.authorities[0];
+    if (user && Object.keys(user).length>0){
+    return  user?.authorities[0] 
+      // return role || null;
+    }
+    return null
   }
 
   getloggedUserId() {
     const user = this.getloggedUser()
-    return user?.id;
+    return user?.id || null;
   }
   setIsloggedIn(value: boolean) {
     localStorage.setItem('loggedIn', JSON.stringify(value));
   }
   CheckIsLoggedIn() {
     const logged: boolean | any = localStorage.getItem('loggedIn')
-    return logged || false
+    return JSON.parse(logged) || false
   }
   setloggedUserToken(token: string) {
     localStorage.setItem('token', JSON.stringify(token));
@@ -54,7 +59,7 @@ export class AuthService {
   }
 
   logout() {
-
+    this.setIsloggedIn(false)
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     this.router.navigate(['/landing'])

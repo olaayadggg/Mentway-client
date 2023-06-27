@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnChanges {
   public isCollapsed = true;
   loggedUser: any
   loggedUserRole: any
@@ -23,9 +23,21 @@ export class NavbarComponent implements OnInit {
     this.loggedUserRole = this.authService.getloggedUserRole();
     this.isLoggedIn = this.authService.CheckIsLoggedIn();
   }
+  ngOnChanges(changes: SimpleChanges): void {
+   
+  }
 
 
   ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // this.loggedUser = this.authService.getloggedUser();
+        this.isLoggedIn = this.authService.CheckIsLoggedIn();
+        console.log("nav------------------------")
+        // re-render the navbar component
+        // add your code here to update the navbar component
+      }
+    });
     this.isLoggedIn = this.authService.CheckIsLoggedIn();
     this.path=this.location.path()
   }
