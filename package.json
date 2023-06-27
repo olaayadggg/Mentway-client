@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-material-components/datetime-picker": "^9.0.0",
+
     "@angular/animations": "^16.0.0",
     "@angular/cdk": "^16.1.1",
     "@angular/common": "^16.0.0",
@@ -23,8 +23,6 @@
     "@angular/router": "^16.0.0",
     "@ng-bootstrap/ng-bootstrap": "^15.0.1",
     "@popperjs/core": "^2.11.6",
-    "@syncfusion/ej2-angular-calendars": "^22.1.35-ngcc",
-    "@syncfusion/ej2-angular-grids": "^22.1.35",
     "agora-rtc-sdk-ng": "^4.18.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",

@@ -5,24 +5,16 @@ import { EditProfileComponent } from "./components/edit-profile-mentee/edit-prof
 import { ProfileMenteeComponent } from "./components/profile-mentee/profile-mentee.component";
 import { SearchMentorsComponent } from "./components/search-mentors/search-mentors.component";
 import { RequestSessionComponent } from './components/request-session/request-session.component';
-import { MatDatepickerModule,MatDatepickerInputEvent} from '@angular/material/datepicker';
+import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule} from '@angular/material/core';
 import { MatIconModule} from '@angular/material/icon';
-import { PaymentMethodComponent } from "src/app/shared/payment-method/payment-method.component";
-import { RateComponent } from "src/app/shared/rate/rate/rate.component";
-import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
 import { IndexComponent } from "src/app/shared/index/index.component";
 import { AuthGuard } from "src/app/guards/auth.guard";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { PaginationComponent } from "src/app/shared/pagination/pagination.component";
-import { AppModule } from "src/app/app.module";
 import { ViewMentorComponent } from "./components/view-mentor/view-mentor.component";
 import { BrowserModule } from "@angular/platform-browser";
-import { mentorModule } from "../mentor-module/mentor.module";
-import { DateTimePickerModule } from "@syncfusion/ej2-angular-calendars";
-import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 
 const routes: Routes = [
   {
@@ -59,13 +51,7 @@ const routes: Routes = [
     MatFormFieldModule,
     MatNativeDateModule,
     MatIconModule,
-    DateTimePickerModule,
     BrowserModule,
-    NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
-  
-
-
   ],
 })
 export class menteeModule {}

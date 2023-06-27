@@ -8,13 +8,7 @@ import { MenteeService } from '../../mentee-service/mentee.service';
 import { BusinessServiceService } from 'src/app/shared/services/business-service.service';
 import { NgFor } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { enableRipple } from '@syncfusion/ej2-base';
-import { DateTimePicker } from '@syncfusion/ej2-angular-calendars';
-import {DateTimePickerModule} from "@syncfusion/ej2-angular-calendars";
-import { NgxMatDatetimePicker } from '@angular-material-components/datetime-picker';
 
-enableRipple(false);
-import { TimePicker } from '@syncfusion/ej2-calendars';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
@@ -23,7 +17,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-request-session',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule,DateTimePickerModule, MatNativeDateModule, NgFor,DateTimePickerModule],
+  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, NgFor],
   templateUrl: './request-session.component.html',
   styleUrls: ['./request-session.component.css']
 })
