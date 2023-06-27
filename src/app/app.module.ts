@@ -41,7 +41,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ListServicesComponent } from './shared/list-services/list-services.component';
 import { ViewMentorComponent } from './modules/mentee-module/components/view-mentor/view-mentor.component';
 import { SearchMentorsComponent } from './modules/mentee-module/components/search-mentors/search-mentors.component';
-
+import {DateTimePickerModule} from "@syncfusion/ej2-angular-calendars";
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +91,9 @@ import { SearchMentorsComponent } from './modules/mentee-module/components/searc
     JsonPipe,
     NgbModule,
     AppRoutingModule,
+    DateTimePickerModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
 
 
 
