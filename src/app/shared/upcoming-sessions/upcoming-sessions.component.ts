@@ -2,19 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
 import { SessionService } from 'src/app/modules/session-module/service/session.service';
 import { environment } from 'src/environments/environment';
-
-
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-upcoming-sessions',
   templateUrl: './upcoming-sessions.component.html',
-  styleUrls: ['./upcoming-sessions.component.css']
+  styleUrls: ['./upcoming-sessions.component.css'],
+
 })
 export class UpcomingSessionsComponent implements OnInit {
   id = 0;
   backend_url = '';
+  simpleDialog!: MatDialogRef<DialogComponent>;
+
   constructor(
     private sessionService: SessionService,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialogModel: MatDialog
   ) {
     // this.authService.setloggedUser()
     this.id = this.authService.getloggedUserId();
@@ -45,15 +49,15 @@ export class UpcomingSessionsComponent implements OnInit {
     this.currentLinkText = linkText;
 
   }
-  formateDate(dateString:any){
-  const date = new Date(dateString);
+  formateDate(dateString: any) {
+    const date = new Date(dateString);
 
     return date.toLocaleString('en-US', {
       year: 'numeric', month: 'long', day: 'numeric',
       hour: 'numeric', minute: 'numeric', second: 'numeric',
-      hour12: true, timeZone: 'UTC'
+      hour12: true, timeZone: 'Africa/Cairo'
     });
-}
+  }
 
   getMenteeSessions(page = 0) {
     return this.sessionService.getMenteeSessions(page, 1, this.id).subscribe({
@@ -95,44 +99,6 @@ export class UpcomingSessionsComponent implements OnInit {
     d2: "Wooow"
   }
   headers = ["Mentor lists", "Scheduled Date", "Scheduled Timing", "Action"]
-  // rows = [
-  //   {
-  //     "mentor": 'Mentor 1',
-  //     "profile-pic": './assets/img/theme/team-1-800x800.jpg',
-  //     "scheduledDate1": '2023-06-18',
-  //     "scheduledDate2": '2023-06-19',
-  //   },
-  //   {
-  //     "mentor": 'Mentor 2',
-  //     "profile-pic": './assets/img/theme/team-2-800x800.jpg',
-  //     "scheduledDate1": '2023-06-18',
-  //     "scheduledDate2": '2023-06-19',
-  //   },
-  //   {
-  //     "mentor": 'Mentor 3',
-  //     "profile-pic": './assets/img/theme/team-3-800x800.jpg',
-  //     "scheduledDate1": '2023-05-22',
-  //     "scheduledDate2": '2023-06-26',
-  //   },
-  //   {
-  //     "mentor": 'Mentor 4',
-  //     "profile-pic": './assets/img/theme/team-4-800x800.jpg',
-  //     "scheduledDate1": '2023-06-18',
-  //     "scheduledDate2": '2023-06-19',
-  //   },
-  //   {
-  //     "mentor": 'Mentor 5',
-  //     "profile-pic": './assets/img/theme/team-4-800x800.jpg',
-  //     "scheduledDate1": '2023-06-18',
-  //     "scheduledDate2": '2023-06-19',
-  //   }
-  // ]
-
-  // set this numbers to 0 as default
-  //  data from first time calling your api
-  // don't forget to apply your design
- 
-
   onPageChanged(page: number) {
     this.currentPage = page;
     // call your api with page number
@@ -143,6 +109,40 @@ export class UpcomingSessionsComponent implements OnInit {
     else if (this.authService.getloggedUserRole() === 'MENTEE') {
       this.getMenteeSessions(page);
     }
+  }
+
+  dialog() {
+    this.simpleDialog = this.dialogModel.open(DialogComponent);
+  }
+  joinSession(serviceId: number, sessionDate: any, duration: any) {
+    console.log(sessionDate)
+    const sessionStartTime = new Date(sessionDate);
+
+    // Step 2: Add the session duration to the session start time to get the session end time
+    const sessionEndTime = new Date(sessionStartTime.getTime() + duration * 60 * 60 * 1000);
+
+    // Step 3: Create a new Date object for the current time
+    const now = new Date();
+    // Step 4: Check if the current time is between the session start time and the session end time
+    if (now >= sessionStartTime && now <= sessionEndTime) {
+      console.log("You can join the session.");
+    } else {
+      console.log("The session has already ended or has not started yet.");
+      this.dialog()
+    }
+    // const sessionEndDate = this.addHoursToDateTimeIso(sessionDate, duration);
+    // if(new Date(sessionDate)<new Date()){
+    //   if(new Date(sessionEndDate)>)
+    // }
+    // console.log(serviceId, sessionDate)
+    // // console.log(time)
+  }
+
+  addHoursToDateTimeIso(date: any, hourToAdd: any) {
+    const mydate = new Date(date);
+    mydate.setHours(mydate.getHours() + hourToAdd);
+    const updatedIsoDateTime = mydate.toISOString();
+    return updatedIsoDateTime;
   }
 
 }
