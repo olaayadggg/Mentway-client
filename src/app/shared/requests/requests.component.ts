@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
 
 @Component({
   selector: 'app-requests',
@@ -6,7 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./requests.component.css']
 })
 export class RequestsComponent {
-
+constructor(private authService:AuthService){
+  this.role=this.authService.getloggedUserRole()
+}
   role = "mentor"
   isRequestAccepted: boolean = false;
   isRequestRejected: boolean = false;

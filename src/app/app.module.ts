@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,24 +20,24 @@ import { PaymentMethodComponent } from './shared/payment-method/payment-method.c
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { ViewServiceComponent } from './shared/view-service/view-service.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
 import { EditProfileMentorComponent } from './modules/mentor-module/components/edit-profile-mentor/edit-profile-mentor.component';
 import { EditProfileComponent } from './modules/mentee-module/components/edit-profile-mentee/edit-profile.component';
 import { IndexComponent } from './shared/index/index.component';
 import { UpcomingSessionsComponent } from './shared/upcoming-sessions/upcoming-sessions.component';
 import { RequestsComponent } from './shared/requests/requests.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from './shared/pagination/pagination.component';
-import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
-// import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
+import {MatPaginatorModule } from '@angular/material/paginator';
 import { JsonPipe } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-// import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ListServicesComponent } from './shared/list-services/list-services.component';
+import { ViewMentorComponent } from './modules/mentee-module/components/view-mentor/view-mentor.component';
+import { SearchMentorsComponent } from './modules/mentee-module/components/search-mentors/search-mentors.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -57,29 +57,40 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     EditProfileComponent,
     IndexComponent,
     PaginationComponent,
+    ListServicesComponent,
+    ViewMentorComponent,
+    PaginationComponent,
+    SearchMentorsComponent,
+    // DialogComponent,
+
 
 
   ],
   imports: [
-    HttpClientModule,
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
+    // CommonModule,
+    HttpClientModule,
+    // FormsModule,
+    MatDialogModule,
     FormsModule,
     RouterModule,
-    AppRoutingModule,
     adminModule,
-    menteeModule,
     mentorModule,
-    MatIconModule,
+    menteeModule,
     sessionModule,
-    NgbModule,
     ReactiveFormsModule,
-    CommonModule, MatFormFieldModule,
+    MatIconModule,
+    MatFormFieldModule,
     MatInputModule,
-    FormsModule,
     MatSlideToggleModule,
     MatPaginatorModule,
-    JsonPipe
+    JsonPipe,
+    NgbModule,
+    AppRoutingModule,
+
+  
 
 
 
@@ -94,11 +105,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     EditProfileMentorComponent,
     EditProfileComponent,
     IndexComponent,
-    // PaginationComponent
+    PaginationComponent,
+    ListServicesComponent,
+    ViewMentorComponent,
+    SearchMentorsComponent,
+    // DialogComponent,
 
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 
- }
+}

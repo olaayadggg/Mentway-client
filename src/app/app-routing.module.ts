@@ -7,12 +7,13 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './modules/auth-module/login/login.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PaymentMethodComponent } from './shared/payment-method/payment-method.component';
+import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   { path: 'register', component: SignupComponent },
   { path: 'landing', component: LandingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'payment', component: PaymentMethodComponent },
+  { path: 'payment', component: PaymentMethodComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: 'landing', pathMatch: 'full' }
 ];
 
@@ -20,9 +21,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes, {
-      useHash: true
-    })
+    RouterModule.forRoot(routes,)
   ],
   exports: [
   ],

@@ -9,10 +9,15 @@ import { RateComponent } from "src/app/shared/rate/rate/rate.component";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
 import { MatIconModule} from '@angular/material/icon';
 import { IndexComponent } from "src/app/shared/index/index.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AuthGuard } from "src/app/guards/auth.guard";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppModule } from "src/app/app.module";
+import { menteeModule } from "../mentee-module/mentee.module";
 const routes: Routes = [
   {
     path: "mentor",
-    canActivate: [],
+    canActivate: [AuthGuard],
     children: [
       { path: "dashboard", component: IndexComponent },
       { path: "profile-mentor", component: ProfileMentorComponent },
@@ -31,8 +36,14 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
     RouterModule.forRoot(routes),
     MatIconModule,
+    // AppModule,
+    // menteeModule
   ],
 })
 export class mentorModule {}

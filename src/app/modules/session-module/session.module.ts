@@ -4,11 +4,12 @@ import { RouterModule, Routes } from "@angular/router";
 import { SessionComponent } from "./components/session/session.component";
 import { MatIconModule } from '@angular/material/icon'
 import { MatCardModule } from '@angular/material/card';
+import { AuthGuard } from "src/app/guards/auth.guard";
 
 const routes: Routes = [
   {
     path: "session",
-    canActivate: [],
+    canActivate: [AuthGuard],
     children: [
       { path: ":channel/:id", component: SessionComponent },
 

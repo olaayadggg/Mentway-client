@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenteeService } from '../../mentee-service/mentee.service';
-import { environment } from 'src/environments/environment';
+import { AuthService } from '../../../auth-module/auth-service/auth.service';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-profile-mentee',
@@ -9,17 +10,25 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./profile-mentee.component.css']
 })
 export class ProfileMenteeComponent implements OnInit {
-  id:number=10;
-  MyData:any|null=null;
-  constructor(private active:ActivatedRoute, private service:MenteeService){
-    this.id=Number(this.active.snapshot.paramMap.get('id'));
+  id: number = 0;
+  MyData: any | null = null;
+  backend_url='';
+
+  constructor(
+    private active: ActivatedRoute,
+    private menteeService: MenteeService,
+    private authService:AuthService,
+  ) {
+    // this.id = Number(this.active.snapshot.paramMap.get('id'));
+    this.id = this.authService.getloggedUserId();
+    this.backend_url=environment.API_URL
   }
 
   ngOnInit(): void {
-    this.service.getMenteeById(9).subscribe({
-      next:(response)=>{console.log(response);
-      this.MyData=response
-      // this.MyData.imgUrl=environment.API_URL.concat(this.MyData.picture)
+    this.menteeService.getMenteeById(this.id).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.MyData = response
       },
     });
   }

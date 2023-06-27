@@ -13,28 +13,48 @@
               <form [formGroup]="Form" (submit)="submit($event)">
                 <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="User Name" id="UserName" formControlName="UserName">
+                    <input class="form-control" placeholder="Email" id="email" formControlName="email">
                   </div>
-                  <ng-container *ngIf="getUserName.touched">
-                    <div *ngIf="getUserName.hasError('required')" class="invalid-feedback d-block">
-                      User name is required
+                  <ng-container *ngIf="this.getEmail.touched">
+                    <div
+                      *ngIf="this.getEmail.hasError('required')"
+                      class="invalid-feedback d-block"
+                    >
+                      Email is Required
                     </div>
-                    <div *ngIf="getUserName.hasError('UserName')" class="invalid-feedback d-block">
-                      Invalid User name
+                    <div
+                      *ngIf="this.getEmail.hasError('email')"
+                      class="invalid-feedback d-block"
+                    >
+                     Invalid Email
                     </div>
                   </ng-container>
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-alternative">
-                    <input class="form-control" placeholder="Password" type="password" id="Password"
-                      formControlName="Password">
+
+                    <input class="form-control" placeholder="Password" formControlName="password" type="password" id="Password">
+
                   </div>
                   <ng-container *ngIf="getPassword.touched">
                     <div *ngIf="getPassword.hasError('required')" class="invalid-feedback d-block">
                       Password is required
                     </div>
-                    <div *ngIf="getPassword.hasError('pattern')" class="invalid-feedback d-block">
-                      Invalid Password
+                    <div
+                      *ngIf="this.getPassword.hasError('minlength')"
+                      class="invalid-feedback d-block"
+                    >
+                      Password must be at least 8 characters
+                    </div>
+
+                    <div
+                      *ngIf="this.getPassword.hasError('pattern')"
+                      class="invalid-feedback d-block"
+                    >
+                      Password must contain uppercase lowercase and special character
+                    </div>
+                    <div *ngIf="this.errors" class="text-center invalid-feedback d-block">
+                      {{this.errors?.message}}
                     </div>
                   </ng-container>
                   <div *ngIf="getPassword.valid" class="valid-feedback d-block">
