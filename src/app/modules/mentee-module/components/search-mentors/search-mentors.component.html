@@ -14,23 +14,25 @@
         <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
 
       </select>
-      <select class="form-select mt-3 p-2 w-100 rounded" style="background-color: #f8f8f8"
+      <!-- <select class="form-select mt-3 p-2 w-100 rounded" [(ngModel)]="rate" style="background-color: #f8f8f8"
         aria-label="Default select example">
-        <option selected>Rating</option>
+        <option value="0" >0</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
-      </select>
+      </select> -->
       <!-- [routerLink]="['/routePath']" routerLinkActive="router-link-active"  -->
-      <button class="btn w-100 mt-3 rounded-pill" style="background: #1fab89; color: #ffffff">
+      <button (click)="filter()" class="btn w-100 mt-3 rounded-pill" style="background: #1fab89; color: #ffffff">
         Apply Filters
       </button>
     </div>
-    <div class="col-md-10 row">
-
-      <div *ngFor="let mentor of mentors" class="col-4 row rounded justify-content-between"
+    <div class="col-md-10 row ">
+      <div *ngIf="!(mentors.length>0)&& (itemsPerPage>0)" class="w-100">
+        <p class="text-center fs-3">No Search Result for '{{getSearchValue.value}}'</p>
+      </div>
+      <div *ngFor="let mentor of mentors" class="col-4 row rounded justify-content-between "
         style="background-color: #f8f8f8">
         <div class="card col-sm-6 col-md-4 col-lg-3 p-1 mb-4" style="
         width: 17rem;
@@ -50,15 +52,16 @@
             </div>
             <p class="card-text">{{mentor?.categoryName||"JS Developer"}}</p>
             <div class="text-center">
-              <a routerLink='/mentee/view-mentor/{{mentor?.id}}' class="btn w-100 rounded-pill" style="color: white; background-color: #1fab89">More
+              <a routerLink='/mentee/view-mentor/{{mentor?.id}}' class="btn w-100 rounded-pill"
+                style="color: white; background-color: #1fab89">More
                 Details</a>
             </div>
           </div>
         </div>
-         <div *ngIf="totalItems>itemsPerPage" class="pagination">
+        <div *ngIf="totalItems>itemsPerPage" class="pagination">
           <app-pagination [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage"
             (pageChanged)="onPageChanged($event)"></app-pagination>
-        </div> 
+        </div>
 
 
       </div>

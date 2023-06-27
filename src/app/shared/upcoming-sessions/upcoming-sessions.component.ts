@@ -58,7 +58,7 @@ export class UpcomingSessionsComponent implements OnInit {
   getMenteeSessions(page = 0) {
     return this.sessionService.getMenteeSessions(page, 1, this.id).subscribe({
       next: (res: any) => {
-        console.log(res)
+        console.log(res?.content[0])
         this.totalItems = res?.totalElements
         this.itemsPerPage = res?.size
         this.currentPage = res?.number
@@ -72,10 +72,10 @@ export class UpcomingSessionsComponent implements OnInit {
 
   getMentorSessions(page = 0) {
 
-    console.log("abc")
+    // console.log("abc")
     return this.sessionService.getMentorSessions(page, 1, this.id).subscribe({
       next: (res: any) => {
-        console.log(res)
+        console.log(res?.content[0])
         this.totalItems = res?.totalElements
         this.itemsPerPage = res?.size
         this.currentPage = res?.number
