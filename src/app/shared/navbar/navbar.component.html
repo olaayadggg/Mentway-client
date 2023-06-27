@@ -18,11 +18,11 @@
             <a class="nav-link active ml-5" aria-current="page"
               [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/dashboard':'/mentee/dashboard']">Dashbord</a>
           </li>
-          <li *ngIf="!isLoggedIn" class="nav-item">
+          <!-- <li  class="nav-item">
             <a class="nav-link active ml-5" aria-current="page" [routerLink]="['/landing']">Home</a>
-          </li>
+          </li> -->
           <!-- </li> -->
-          <li *ngIf="isLoggedIn && loggedUserRole==='MENTEE' " class="nav-item">
+          <li *ngIf="isLoggedIn && loggedUserRole==='MENTEE'" class="nav-item">
             <a class="nav-link active ml-5" aria-current="page" [routerLink]="['/mentee/search']">Search</a>
           </li>
         </ul>
@@ -46,18 +46,7 @@
 
 
         <ul *ngIf="isLoggedIn" class="navbar-nav align-items-lg-center justify-content-between">
-          <li class="nav-link nav-link-icon dropdown bi bi-bell" style="color: #1FAB89;" data-toggle="dropdown"
-            role="button">
-            <a class=" " data-toggle="dropdown" role="button">
-              <i class="bi bi-bell" style="color: #1FAB89;"></i>
-            </a>
-            <div class="dropdown-menu">
-              <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-              <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-              <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-              <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-            </div>
-          </li>
+         
           <li>
             <div class="d-flex align-items-lg-center justify-content-end">
               <a [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/profile-mentor':'/mentee/profile-mentee']" class="nav-link nav-item" role="button">
@@ -74,6 +63,8 @@
                       class="dropdown-item">Dashboard</a></li>
                   <li><a [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/profile-mentor':'/mentee/profile-mentee']"
                       class="dropdown-item">Profile</a></li>
+                      <li><a [routerLink]="['/payment']"
+                          class="dropdown-item">Payment</a></li>
                   <!-- <li><a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a></li> -->
                   <!-- <li><a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a></li> -->
                   <li>

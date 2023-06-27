@@ -36,6 +36,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ListServicesComponent } from './shared/list-services/list-services.component';
 import { ViewMentorComponent } from './modules/mentee-module/components/view-mentor/view-mentor.component';
 import { SearchMentorsComponent } from './modules/mentee-module/components/search-mentors/search-mentors.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { SearchMentorsComponent } from './modules/mentee-module/components/searc
     ViewMentorComponent,
     PaginationComponent,
     SearchMentorsComponent,
+    // DialogComponent,
 
 
 
@@ -70,6 +73,7 @@ import { SearchMentorsComponent } from './modules/mentee-module/components/searc
     // CommonModule,
     HttpClientModule,
     // FormsModule,
+    MatDialogModule,
     FormsModule,
     RouterModule,
     adminModule,
@@ -105,6 +109,7 @@ import { SearchMentorsComponent } from './modules/mentee-module/components/searc
     ListServicesComponent,
     ViewMentorComponent,
     SearchMentorsComponent,
+    // DialogComponent,
 
   ],
   bootstrap: [AppComponent]
