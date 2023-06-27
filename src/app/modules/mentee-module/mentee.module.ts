@@ -21,6 +21,9 @@ import { AppModule } from "src/app/app.module";
 import { ViewMentorComponent } from "./components/view-mentor/view-mentor.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { mentorModule } from "../mentor-module/mentor.module";
+import { DateTimePickerModule } from "@syncfusion/ej2-angular-calendars";
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+
 const routes: Routes = [
   {
     path: "mentee",
@@ -56,8 +59,13 @@ const routes: Routes = [
     MatFormFieldModule,
     MatNativeDateModule,
     MatIconModule,
+    DateTimePickerModule,
+    BrowserModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+  
 
-    
+
   ],
 })
 export class menteeModule {}
