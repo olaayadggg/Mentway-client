@@ -1,32 +1,25 @@
 <main>
   <section class="section section-lg">
-    <div class="container d-flex col-lg-9 mt-5 shadow-lg p-3 mb-5 bg-white border-0 justify-content-between">
-      <div class="col-lg-5 text-center mt-5">
+    <div class="container main d-flex col-lg-9 col-md-10 col-sm-12 mt-5 shadow-lg p-3 mb-5 bg-white border-0 justify-content-between">
+      <div class="col-lg-5 col-md-8 col-sm-12 text-center mt-5">
         <h1 class="text">Select your date and time</h1>
         <img src="./assets/img/ill/Scheduling.svg" />
       </div>
-      <div class="col-lg-6 mt-5 ">
-        <!-- <form action=""> -->
+
+      <div class="col-lg-6 col-md-8 col-sm-12 mt-5 ">
         <div class="card mt-2">
-
-
-          <!-- *************** Error ya sar7aannnn  line 44 ********** -->
-          <form [formGroup]="Form" (submit)="submit($event)">
-            <div>
-              <label for="DateTime">Enter a date and time for your session booking:</label>
-              <input class="form-control" id="DateTime" type="datetime-local" formControlName="startDate"
-                value="2017-06-01T08:30" />
-              <div class="mt-2">
-                <textarea class="form-control" formControlName="applicationDetails" placeholder="Write a comment" cols="30"
-                  rows="10"></textarea>
-              </div>
-              <!-- </form> -->
-
-              <button class="btn mt-5" type="submit">
-                Process to Pay
-              </button>
+           <!-- *************** Error ya sar7aannnn  line 44 ********** -->
+            <form class="formGroup container mt-5"  (submit)="submit($event)">
+             <input class="form-control" id="DateTime" type="datetime-local" formControlName="DateTime" value="2017-06-01T08:30" />
+            <div class="mt-2">
+              <textarea class="form-control" formControlName="comment" placeholder="Write a comment" cols="30" rows="10"></textarea>
             </div>
-          </form>
+            <button class="btn mt-5 mb-5" type="submit" >
+              Process to Pay
+            </button>
+           </form>
+
+
         </div>
       </div>
     </div>
