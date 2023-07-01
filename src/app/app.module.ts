@@ -19,7 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PaymentMethodComponent } from './shared/payment-method/payment-method.component';
 import { RateComponent } from './shared/rate/rate/rate.component';
 import { ViewServiceComponent } from './shared/view-service/view-service.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EditProfileMentorComponent } from './modules/mentor-module/components/edit-profile-mentor/edit-profile-mentor.component';
 import { EditProfileComponent } from './modules/mentee-module/components/edit-profile-mentee/edit-profile.component';
 import { IndexComponent } from './shared/index/index.component';
@@ -38,6 +38,9 @@ import { ViewMentorComponent } from './modules/mentee-module/components/view-men
 import { SearchMentorsComponent } from './modules/mentee-module/components/search-mentors/search-mentors.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { PaymentStatusComponent } from './shared/payment-status/payment-status.component';
+import { AbcComponent } from './shared/abc/abc.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ViewMentorComponent,
     PaginationComponent,
     SearchMentorsComponent,
+    PaymentStatusComponent,
+    AbcComponent,
     // DialogComponent,
 
 
@@ -89,13 +94,16 @@ import { MatDialogModule } from '@angular/material/dialog';
     JsonPipe,
     NgbModule,
     AppRoutingModule,
-
+   
   
 
 
 
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+  }
+  ],
   exports: [
     PaymentMethodComponent,
     RateComponent,
