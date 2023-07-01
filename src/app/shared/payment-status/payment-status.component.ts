@@ -39,7 +39,11 @@ export class PaymentStatusComponent implements OnInit {
       // [0]: https://stripe.com/docs/payments/payment-methods#payment-notification
       console.log("intent: -------------- ",myIntent)
       if (myIntent?.paymentIntent?.status ==='succeeded'){
-
+        this.paymentService.setValidPayment(myIntent?.paymentIntent?.id).subscribe({
+          next:(res:any)=>{
+            console.log(res)
+          }
+        })
         console.log("Success! Payment received.")
         
       } else if (myIntent?.paymentIntent?.status ==='processing'){

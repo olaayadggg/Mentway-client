@@ -16,8 +16,14 @@ export class PaymentService {
   createPayment() {
     return this.http.post(`${this.baseUrl}/payments/create`, {})
   }
-
+  
   async createStripeobject() {
     this.stripe = await loadStripe(environment.stripeKey, { apiVersion: "2022-11-15" })
+  }
+  
+  setValidPayment(intentId:any){
+    
+    return this.http.get(`${this.baseUrl}/payments/valid?pamentIntentId=${intentId}`)
+    // return this.stripe = await loadStripe(environment.stripeKey, { apiVersion: "2022-11-15" })
   }
 }
