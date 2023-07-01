@@ -24,11 +24,15 @@ export class SearchMentorsComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryService.getAllCategories().subscribe((response) => { this.categories = response; console.log(response) });
-    this.search(0, 'm', this.rate, this.categoryID)
+    // this.search(0, 'm', this.rate, this.categoryID)
 
   }
 
   search(page = 0, name: string, rate: number | undefined = undefined, catId: number | undefined = undefined): void {
+    
+    if(rate){
+      rate=rate>0?rate:undefined
+    }
     this.mentorService.getAllMentors(page, 5, name, rate, catId)
       .subscribe({
         next: (response:any) => {
@@ -39,6 +43,7 @@ export class SearchMentorsComponent implements OnInit {
           console.log(response)
         },
         error:(err)=>{
+          this.itemsPerPage=1
           console.log(err)
         }
       });
@@ -67,7 +72,10 @@ export class SearchMentorsComponent implements OnInit {
       this.myform.markAllAsTouched();
     }
   }
-
+filter(){
+  this.search(0, this.getSearchValue.value, this.rate, this.categoryID)
+  // this.search()
+}
   onPageChanged(page: number) {
     this.currentPage = page;
     // call your api with page number

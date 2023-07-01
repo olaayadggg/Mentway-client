@@ -1,4 +1,4 @@
-<table class="custom-table bottom-border-radius">
+<table class="custom-table bottom-border-radius w-100">
     <thead>
         <tr>
         <th>{{ role === 'mentor' ? 'Mentor Lists' : 'Mentee Lists' }}</th>
@@ -18,7 +18,7 @@
         <td>{{ formateDate(row.startDate)}}</td>
         <!-- <td><div class="date">{{ row.scheduledDate2 }}</div></td> -->
         <td>
-            <button [routerLink]="['/user/jim']" style="border: none; background-color: #EDFFF6; border-radius: 8px;">
+            <button (click)="joinSession(row.serviceId,row.startDate,row.duration)" style="border: none; background-color: #EDFFF6; border-radius: 8px;">
               <div class="join-session">
                 <span class="view-text"><mat-icon style="color: #1FAB89;" class="pt-1">link</mat-icon> Join Session</span>
               </div>
@@ -32,3 +32,4 @@
     <div *ngIf="totalItems>itemsPerPage" class="pagination" >
       <app-pagination [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage" (pageChanged)="onPageChanged($event)"></app-pagination>
     </div>
+

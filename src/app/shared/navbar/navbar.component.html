@@ -1,15 +1,13 @@
+
 <nav class="navbar navbar-expand-lg navbar-main navbar-expand-lg navbar-transparent shadow-sm headroom headroom--top headroom--pinned ">
+
+
   <div class="container">
     <a class="navbar-brand" [routerLink]="['/landing']">
       <img src="./assets/img/brand/newlogo.svg" alt="" srcset="">
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      (click)="isCollapsed = !isCollapsed"
-      [attr.aria-expanded]="!isCollapsed"
-      aria-controls="navbar_global"
-    >
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -19,13 +17,20 @@
             <a class="nav-link active" [routerLink]="['/about-us']">About us</a>
           </li>
           <li *ngIf="isLoggedIn" class="nav-item">
-            <a class="nav-link active ml-5" aria-current="page" [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/dashboard':'/mentee/dashboard']">Dashbord</a>
+            <a class="nav-link active ml-5" aria-current="page"
+              [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/dashboard':'/mentee/dashboard']">Dashbord</a>
+          </li>
+          <!-- <li  class="nav-item">
+            <a class="nav-link active ml-5" aria-current="page" [routerLink]="['/landing']">Home</a>
+          </li> -->
+          <!-- </li> -->
+          <li *ngIf="isLoggedIn && loggedUserRole==='MENTEE'" class="nav-item">
+            <a class="nav-link active ml-5" aria-current="page" [routerLink]="['/mentee/search']">Search</a>
           </li>
 
-            <!-- </li> -->
-            <li *ngIf="isLoggedIn && loggedUserRole==='MENTEE' " class="nav-item">
-              <a class="nav-link active ml-5" aria-current="page" [routerLink]="['/mentee/search']">Search</a>
-            </li>
+
+      
+
         </ul>
 
       </ul>
@@ -34,63 +39,51 @@
 
         <ul class="navbar-nav  justify-content-between">
           <li *ngIf="!isLoggedIn" class="nav-item d-none d-lg-block ">
-           <a [routerLink]="['/register']"class="btn btn-neutral register ">
-             <span class="nav-link-inner--text">Create account</span>
-           </a>
-         </li>
-         <li *ngIf="!isLoggedIn" class="nav-item d-none d-lg-block mx-2">
-           <a [routerLink]="['/login']"  class="btn login ">
-             <span class="nav-link-inner--text">Login</span>
-           </a>
-         </li>
-       </ul>
-
-
-       <ul *ngIf="isLoggedIn" class="navbar-nav align-items-lg-center justify-content-between">
-        <li class="nav-link nav-link-icon dropdown bi bi-bell" style="color: #1FAB89;" data-toggle="dropdown"
-        role="button">
-          <a
-            class=" "
-            data-toggle="dropdown"
-            role="button"
-          >
-          <i class="bi bi-bell" style="color: #1FAB89;"></i>
-          </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div>
-        </li>
-        <li>
-          <div class="d-flex align-items-lg-center justify-content-end">
-            <a
-              [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/profile-mentor':'/mentee/profile-mentee']"
-              class="nav-link nav-item"
-              role="button"
-            >
-              <img
-                class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                src="{{ getImageUrl.length>10?back_end_url+''+getImageUrl:'./assets/img/theme/team-1-800x800.jpg' }}"
-                style="width: 50px"
-                alt=""
-              />
+            <a [routerLink]="['/register']" class="btn btn-neutral register ">
+              <span class="nav-link-inner--text">Create account</span>
             </a>
-            <div class="dropdown">
-              <a class=" dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #1FAB89;">
+          </li>
+          <li *ngIf="!isLoggedIn" class="nav-item d-none d-lg-block mx-2">
+            <a [routerLink]="['/login']" class="btn login ">
+              <span class="nav-link-inner--text">Login</span>
+            </a>
+          </li>
+        </ul>
+
+
+        <ul *ngIf="isLoggedIn" class="navbar-nav align-items-lg-center justify-content-between">
+         
+          <li>
+            <div class="d-flex align-items-lg-center justify-content-end">
+              <a [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/profile-mentor':'/mentee/profile-mentee']" class="nav-link nav-item" role="button">
+                <img *ngIf="isLoggedIn" class="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                  src="{{ getImageUrl?.length>10?back_end_url+''+getImageUrl:'./assets/img/theme/team-1-800x800.jpg' }}"
+                  style="width: 50px" alt="" />
+
               </a>
+              <div class="dropdown">
+                <a class="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                  style="color: #1FAB89;">
+                  <mat-icon>menu</mat-icon></a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><hr class="dropdown-divider"></li>
-                <li><a [routerLink]="['/login']" (click)="logout()" class="dropdown-item" >Logout</a></li>
-              </ul>
+
+                 
+                      <li><a [routerLink]="['/payment']"
+                          class="dropdown-item">Payment</a></li>
+               
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a [routerLink]="['/login']" (click)="logout()" class="dropdown-item">Logout</a></li>
+                </ul>
 
 
-          </div>
 
-          </div>
-        </li>
-      </ul>
+              </div>
+
+            </div>
+          </li>
+        </ul>
       </div>
 
 
