@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ViewMentorComponent } from "./components/view-mentor/view-mentor.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
+import { RateAfterCallComponent } from './rate-after-call/rate-after-call.component';
 const routes: Routes = [
   {
     path: "mentee",
@@ -27,7 +28,8 @@ const routes: Routes = [
       { path: "search", component: SearchMentorsComponent},
       { path: "date-pick/:id", component: RequestSessionComponent},
       { path: "view-mentor/:id", component: ViewMentorComponent },
-      { path: "view-service/:id", component: ViewServiceComponent }
+      { path: "view-service/:id", component: ViewServiceComponent },
+      { path: "app-rate-after-call", component: RateAfterCallComponent },
     ],
   },
 ];
@@ -35,6 +37,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
+    RateAfterCallComponent,
     // SearchMentorsComponent,
     // ViewMentorComponent
     // PaginationComponent
