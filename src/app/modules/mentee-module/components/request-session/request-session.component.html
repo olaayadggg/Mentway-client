@@ -6,54 +6,28 @@
         <img src="./assets/img/ill/Scheduling.svg" />
       </div>
       <div class="col-lg-6 mt-5 ">
-        <form action="">
+        <!-- <form action=""> -->
         <div class="card mt-2">
-            <!-- <mat-form-field>
-              <mat-label>Pick a date</mat-label>
-              <input matInput [matDatepicker]="picker"
-                     (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
-              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
 
-            <div class="w-100">
-              <div class="form">
-                <label for="">Choose time</label>
-                <input type="time" class="form-control" cols="30"  value="10:05 AM" />
-                <div class="mt-2">
-                  <textarea name="comment" placeholder="Write a comment" cols="30" rows="10"></textarea>
-                </div>
+
+          <!-- *************** Error ya sar7aannnn  line 44 ********** -->
+          <form [formGroup]="Form" (submit)="submit($event)">
+            <div>
+              <label for="DateTime">Enter a date and time for your session booking:</label>
+              <input class="form-control" id="DateTime" type="datetime-local" formControlName="startDate"
+                value="2017-06-01T08:30" />
+              <div class="mt-2">
+                <textarea class="form-control" formControlName="applicationDetails" placeholder="Write a comment" cols="30"
+                  rows="10"></textarea>
               </div>
-            </div> -->
-            <!-- <ejs-datetimepicker></ejs-datetimepicker> -->
+              <!-- </form> -->
 
-            <!-- <mat-form-field>
-              <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [formControl]="dateControl"
-                 [min]="minDate" [max]="maxDate" [disabled]="disabled">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners" [showSeconds]="showSeconds"
-                 [stepHour]="stepHour" [stepMinute]="stepMinute" [stepSecond]="stepSecond"
-                 [touchUi]="touchUi" [color]="color" [enableMeridian]="enableMeridian"
-                 [disableMinute]="disableMinute" [hideTime]="hideTime">
-              </ngx-mat-datetime-picker>
-           </mat-form-field>
-           <ngx-mat-timepicker [formControl]="formControl"></ngx-mat-timepicker> -->
-
-
-           <!-- *************** Error ya sar7aannnn  line 44 ********** -->
-           <!-- <form [formGroup]="Form" (submit)="submit($event)"> -->
-             <label for="DateTime">Enter a date and time for your session booking:</label>
-            <input class="form-control" id="DateTime" type="datetime-local" formControlName="DateTime" value="2017-06-01T08:30" />
-            <div class="mt-2">
-              <textarea class="form-control" formControlName="comment" placeholder="Write a comment" cols="30" rows="10"></textarea>
+              <button class="btn mt-5" type="submit">
+                Process to Pay
+              </button>
             </div>
-           <!-- </form> -->
-
-          <button class="btn mt-5" type="submit" >
-            Process to Pay
-          </button>
+          </form>
         </div>
-      </form>
       </div>
     </div>
   </section>

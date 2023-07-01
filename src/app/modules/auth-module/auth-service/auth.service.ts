@@ -54,6 +54,10 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/login`, credentials);
   }
 
+  hasPayment(){
+    const user = this.getloggedUser()
+    return user?.hasPayment || true; // need to be set as false after endpoint 
+  }
   register(registerData: any) {
     return this.http.post(`${this.baseUrl}/register`, registerData);
   }
