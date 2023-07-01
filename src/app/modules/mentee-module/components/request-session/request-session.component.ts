@@ -7,7 +7,6 @@ import { MenteeService } from '../../mentee-service/mentee.service';
 import { BusinessServiceService } from 'src/app/shared/services/business-service.service';
 import { NgFor } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import {DateTimePickerModule} from "@syncfusion/ej2-angular-calendars";
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
@@ -17,7 +16,13 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 @Component({
   selector: 'app-request-session',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, NgFor, FormsModule, ReactiveFormsModule],
+  imports: [MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgFor,
+    FormsModule,
+    ReactiveFormsModule],
   templateUrl: './request-session.component.html',
   styleUrls: ['./request-session.component.css']
 })
@@ -25,6 +30,7 @@ export class RequestSessionComponent implements OnInit {
   serviceId: any
   events: string[] = [];
   Form!: FormGroup;
+
 
   constructor(private menteeService: MenteeService,
     private businessService: BusinessServiceService,
@@ -56,29 +62,29 @@ export class RequestSessionComponent implements OnInit {
     if (this.Form.status == 'VALID') {
       console.log(this.Form.value)
       //  navigate to confirm request
-      this.router.navigateByUrl('/abc', {
+      this.router.navigateByUrl('/mentee/confirmRequest', {
         state: {
           'serviceId': this.serviceId,
           'startDate': this.DateTime.value,
           'applicationDetails': this.Comment.value,
         }
-});
+      });
 
-    // }
+      // }
 
-    // this.businessService.applyForService(this.serviceId, {
-    //   'startDate': this.DateTime.value,
-    //   'applicationDetails': this.Comment.value,
-    // }).subscribe({
-    //   next: (res) => {
-    //     console.log(res)
-    //     this.router.navigate(['/mentee/confirm'])
-    //   }
-    // })
-  } else {
-  console.log(this.Form.errors)
-  this.Form.markAllAsTouched();
-}
+      // this.businessService.applyForService(this.serviceId, {
+      //   'startDate': this.DateTime.value,
+      //   'applicationDetails': this.Comment.value,
+      // }).subscribe({
+      //   next: (res) => {
+      //     console.log(res)
+      //     this.router.navigate(['/mentee/confirm'])
+      //   }
+      // })
+    } else {
+      console.log(this.Form.errors)
+      this.Form.markAllAsTouched();
+    }
   }
 
 }

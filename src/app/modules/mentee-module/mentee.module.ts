@@ -16,9 +16,6 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ViewMentorComponent } from "./components/view-mentor/view-mentor.component";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { mentorModule } from "../mentor-module/mentor.module";
-import { DateTimePickerModule } from "@syncfusion/ej2-angular-calendars";
-import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { ConfirmRequestComponent } from './components/confirm-request/confirm-request.component';
 
 
@@ -33,7 +30,7 @@ const routes: Routes = [
       { path: "profile-mentee", component: ProfileMenteeComponent },
       { path: "edit-profile", component: EditProfileComponent },
       { path: "search", component: SearchMentorsComponent},
-      { path: "confirmRequest", component: ConfirmRequestComponent}
+      { path: "confirmRequest", component: ConfirmRequestComponent},
       { path: "date-pick/:id", component: RequestSessionComponent},
       { path: "view-mentor/:id", component: ViewMentorComponent },
       { path: "view-service/:id", component: ViewServiceComponent }
@@ -63,8 +60,7 @@ const routes: Routes = [
     MatNativeDateModule,
     MatIconModule,
     BrowserModule,
-    NgxMatDatetimePickerModule,
-    NgxMatTimepickerModule,
+
 
   ],
 })

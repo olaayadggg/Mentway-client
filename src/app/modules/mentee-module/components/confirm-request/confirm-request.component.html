@@ -12,14 +12,14 @@
               <div class="container">
                 <div class="mentor mb-3">
                   <div class="mt-2">
-                    <label for="Mentor">Mentor</label>
-                    <h6>abdallah</h6>
+                    <label for="Mentor">Service</label>
+                    <h6>{{service?.title |titlecase}}</h6>
                   </div>
-                  <div class="mt-2">
+                  <!-- <div class="mt-2">
                     <label >Payment Method</label>
                     <h6>Debit card</h6>
                     <h6>432 546546 7657657</h6>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="info d-flex justify-content-between">
                   <div class="col-lg-3">
@@ -28,15 +28,15 @@
                     <h6>Total cost</h6>
                   </div>
                   <div class="col-lg-4">
-                  <h6>12/4/2000</h6>
-                  <h6>12:00 pm</h6>
-                  <h6>20 $</h6>
+                  <h6>{{formateDate(MyData?.startDate)}}</h6>
+                  <!-- <h6>12:00 pm</h6> -->
+                  <h6>{{service?.price|currency}}</h6>
                 </div>
                 </div>
               </div>
             </form>
 
-          <button class="btn mt-5 mb-5" type="submit" >
+          <button class="btn mt-5 mb-5" type="submit" (click)="submit()">
             Confirm
           </button>
         </div>

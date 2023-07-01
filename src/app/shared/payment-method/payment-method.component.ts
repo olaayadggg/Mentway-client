@@ -10,20 +10,20 @@ import { PaymentService } from '../services/payment.service';
 })
 export class PaymentMethodComponent implements OnInit {
   form: FormGroup = new FormGroup({});
-  errors:[]=[];
-  clientSectert:any;
+  errors: [] = [];
+  clientSectert: any;
   paymentHandler: any = null;
-  stripeElemnts:any
-  constructor(private paymentService:PaymentService) { }
+  stripeElemnts: any
+  constructor(private paymentService: PaymentService) { }
 
   ngOnInit(): void {
 
     this.paymentService.createPayment().subscribe({
-      next:(res:any)=>{
+      next: (res: any) => {
         this.clientSectert = res?.clientSecret;
         console.log(res?.clientSecret)
         this.testStripe(res?.clientSecret)
-      },error:(err)=>{
+      }, error: (err) => {
         console.log(err)
       }
 
@@ -35,7 +35,7 @@ export class PaymentMethodComponent implements OnInit {
 
 
     // this.invokeStripe();
-// this.v.getAllCategories().subscribe({next:(res)=>{console.log(res)}})
+    // this.v.getAllCategories().subscribe({next:(res)=>{console.log(res)}})
     // this.form = new FormGroup({
     //   cardHolder: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]{5,50}$/)]),
     //   // cardNumber: new FormControl('', [Validators.required, Validators.pattern(/^4[0-9]{12}(?:[0-9]{3})?$/)]),
@@ -45,7 +45,7 @@ export class PaymentMethodComponent implements OnInit {
     // });
   }
 
-  testStripe(secret:any) {
+  testStripe(secret: any) {
     const options = {
       clientSecret: `${secret}`,
       // Fully customizable with appearance API.
@@ -53,7 +53,7 @@ export class PaymentMethodComponent implements OnInit {
 
     };
 
-     this.stripeElemnts = this.paymentService.stripe.elements(options);
+    this.stripeElemnts = this.paymentService.stripe.elements(options);
 
     // Create and mount the Payment Element
     const paymentElement = this.stripeElemnts.create('payment');
@@ -65,29 +65,31 @@ export class PaymentMethodComponent implements OnInit {
 
 
 
-  async submit(event:any){
+  async submit(event: any) {
     event.preventDefault();
 
-    const { error } = await this.paymentService.stripe.confirmPayment({
-      elements:this.stripeElemnts,
+    const obj = await this.paymentService.stripe.confirmPayment({
+      elements: this.stripeElemnts,
       confirmParams: {
         return_url: "http://localhost:4200/payment/status",
       },
     });
-
-    if (error) {
-      console.log(error)
+    localStorage.setItem("abc", JSON.stringify(obj))
+    console.log('data:--', obj)
+    if (obj?.error) {
+      console.log(obj?.error)
       // This point will only be reached if there is an immediate error when
       // confirming the payment. Show error to your customer (for example, payment
       // details incomplete)
       // const messageContainer = document.querySelector('#error-message');
       // messageContainer.textContent = error.message;
     } else {
+      localStorage.setItem("abc", JSON.stringify(obj))
       // Your customer will be redirected to your `return_url`. For some payment
       // methods like iDEAL, your customer will be redirected to an intermediate
       // site first to authorize the payment, then redirected to the `return_url`.
     }
 
   }
-  
+
 }

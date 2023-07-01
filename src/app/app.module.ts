@@ -40,7 +40,6 @@ import { DialogComponent } from './shared/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { PaymentStatusComponent } from './shared/payment-status/payment-status.component';
-import { AbcComponent } from './shared/abc/abc.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +64,6 @@ import { AbcComponent } from './shared/abc/abc.component';
     PaginationComponent,
     SearchMentorsComponent,
     PaymentStatusComponent,
-    AbcComponent,
     // DialogComponent,
 
 

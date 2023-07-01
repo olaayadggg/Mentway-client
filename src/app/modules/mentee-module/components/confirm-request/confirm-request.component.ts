@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
-import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 import { SessionService } from 'src/app/modules/session-module/service/session.service';
+import { BusinessServiceService } from 'src/app/shared/services/business-service.service';
+
 @Component({
   selector: 'app-confirm-request',
   templateUrl: './confirm-request.component.html',
@@ -11,39 +11,45 @@ import { SessionService } from 'src/app/modules/session-module/service/session.s
 export class ConfirmRequestComponent {
   id: number = 0;
   MyData: any | null = null;
-  backend_url='';
+  service: any
 
   constructor(
-    private active: ActivatedRoute,
-    private authService:AuthService,
-    private sessionService:SessionService
+    private router: Router,
+    private bService: BusinessServiceService,
+    private sessionService: SessionService
 
   ) {
-    this.id = this.authService.getloggedUserId();
-    this.backend_url=environment.API_URL
-  }
-  rows: any[] = []
-  totalItems = 0;
-  itemsPerPage = 0;
-  currentPage = 1;
+    this.MyData = this.router.getCurrentNavigation()?.extras.state
+    if (this.MyData) {
+      this.bService.getServicebyId(this.MyData?.serviceId).subscribe({
+        next:(res:any)=>{
+          this.service=res
+        }
 
-  getMenteeSessions(page = 0) {
-    return this.sessionService.getMenteeSessions(page, 1, this.id).subscribe({
-      next: (res: any) => {
-        console.log(res)
-        this.totalItems = res?.totalElements
-        this.itemsPerPage = res?.size
-        this.currentPage = res?.number
-        this.rows = res?.content
-      },
-      error: (err) => {
-        console.log(err)
-      }
-    })
+      })
+    }
+    console.log("router------------", this.router.getCurrentNavigation()?.extras.state);
+
+
+  }
+  formateDate(dateString: any) {
+    const date = new Date(dateString);
+
+    return date.toLocaleString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric',
+      hour: 'numeric', minute: 'numeric', second: 'numeric',
+      hour12: true, timeZone: 'Africa/Cairo'
+    });
   }
 
-  ngOnInit(): void {
-    this.getMenteeSessions(0)
-    ;
-  }
+
+submit(){
+  this.bService.applyForService(this.MyData?.serviceId,{
+    'startDate': this.MyData?.startDate,
+    'applicationDetails': this.MyData?.applicationDetails,
+  }).subscribe({next:(res:any)=>{
+    console.log(res)
+  }})
+}
+
 }

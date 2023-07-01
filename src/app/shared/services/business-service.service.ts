@@ -41,4 +41,7 @@ export class BusinessServiceService {
       .set('size', size.toString());
     return this.http.get(`${this.baseUrl}/services/review/mentors/${mentorId}`, { params })
   }
+  getServicebyId(id:any){
+  return this.http.get(`${this.baseUrl}/services/${id}`,)
+  }
 }
