@@ -1,4 +1,4 @@
-.container{
+.main{
 text-align: center;
 border: 1.18786px solid #EDFFF6;
 box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08);
@@ -19,16 +19,12 @@ img{
   border: 1.18786px solid #EDFFF6;
   box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08);
   border-radius: 19.0058px;
-  height: 80%;
+  height: fit-content;
   width: 70%;
 
 }
 
 .col-lg-6{
-  text-align: center;
-   border: 1.18786px solid #EDFFF6;
-   box-shadow: 0px 4.75145px 33.2601px rgba(119, 113, 113, 0.08);
-   border-radius: 19.0058px;
   align-items: center;
   position: relative;
 }

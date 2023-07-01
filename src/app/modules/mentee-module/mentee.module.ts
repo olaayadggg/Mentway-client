@@ -23,6 +23,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { mentorModule } from "../mentor-module/mentor.module";
 import { DateTimePickerModule } from "@syncfusion/ej2-angular-calendars";
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { ConfirmRequestComponent } from './components/confirm-request/confirm-request.component';
 
 const routes: Routes = [
   {
@@ -34,7 +35,8 @@ const routes: Routes = [
       { path: "edit-profile", component: EditProfileComponent },
       { path: "search", component: SearchMentorsComponent},
       { path: "date-pick", component: RequestSessionComponent},
-      { path: "view-mentor/:id", component: ViewMentorComponent}
+      { path: "view-mentor/:id", component: ViewMentorComponent},
+      { path: "confirmRequest", component: ConfirmRequestComponent}
     ],
   },
 ];
@@ -42,6 +44,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
+    ConfirmRequestComponent,
     // SearchMentorsComponent,
     // ViewMentorComponent
     // PaginationComponent
@@ -63,9 +66,6 @@ const routes: Routes = [
     BrowserModule,
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
-  
-
-
   ],
 })
 export class menteeModule {}

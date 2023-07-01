@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-main navbar-expand-lg navbar-transparent headroom headroom--top headroom--pinned ">
+<nav class="navbar navbar-expand-lg navbar-main navbar-expand-lg navbar-transparent shadow-sm headroom headroom--top headroom--pinned ">
   <div class="container">
     <a class="navbar-brand" [routerLink]="['/landing']">
       <img src="./assets/img/brand/newlogo.svg" alt="" srcset="">
@@ -21,10 +21,7 @@
           <li *ngIf="isLoggedIn" class="nav-item">
             <a class="nav-link active ml-5" aria-current="page" [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/dashboard':'/mentee/dashboard']">Dashbord</a>
           </li>
-            <li *ngIf="!isLoggedIn" class="nav-item">
-              <a class="nav-link active ml-5" aria-current="page"
-                [routerLink]="['/landing']">Home</a>
-            </li>
+
             <!-- </li> -->
             <li *ngIf="isLoggedIn && loggedUserRole==='MENTEE' " class="nav-item">
               <a class="nav-link active ml-5" aria-current="page" [routerLink]="['/mentee/search']">Search</a>
@@ -69,7 +66,7 @@
         <li>
           <div class="d-flex align-items-lg-center justify-content-end">
             <a
-              [routerLink]="['./mentee/profile-mentee']"
+              [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/profile-mentor':'/mentee/profile-mentee']"
               class="nav-link nav-item"
               role="button"
             >
@@ -84,9 +81,6 @@
               <a class=" dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #1FAB89;">
               </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a [routerLink]="[loggedUserRole=='MENTOR'?'/mentor/dashboard':'/mentee/dashboard']" class="dropdown-item">Dashboard</a></li>
-                <li><a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a></li>
-                <li><a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a [routerLink]="['/login']" (click)="logout()" class="dropdown-item" >Logout</a></li>
               </ul>

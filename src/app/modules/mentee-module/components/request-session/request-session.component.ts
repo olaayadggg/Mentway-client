@@ -8,13 +8,9 @@ import { MenteeService } from '../../mentee-service/mentee.service';
 import { BusinessServiceService } from 'src/app/shared/services/business-service.service';
 import { NgFor } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { enableRipple } from '@syncfusion/ej2-base';
-import { DateTimePicker } from '@syncfusion/ej2-angular-calendars';
 import {DateTimePickerModule} from "@syncfusion/ej2-angular-calendars";
-import { NgxMatDatetimePicker } from '@angular-material-components/datetime-picker';
 
-enableRipple(false);
-import { TimePicker } from '@syncfusion/ej2-calendars';
+// enableRipple(false);
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
@@ -55,24 +51,24 @@ export class RequestSessionComponent implements OnInit {
 
   ///////////////// error @sar7an //////////////////
 
-  // submit(e: Event) {
-  //   e.preventDefault();
-  //   if (this.Form.status == 'VALID') {
-  //     console.log(this.Form.value)
-  //     this.businessService.applyForService({
-  //       startDate: this.getDateTime.value,
-  //       applicationDetails: this.getComment.value,
-  //     }).subscribe({
-  //       next: (res) => {
-  //         console.log(res)
-  //         this.router.navigate(['/mentee/confirm'])
-  //       }
-  //     })
-  //   } else {
-  //     console.log(this.Form.errors)
-  //     this.Form.markAllAsTouched();
-  //   }
-  // }
+  submit(e: Event) {
+    e.preventDefault();
+    if (this.Form.status == 'VALID') {
+       console.log(this.Form.value)
+    //   this.businessService.applyForService({
+    //     startDate: this.getDateTime.value,
+    //     applicationDetails: this.getComment.value,
+    //   }).subscribe({
+    //     next: (res) => {
+    //       console.log(res)
+    //       this.router.navigate(['/mentee/confirmRequest'])
+    //     }
+    //   })
+    // } else {
+      console.log(this.Form.errors)
+      this.Form.markAllAsTouched();
+    }
+  }
 }
 
 
