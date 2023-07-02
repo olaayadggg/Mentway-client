@@ -36,9 +36,9 @@ export class SignupComponent {
       ]),
       password: new FormControl('', [
         Validators.required,
-        // Validators.pattern(
-        //   "^S*(?=S{8,})(?=S*[a-z])(?=S*[A-Z])(?=S*[d])(?=S*[W])S*$"
-        // ),
+        Validators.pattern(
+          '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$'
+        ),
       ]),
       password2: new FormControl('', [Validators.required]),
     });

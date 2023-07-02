@@ -75,12 +75,11 @@
                       >
                         Password is at least 8 characters
                       </div>
-
                       <div
                         *ngIf="this.getPassword.hasError('pattern')"
                         class="invalid-feedback d-block"
                       >
-                        Password must contain uppercase lowercase and special character
+                        Invalid Password
                       </div>
 
                       <div *ngIf="this.errors?.password" class="invalid-feedback d-block">
