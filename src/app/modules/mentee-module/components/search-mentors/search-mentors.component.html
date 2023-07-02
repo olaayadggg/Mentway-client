@@ -1,12 +1,15 @@
 <div class="w-100 d-flex flex-column  justify-content-center" style="background-color: #f8f8f8">
   <div class="w-100 mt-3 mb-3 d-flex justify-content-center">
-    <form [formGroup]="myform" (submit)="submit($event)" class="w-75 d-flex justify-content-evenly">
-      <input formControlName="value" [placeholder]="placeholder" class="form-control w-75" type="text" required>
-      <button class="btn" style="color: white; background-color: #1fab89"> Search</button>
+    <form [formGroup]="myform" (submit)="submit($event)" class="w-75 d-flex justify-content-center ">
+      <input formControlName="value" [placeholder]="placeholder" class="form-control w-50 m-2 rounded-pill" type="text"
+        required>
+      <button class="btn m-2 rounded-pill" style="color: white; background-color: #1fab89"> Search</button>
     </form>
   </div>
-  <div class="w-100 row justify-content-between" style="background-color: #f8f8f8">
-    <div class="rounded col-2 ms-4 p-3 h-50" style="background-color: #ffffff">
+  <!-- <div class="container"> -->
+
+  <div class="row col-lg-12 justify-content-around " style="background-color: #f8f8f8">
+    <div class="rounded col-lg-2 ms-5 me-5  h-100" style="background-color: #ffffff">
       <h4 style="color: #1fab89">Filters</h4>
 
       <select class="form-select mt-3 p-2 w-100 rounded" [(ngModel)]="categoryID" style="background-color: #f8f8f8"
@@ -14,22 +17,17 @@
         <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
 
       </select>
-      <select class="form-select mt-3 p-2 w-100 rounded" style="background-color: #f8f8f8"
-        aria-label="Default select example">
-        <option selected>Rating</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <button class="btn w-100 mt-3 rounded-pill" style="background: #1fab89; color: #ffffff">
+
+      <button (click)="filter()" class="btn w-100 mt-3 rounded-pill" style="background: #1fab89; color: #ffffff">
+
         Apply Filters
       </button>
     </div>
-    <div class="col-md-10 row">
-
-      <div *ngFor="let mentor of mentors" class="col-4 row rounded justify-content-between"
+    <div class="col-lg-9 row ">
+      <div *ngIf="!(mentors.length>0)&& (itemsPerPage>0)" class="w-100">
+        <p class="text-center fs-3">No Search Result for '{{getSearchValue.value}}'</p>
+      </div>
+      <div *ngFor="let mentor of mentors" class="col-lg-4 row rounded justify-content-around "
         style="background-color: #f8f8f8">
         <div class="card col-sm-6 col-md-4 col-lg-3 p-1 mb-4" style="
         width: 17rem;
@@ -49,24 +47,23 @@
             </div>
             <p class="card-text">{{mentor?.categoryName||"JS Developer"}}</p>
             <div class="text-center">
-              <a routerLink='/mentee/view-mentor/{{mentor?.id}}' class="btn w-100 rounded-pill" style="color: white; background-color: #1fab89">More
+              <a routerLink='/mentee/view-mentor/{{mentor?.id}}' class="btn w-100 rounded-pill"
+                style="color: white; background-color: #1fab89">More
                 Details</a>
             </div>
           </div>
         </div>
-         <div *ngIf="totalItems>itemsPerPage" class="pagination">
+        <div *ngIf="totalItems>itemsPerPage" class="pagination">
           <app-pagination [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage"
             (pageChanged)="onPageChanged($event)"></app-pagination>
-        </div> 
+        </div>
 
 
       </div>
     </div>
   </div>
+
+
 </div>
-
-
-
-
 
 

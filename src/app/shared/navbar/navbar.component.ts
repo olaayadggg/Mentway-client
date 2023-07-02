@@ -24,26 +24,27 @@ export class NavbarComponent implements OnInit, OnChanges {
     this.isLoggedIn = this.authService.CheckIsLoggedIn();
   }
   ngOnChanges(changes: SimpleChanges): void {
-   
+    
   }
-
-
+  
+  
   ngOnInit() {
+    this.isLoggedIn = this.authService.CheckIsLoggedIn();
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // this.loggedUser = this.authService.getloggedUser();
+        this.loggedUserRole = this.authService.getloggedUserRole();
         this.isLoggedIn = this.authService.CheckIsLoggedIn();
-        console.log("nav------------------------")
+        // console.log("nav------------------------")
         // re-render the navbar component
         // add your code here to update the navbar component
       }
     });
-    this.isLoggedIn = this.authService.CheckIsLoggedIn();
     this.path=this.location.path()
   }
 
   get getImageUrl() {
-    return this.loggedUser.imgUrl
+    return this.loggedUser.imgUrl.length > 20? this.loggedUser.imgUrl: this.loggedUser
   }
 
   logout() {

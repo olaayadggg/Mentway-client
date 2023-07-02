@@ -20,14 +20,13 @@
                 <div>{{ row.price |currency }}</div>
             </td>
             <td>
-                <button [routerLink]="['/user/jim']"
+                <button routerLink='/mentee/view-service/{{row.id}}'
                     style="border: none; background-color: #EDFFF6; border-radius: 8px;">
                     <div class="join-session">
                         <!--  add router link -->
-                        <span *ngIf="path==='/mentor/dashboard'" class="view-text">
+                        <span  class="view-text">
                             <mat-icon style="color: #1FAB89;"class="pt-1">link</mat-icon> View Service</span>
-                        <span *ngIf="path!=='/mentor/dashboard'" class="view-text">
-                            <mat-icon style="color: #1FAB89;" class="pt-1">link</mat-icon>Request Service</span>
+                        
                     </div>
                 </button>
             </td>

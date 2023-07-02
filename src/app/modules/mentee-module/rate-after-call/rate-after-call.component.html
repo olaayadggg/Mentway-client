@@ -1,0 +1,24 @@
+<div class="rateaftercall">
+  <div class="dQO5xd AkYcJb">
+    <div class="eZYnye iqsfZc">How was the Session?</div>
+    <div class="user-info">
+      <img [src]="row['profile-pic']" alt="User Image" class="user-image">
+    </div>
+    <div class="rating-container">
+      <mat-icon
+        class="star-icon"
+        *ngFor="let star of stars; let i = index"
+        [class.highlighted]="i < highlightedStars || rating >= star"
+        (click)="setRating(star)"
+        (mouseover)="highlightStars(i + 1)"
+        (mouseout)="resetStars()"
+      >
+        star
+      </mat-icon>
+    </div>
+    <div class="QnE5Md f2prfd">
+      <span class="qBrLkf">Very bad</span>
+      <span class="yZ71kd">Very good</span>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,51 @@
-<div class=" d-flex justify-content-evenly m-5" style="width: 40%;">
-    <div class="w-50 m-2 d-flex flex-column justify-content-center">
-        <div class="profile-info w-100">
-            <h2 class="fs-3 text-center text-capitalize">{{mentor?.name || 'Mohamed Salah'}}</h2>
-            <p class="text-center">{{mentor.categoryId ||'DevOps Designer'}}</p>
-            <!-- <p class="country">Egypt</p> -->
-        </div>
-        <div  class="w-100">
-            <img src="./assets/img/theme/team-4-800x800.jpg" alt="Profile Image"
-                class=" w-100 rounded-circle profile-picture" />
-        </div>
+<section>
+    <div class="container main">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="container">
+                    <div class="container first shadow my-3 p-4">
+                        <div class="row ifno">
+                            <div class="col-lg-8 d-flex">
+                                <div class="img">
+                                    <img src=" https://images.pexels.com/photos/17168343/pexels-photo-17168343/free-photo-of-hot-air-balloon-flying-over-man-riding-on-horse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                        alt="" class="img-fluid rounded-circle" />
+                                </div>
+                                <div class="nameRate">
+                                    <div class="name">{{mentor?.name||'Ahemd Nagy'}}</div>
+                                    <div class="title mt-3">{{(mentor?.categoryName )||'Ux / UI Designer' |titlecase}}
+                                    </div>
+                                    <div class="rate mt-1">
+                                        <mat-icon>star_border</mat-icon>
+                                        <mat-icon>star_border</mat-icon>
+                                        <mat-icon>star_border</mat-icon>
+                                        <mat-icon>star_border</mat-icon>
+                                        <mat-icon>star_border</mat-icon>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="myp mt-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quisquam esse
+                                voluptatum repudiandae
+                                quaerat vitae natus laboriosam culpa! Corrupti corporis rerum eveniet necessitatibus
+                                sunt possimus illo
+                                qui provident minima nisi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container second shadow my-3">
+                    </div>
+                </div>
+            </div>
 
+        </div>
     </div>
-    <div class="w-50 m-2" style="width: 50%;">
+</section>
+<section class="w-100 d-flex justify-content-center">
+
+    <!-- <div class=""> -->
+
+    <div class="w-100 m-2 d-flex justify-content-center m-5" style="width: 100%;">
         <app-list-services [id]="id"></app-list-services>
     </div>
-
-</div>
+    <!-- </div> -->
+</section>
