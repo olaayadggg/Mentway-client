@@ -36,6 +36,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ListServicesComponent } from './shared/list-services/list-services.component';
 import { ViewMentorComponent } from './modules/mentee-module/components/view-mentor/view-mentor.component';
 import { SearchMentorsComponent } from './modules/mentee-module/components/search-mentors/search-mentors.component';
+import { NotificationsComponent } from './shared/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { SearchMentorsComponent } from './modules/mentee-module/components/searc
     ViewMentorComponent,
     PaginationComponent,
     SearchMentorsComponent,
+    NotificationsComponent,
 
 
 
