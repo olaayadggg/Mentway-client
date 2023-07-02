@@ -15,7 +15,7 @@ export class SessionService {
       .set('page', page.toString())
       .set('size', size.toString());
 
-    return this.http.get(`${this.baseUrl}/services/upcoming/mentees/${id}`, { params: params })
+    return this.http.get(`${this.baseUrl}/services/upcoming/mentee`, { params: params })
 
   }
   getMentorSessions(page = 0, size = 5, id: number) {
@@ -24,7 +24,7 @@ export class SessionService {
       .set('size', size.toString());
     // let headers = new HttpHeaders().set('Access-Control-Allow-Origin', '*').set('Origin', 'http://localhost:4200')
 
-    return this.http.get(`${this.baseUrl}/services/upcoming/mentors/${id}`, { params: params })
+    return this.http.get(`${this.baseUrl}/services/upcoming/mentor`, { params: params })
 
   }
   createClient(): any {

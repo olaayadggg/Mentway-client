@@ -54,6 +54,10 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/login`, credentials);
   }
 
+  hasPayment(){
+    const user = this.getloggedUser()
+    return user?.hasValidPaymentMethod || false; 
+  }
   register(registerData: any) {
     return this.http.post(`${this.baseUrl}/register`, registerData);
   }
