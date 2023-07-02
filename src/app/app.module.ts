@@ -36,10 +36,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ListServicesComponent } from './shared/list-services/list-services.component';
 import { ViewMentorComponent } from './modules/mentee-module/components/view-mentor/view-mentor.component';
 import { SearchMentorsComponent } from './modules/mentee-module/components/search-mentors/search-mentors.component';
+import { NotificationsComponent } from './shared/notifications/notifications.component';
+
 import { DialogComponent } from './shared/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { PaymentStatusComponent } from './shared/payment-status/payment-status.component';
+
 
 @NgModule({
   declarations: [
@@ -62,9 +65,12 @@ import { PaymentStatusComponent } from './shared/payment-status/payment-status.c
     ListServicesComponent,
     ViewMentorComponent,
     PaginationComponent,
+    NotificationsComponent,
+
     SearchMentorsComponent,
     PaymentStatusComponent,
     // DialogComponent,
+
 
 
 
@@ -114,6 +120,7 @@ import { PaymentStatusComponent } from './shared/payment-status/payment-status.c
     PaginationComponent,
     ListServicesComponent,
     ViewMentorComponent,
+
     SearchMentorsComponent,
     // DialogComponent,
 

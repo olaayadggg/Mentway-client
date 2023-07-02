@@ -21,6 +21,8 @@ import { ConfirmRequestComponent } from './components/confirm-request/confirm-re
 
 import { ViewServiceComponent } from "src/app/shared/view-service/view-service.component";
 
+import { RateAfterCallComponent } from './rate-after-call/rate-after-call.component';
+
 const routes: Routes = [
   {
     path: "mentee",
@@ -33,7 +35,8 @@ const routes: Routes = [
       { path: "confirmRequest", component: ConfirmRequestComponent},
       { path: "date-pick/:id", component: RequestSessionComponent},
       { path: "view-mentor/:id", component: ViewMentorComponent },
-      { path: "view-service/:id", component: ViewServiceComponent }
+      { path: "view-service/:id", component: ViewServiceComponent },
+      { path: "app-rate-after-call", component: RateAfterCallComponent },
     ],
   },
 ];
@@ -41,10 +44,16 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProfileMenteeComponent,
+
+    RateAfterCallComponent,
+
     ConfirmRequestComponent,
+
     // SearchMentorsComponent,
     // ViewMentorComponent
     // PaginationComponent
+    // SearchMentorsComponent,
+    SearchMentorsComponent,
     // EditProfileComponent,
 
   ],
@@ -61,6 +70,7 @@ const routes: Routes = [
     MatIconModule,
     BrowserModule,
 
+    FormsModule
 
   ],
 })

@@ -20,6 +20,7 @@ export class SearchMentorsComponent implements OnInit {
   itemsPerPage = 0;
   currentPage = 1;
 
+
   constructor(private categoryService: CategoryService, private mentorService: MentorService) { }
 
   ngOnInit(): void {
