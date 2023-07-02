@@ -10,10 +10,10 @@
               </div>
               <div class="text-center">
                 <a href="javascript:void(0)" class="btn btn-neutral btn-icon mr-4">
-                  <span class="btn">Mentor</span>
+                  <span class="btn" (click)="setRole('MENTOR')">Mentor</span>
                 </a>
                 <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
-                  <span class="btn">Mentee</span>
+                  <span class="btn" (click)="setRole('MENTEE')">Mentee</span>
                 </a>
               </div>
             </div>
@@ -21,10 +21,10 @@
               <form role="form" [formGroup]="form" (submit)="submit($event)" enctype="multipart/form-data">
                 <div class="form-group" >
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" formControlName="username" placeholder="User Name" type="text" >
-                    <ng-container *ngIf="this.getUserName.touched">
+                    <input class="form-control" formControlName="name" placeholder="Full Name" type="text" >
+                    <ng-container *ngIf="this.getName.touched">
                       <div
-                        *ngIf="this.getUserName.hasError('required')"
+                        *ngIf="this.getName.hasError('required')"
                         class="invalid-feedback d-block"
                       >
                         User name is Required
@@ -35,39 +35,7 @@
                     </ng-container>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" formControlName="firstName" placeholder="First Name" type="Text" >
-                    <ng-container *ngIf="this.getFirstName.touched">
-                      <div
-                        *ngIf="this.getFirstName.hasError('required')"
-                        class="invalid-feedback d-block"
-                      >
-                        First Name is Required
-                      </div>
-                      <div *ngIf="this.errors?.name" class="invalid-feedback d-block">
-                        {{ this.errors?.firstName[0] }}
-                      </div>
-                    </ng-container>
-                  </div>
-                </div>
 
-                <div class="form-group">
-                  <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" formControlName="lastName" placeholder="Last Name"  >
-                    <ng-container *ngIf="this.getLastName.touched">
-                      <div
-                        *ngIf="this.getLastName.hasError('required')"
-                        class="invalid-feedback d-block"
-                      >
-                        last Name is Required
-                      </div>
-                      <div *ngIf="this.errors?.name" class="invalid-feedback d-block">
-                        {{ this.errors?.lastName[0] }}
-                      </div>
-                    </ng-container>
-                  </div>
-                </div>
 
                 <div class="form-group" >
                   <div class="input-group input-group-alternative mb-3">
