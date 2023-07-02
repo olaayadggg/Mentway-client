@@ -59,7 +59,6 @@ import { NotificationsComponent } from './shared/notifications/notifications.com
     ListServicesComponent,
     ViewMentorComponent,
     PaginationComponent,
-    SearchMentorsComponent,
     NotificationsComponent,
 
 
@@ -106,7 +105,6 @@ import { NotificationsComponent } from './shared/notifications/notifications.com
     PaginationComponent,
     ListServicesComponent,
     ViewMentorComponent,
-    SearchMentorsComponent,
 
   ],
   bootstrap: [AppComponent]
