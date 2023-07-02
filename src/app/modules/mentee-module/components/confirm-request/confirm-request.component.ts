@@ -28,7 +28,7 @@ export class ConfirmRequestComponent {
 
       })
     }
-    console.log("router------------", this.router.getCurrentNavigation()?.extras.state);
+    // console.log("router------------", this.router.getCurrentNavigation()?.extras.state);
 
 
   }
@@ -49,7 +49,18 @@ submit(){
     'applicationDetails': this.MyData?.applicationDetails,
   }).subscribe({next:(res:any)=>{
     console.log(res)
-  }})
+    
+      alert("success")
+      setTimeout(()=>{
+        this.router.navigate(['/mentee/dashboard'])
+        
+      },3000)
+    
+  },error:(err)=>{
+    console.log(err)
+    alert(err.error.details.date)
+  }
+})
 }
 
 }

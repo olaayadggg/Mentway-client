@@ -28,6 +28,9 @@ export class BusinessServiceService {
     return this.http.post(`${this.baseUrl}/services/apply/${serviceId}`, request)
   }
 
+  acceptRequest(updatedMentor: any) {
+    return this.http.put(`${this.baseUrl}/`, updatedMentor)
+  }
   getServiceByMentorId(mentorId: number, page = 0, size = 5) {
     let params = new HttpParams()
       .set('page', page.toString())

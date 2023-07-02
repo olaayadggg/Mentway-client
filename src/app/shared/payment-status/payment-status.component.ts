@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PaymentService } from '../services/payment.service';
+import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
+
 @Component({
   selector: 'app-payment-status',
   templateUrl: './payment-status.component.html',
@@ -10,9 +12,17 @@ export class PaymentStatusComponent implements OnInit {
   myQueryParam!: string;
   myIntent!: string;
   // myQueryParam
-
-  constructor(private route: ActivatedRoute,
-    private paymentService:PaymentService) { }
+  data: string = '';
+  color: string = '';
+  role: string = '';
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private paymentService: PaymentService,
+    private authService: AuthService,
+  ) {
+    this.role = this.authService.getloggedUserRole()
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -26,8 +36,8 @@ export class PaymentStatusComponent implements OnInit {
 
   // payment_intent	
 
-  test(){
-    this.paymentService.stripe.retrievePaymentIntent(this.myQueryParam).then((myIntent:any) => {
+  test() {
+    this.paymentService.stripe.retrievePaymentIntent(this.myQueryParam).then((myIntent: any) => {
       // const message = document.querySelector('#message')
 
       // Inspect the PaymentIntent `status` to indicate the status of the payment
@@ -37,45 +47,37 @@ export class PaymentStatusComponent implements OnInit {
       // confirmation, while others will first enter a `processing` state.
       //
       // [0]: https://stripe.com/docs/payments/payment-methods#payment-notification
-      console.log("intent: -------------- ",myIntent)
-      if (myIntent?.paymentIntent?.status ==='succeeded'){
+      // console.log("intent: -------------- ",myIntent)
+      if (myIntent?.paymentIntent?.status === 'succeeded') {
         this.paymentService.setValidPayment(myIntent?.paymentIntent?.id).subscribe({
-          next:(res:any)=>{
+          next: (res: any) => {
             console.log(res)
           }
         })
-        console.log("Success! Payment received.")
-        
-      } else if (myIntent?.paymentIntent?.status ==='processing'){
+        this.data = 'Success! Payment received.'
+        this.color = 'success'
+        // console.log("Success! Payment received.")
 
-        console.log("Payment processing.We'll update you when payment is received.")
-      } else if (myIntent?.paymentIntent?.status ==="requires_payment_method"){
-
-        console.log("Payment failed. Please try another payment method.")
+      } else if (myIntent?.paymentIntent?.status === 'processing') {
+        this.data = "Payment processing.We'll update you when payment is received."
+        this.color = 'warning'
+        // console.log("Payment processing.We'll update you when payment is received.")
+      } else if (myIntent?.paymentIntent?.status === "requires_payment_method") {
+        this.data = "Payment failed. Please try another payment method."
+        this.color = 'danger'
+        // console.log("Payment failed. Please try another payment method.")
       }
-      else{
-        console.log("worng")
+      else {
+        this.data = "Something wnent wrong!"
+        this.color = 'danger'
+        // console.log("worng")
       }
-      // switch (myIntent?.status) {
-      //   case "succeeded":
-      //     // message.innerText = 'Success! Payment received.';
-      //     break;
+      this.authService.setValidPayment()
+      setTimeout(() => {
 
-      //   case 'processing':
-      //     // message.innerText = "Payment processing. We'll update you when payment is received.";
-      //     break;
+        this.router.navigate([`/${this.role.toLocaleLowerCase()}/dashboard`])
 
-      //   case 'requires_payment_method':
-      //     // message.innerText = 'Payment failed. Please try another payment method.';
-      //     // Redirect your user back to your payment page to attempt collecting
-      //     // payment again
-      //     break;
-
-      //   default:
-      //     console.log("worng")
-      //     // message.innerText = 'Something went wrong.';
-      //     break;
-      // }
+      }, 3000)
     });
   }
 }

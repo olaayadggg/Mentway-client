@@ -58,6 +58,14 @@ export class AuthService {
     const user = this.getloggedUser()
     return user?.hasValidPaymentMethod || false; 
   }
+  setValidPayment(){
+    const user = this.getloggedUser()
+    if(user){
+      user.hasValidPaymentMethod=true;
+      this.setloggedUser(user)
+    }
+
+  }
   register(registerData: any) {
     return this.http.post(`${this.baseUrl}/register`, registerData);
   }

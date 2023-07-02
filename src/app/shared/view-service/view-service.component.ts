@@ -13,6 +13,7 @@ export class ViewServiceComponent implements OnInit {
   serviceId: any;
   service: any;
   userRole: any = ''
+  validPayment:any
   constructor(
     private authService: AuthService,
     private activatedRoute: ActivatedRoute,
@@ -21,6 +22,7 @@ export class ViewServiceComponent implements OnInit {
   ) {
     this.userRole = this.authService.getloggedUserRole()
     this.serviceId = Number(this.activatedRoute.snapshot.paramMap.get('id'))!;
+    this.validPayment=this.authService.hasPayment()
   }
   ngOnInit(): void {
     this.bService.getServicebyId(this.serviceId).subscribe({
@@ -29,5 +31,14 @@ export class ViewServiceComponent implements OnInit {
         this.service = res
       }
     })
+  }
+  requsetOrAddPayment(){
+if(this.validPayment){
+  this.router.navigate([`/mentee/date-pick/${this.serviceId}`])
+}else{
+  
+  this.router.navigate([`/payment`])
+}
+    // routerLink = "/mentee/date-pick/{{serviceId}}"
   }
 }

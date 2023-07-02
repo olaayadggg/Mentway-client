@@ -44,7 +44,7 @@ export class NavbarComponent implements OnInit, OnChanges {
   }
 
   get getImageUrl() {
-    return this.loggedUser.imgUrl.length > 20? this.loggedUser.imgUrl: this.loggedUser
+    return this.loggedUser.imgUrl.length > 20? this.loggedUser.imgUrl: "asda"
   }
 
   logout() {
