@@ -19,14 +19,11 @@
             </div>
             <div class="card-body px-lg-5 py-lg-5">
               <form role="form" [formGroup]="form" (submit)="submit($event)" enctype="multipart/form-data">
-                <div class="form-group" >
+                <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" formControlName="name" placeholder="Full Name" type="text" >
+                    <input class="form-control" formControlName="name" placeholder="Full Name" type="text">
                     <ng-container *ngIf="this.getName.touched">
-                      <div
-                        *ngIf="this.getName.hasError('required')"
-                        class="invalid-feedback d-block"
-                      >
+                      <div *ngIf="this.getName.hasError('required')" class="invalid-feedback d-block">
                         User name is Required
                       </div>
                       <div *ngIf="this.errors?.name" class="invalid-feedback d-block">
@@ -37,20 +34,14 @@
                 </div>
 
 
-                <div class="form-group" >
+                <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" formControlName="email" placeholder="Email" type="email" >
+                    <input class="form-control" formControlName="email" placeholder="Email" type="email">
                     <ng-container *ngIf="this.getEmail.touched">
-                      <div
-                        *ngIf="this.getEmail.hasError('required')"
-                        class="invalid-feedback d-block"
-                      >
+                      <div *ngIf="this.getEmail.hasError('required')" class="invalid-feedback d-block">
                         Email is Required
                       </div>
-                      <div
-                        *ngIf="this.getEmail.hasError('email')"
-                        class="invalid-feedback d-block"
-                      >
+                      <div *ngIf="this.getEmail.hasError('email')" class="invalid-feedback d-block">
                         Email is Invalid
                       </div>
                       <div *ngIf="this.errors?.email" class="invalid-feedback d-block">
@@ -61,24 +52,15 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" formControlName="password" placeholder="Password" type="password" >
+                    <input class="form-control" formControlName="password" placeholder="Password" type="password">
                     <ng-container *ngIf="this.getPassword.touched">
-                      <div
-                        *ngIf="this.getPassword.hasError('required')"
-                        class="invalid-feedback d-block"
-                      >
+                      <div *ngIf="this.getPassword.hasError('required')" class="invalid-feedback d-block">
                         Password is required
                       </div>
-                      <div
-                        *ngIf="this.getPassword.hasError('minlength')"
-                        class="invalid-feedback d-block"
-                      >
+                      <div *ngIf="this.getPassword.hasError('minlength')" class="invalid-feedback d-block">
                         Password is at least 8 characters
                       </div>
-                      <div
-                        *ngIf="this.getPassword.hasError('pattern')"
-                        class="invalid-feedback d-block"
-                      >
+                      <div *ngIf="this.getPassword.hasError('pattern')" class="invalid-feedback d-block">
                         Invalid Password
                       </div>
 
@@ -89,20 +71,16 @@
                   </div>
                 </div>
 
-                <div class="form-group">
+
+                <!-- <div class="form-group">
                   <div class="input-group input-group-alternative mb-3">
-                    <input class="form-control" formControlName="password2" placeholder="Confirm Password" type="password" >
+                    <input class="form-control" formControlName="password2" placeholder="Confirm Password"
+                      type="password">
                     <ng-container *ngIf="this.getPassword2.touched">
-                      <div
-                        *ngIf="this.getPassword2.hasError('required')"
-                        class="invalid-feedback d-block"
-                      >
+                      <div *ngIf="this.getPassword2.hasError('required')" class="invalid-feedback d-block">
                         Password is required
                       </div>
-                      <div
-                        *ngIf="this.getPassword2.value != this.getPassword.value"
-                        class="invalid-feedback d-block"
-                      >
+                      <div *ngIf="this.getPassword2.value != this.getPassword.value" class="invalid-feedback d-block">
                         passwords must match
                       </div>
 
@@ -110,41 +88,32 @@
                     </ng-container>
                   </div>
                 </div>
+ -->
+
+
                 <!-- <div class="text-muted font-italic">
                   <small>password strength:
                     <span class="text-success font-weight-700">strong</span>
                   </small>
                 </div> -->
 
-                <div class="file">
+                <div class="file mb-3">
                   <label for="formFile" class="form-label">Avatar</label>
-                  <input
-                    class="form-control small-input"
-                    type="file"
-                    formControlName="formFile"
-                    (change)="readUrl($event)"
-                    formControlName="image"
-                  />
+                  <input class="form-control small-input" type="file" formControlName="formFile"
+                    (change)="readUrl($event)" formControlName="image" />
                   <ng-container>
-                    <div
-                      *ngIf="this.getImage.hasError('required') && this.getImage.touched"
-                      class="invalid-feedback d-block"
-                    >
+                    <div *ngIf="this.getImage.hasError('required') && this.getImage.touched"
+                      class="invalid-feedback d-block">
                       image is required
                     </div>
-                    <div
-                      *ngIf="this.getImage.hasError('maxSize') && this.getImage.touched"
-                      class="invalid-feedback d-block"
-                    >
+                    <div *ngIf="this.getImage.hasError('maxSize') && this.getImage.touched"
+                      class="invalid-feedback d-block">
                       image size mustn't exceed 2mb
                     </div>
-                    <div
-                      *ngIf="
+                    <div *ngIf="
                         this.getImage.hasError('invalidExtension') &&
                         this.getImage.touched
-                      "
-                      class="invalid-feedback d-block"
-                    >
+                      " class="invalid-feedback d-block">
                       image type is not valid
                     </div>
 
@@ -153,6 +122,28 @@
                     </div>
                   </ng-container>
                 </div>
+
+                <div *ngIf="userRole==='MENTOR'" class="form-group">
+                  <div class="input-group input-group-alternative mb-3">
+                    <textarea class="form-control" formControlName="coverLetter" placeholder="Type your cover letter" type="password"></textarea>
+                    <!-- <ng-container *ngIf="this.getCoverLetter.touched">
+                      <div *ngIf="this.getPassword.hasError('required')" class="invalid-feedback d-block">
+                        cover letter is required
+                      </div>
+                      
+                    </ng-container> -->
+                  </div>
+                </div>
+
+                  <div *ngIf="userRole==='MENTOR'" class="form-group">
+                    <div class="input-group input-group-alternative mb-3">
+                <select class="form-select mt-3 p-2 w-100 rounded"formControlName="categoryId" style="background-color: #f8f8f8"
+                  aria-label="Default select example">
+                  <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+                
+                </select>
+                    </div>
+                  </div>
 
                 <div class="row my-4">
                   <div class="col-12">
@@ -167,7 +158,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn create mt-4" >Create account</button>
+                  <button type="submit" class="btn create mt-4">Create account</button>
                 </div>
               </form>
             </div>

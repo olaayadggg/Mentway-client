@@ -1,12 +1,8 @@
 <div class="container upcoming" style="width: 100%; overflow-x: auto">
   <div class="booking-summary">
-    <h2 class="title">Booking Summary</h2>
+    <h2 class="title m-3">Dashboard</h2>
     <div class="breadcrumbs">
-      <a href="/home" class="aa">Home</a>/<a [routerLink]="
-          role === 'MENTOR'
-            ? '/mentor/profile-mentor'
-            : '/mentee/profile-mentee'
-        " class="aa">Profile</a>/ <span class="currentLink">{{ currentLinkText }}</span>
+      <a [routerLink]="role === 'MENTOR'? '/mentor/dashboard': '/mentee/dashboard'" class="aa">Dashboard</a>/<span class="currentLink">{{ currentLinkText }}</span>
     </div>
   </div>
   <div class="row mb-5">
@@ -15,8 +11,7 @@
         <div class="profile-container col-sm-12">
           <div class="profile-header d-flex justify-content-space-between gap-3">
             <div class="profile-image">
-              <img src='./assets/img/theme/team-1-800x800.jpg' alt="Profile Image"
-                class="rounded-circle profile-picture" />
+              <img src="{{backend_url+'/'+user.imgUrl}}" alt="Profile Image"class="rounded-circle profile-picture" />
             </div>
             <div class="profile-info">
               <h2 class="name">{{user?.name|titlecase}}</h2>

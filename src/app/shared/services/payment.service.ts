@@ -26,4 +26,8 @@ export class PaymentService {
     return this.http.get(`${this.baseUrl}/payments/valid?pamentIntentId=${intentId}`)
     // return this.stripe = await loadStripe(environment.stripeKey, { apiVersion: "2022-11-15" })
   }
+  
+  addPayemntToMentor(mentorId:any){
+    return this.http.get(`${this.baseUrl}/payments/validate/mentor`)
+  }
 }

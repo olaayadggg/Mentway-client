@@ -61,7 +61,7 @@ export class LoginComponent {
             else if (this.auth.getloggedUserRole() === 'ADMIN') {
 
               console.log(this.auth.getloggedUserRole())
-              // this.router.navigate(['/mentee/dashboard']);
+              this.router.navigate(['/admin/reports']);
 
             }
             console.log(res)

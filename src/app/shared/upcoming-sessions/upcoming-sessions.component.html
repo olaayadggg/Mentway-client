@@ -11,7 +11,7 @@
     <tr *ngFor="let row of rows">
       <td class="user-cell">
         <div class="user-info">
-          <img [src]="row['profile-pic']" alt="User Image" class="user-image">
+          <img src="{{backend_url+'/'+row.imgUrl}}" alt="User Image" class="user-image">
           <span class="user-name">{{ row.name }}</span>
         </div>
       </td>

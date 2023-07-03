@@ -36,7 +36,7 @@ const routes: Routes = [
       { path: "date-pick/:id", component: RequestSessionComponent},
       { path: "view-mentor/:id", component: ViewMentorComponent },
       { path: "view-service/:id", component: ViewServiceComponent },
-      { path: "app-rate-after-call", component: RateAfterCallComponent },
+      { path: "add-rate/:id", component: RateAfterCallComponent },
     ],
   },
 ];

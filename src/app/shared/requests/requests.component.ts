@@ -12,7 +12,7 @@ export class RequestsComponent implements OnInit {
   sessionService: any;
   id: number = 0
   menteeData: any[] = []
-  mentorData: any[] = []
+  // mentorData: any[] = []
   constructor(
     private bService: BusinessServiceService,
     private authService: AuthService,
@@ -31,72 +31,36 @@ export class RequestsComponent implements OnInit {
   role = "mentor"
   isRequestAccepted: boolean = false;
   isRequestRejected: boolean = false;
-  // mentorData = [
-  //   {
-  //     "name": "Shahira Shahir",
-  //     "bank": "Hsbc",
-  //     "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
-  //     "profile-pic": "./assets/img/theme/team-1-800x800.jpg",
-  //     isRequestAccepted: false,
-  //     isRequestRejected: false
-  //   },
-  //   {
-  //     "name": "Samira Samir",
-  //     "bank": "Alahly",
-  //     "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
-  //     "profile-pic": "./assets/img/theme/team-2-800x800.jpg",
-  //     isRequestAccepted: false,
-  //     isRequestRejected: false
-  //   },
-  //   {
-  //     "name": "Bahira Bahir",
-  //     "bank": "Misr",
-  //     "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
-  //     "profile-pic": "./assets/img/theme/team-3-800x800.jpg",
-  //     isRequestAccepted: false,
-  //     isRequestRejected: false
-  //   },
-  //   {
-  //     "name": "Saeda Saed",
-  //     "bank": "QNB",
-  //     "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
-  //     "profile-pic": "./assets/img/theme/team-4-800x800.jpg",
-  //     isRequestAccepted: false,
-  //     isRequestRejected: false
-  //   },
-  //   {
-  //     "name": "Galeela Galeel",
-  //     "bank": "Mannndd",
-  //     "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
-  //     "profile-pic": "./assets/img/theme/team-1-800x800.jpg",
-  //     isRequestAccepted: false,
-  //     isRequestRejected: false
-  //   },
-  //   {
-  //     "name": "Alia Ali",
-  //     "bank": "Hsbc",
-  //     "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
-  //     "profile-pic": "./assets/img/theme/team-2-800x800.jpg",
-  //     isRequestAccepted: false,
-  //     isRequestRejected: false
-  //   },
-  //   {
-  //     "name": "Haida Hady",
-  //     "bank": "Hsbc",
-  //     "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
-  //     "profile-pic": "./assets/img/theme/team-3-800x800.jpg",
-  //     isRequestAccepted: false,
-  //     isRequestRejected: false
-  //   },
-  //   {
-  //     "name": "Kamila Kamil",
-  //     "bank": "Hsbc",
-  //     "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
-  //     "profile-pic": "./assets/img/theme/team-4-800x800.jpg",
-  //     isRequestAccepted: false,
-  //     isRequestRejected: false
-  //   },
-  // ]
+  mentorData = [
+    {
+      "name": "Shahira Shahir",
+      "startDate":new Date().toISOString(),
+      "applicationDetails": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
+      "profile-pic": "./assets/img/theme/team-1-800x800.jpg",
+      isRequestAccepted: false,
+      isRequestRejected: false
+    },
+    {
+      "name": "Samira Samir",
+      "bank": "Alahly",
+      "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
+      "profile-pic": "./assets/img/theme/team-2-800x800.jpg",
+      isRequestAccepted: false,
+      isRequestRejected: false,
+      "startDate": new Date().toISOString(),
+      "applicationDetails": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
+    },
+    {
+      "name": "Bahira Bahir",
+      "bank": "Misr",
+      "startDate": new Date().toISOString(),
+      "applicationDetails": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
+      "coverLetter": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi nobis quidem esse explicabo reiciendis nihil expedita nesciunt accusantium exercitationem. Repellendus excepturi expedita fugiat illo temporibus quae minus quis quod in.",
+      "profile-pic": "./assets/img/theme/team-3-800x800.jpg",
+      isRequestAccepted: false,
+      isRequestRejected: false
+    },
+  ]
 
   headers = ["Title", "Mentor", "Date Time", "Duration", "Price", "Status"]
   acceptRequest(item: any) {
@@ -173,41 +137,7 @@ export class RequestsComponent implements OnInit {
     })
   }
 
-  /**
-   * 
-   * applicationDetails
-: 
-"mentee 2 application1"
-categoryName
-: 
-"front end"
-details
-: 
-"service details 2"
-duration
-: 
-1
-mentorId
-: 
-4
-mentorImgUrl
-: 
-"img url 3"
-mentorName
-: 
-"ola ayad"
-price
-: 
-0
-startDate
-: 
-"2023-07-03T18:12:40.343218"
-title
-: 
-null
-   * 
-   * 
-   * */
+
 
 
   formateDate(dateString: any) {

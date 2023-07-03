@@ -24,6 +24,7 @@ export class UpcomingSessionsComponent implements OnInit {
   ) {
     // this.authService.setloggedUser()
     this.id = this.authService.getloggedUserId();
+    this.backend_url=environment.API_URL
   }
 
   ngOnInit(): void {

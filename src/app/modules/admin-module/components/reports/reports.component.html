@@ -1,1 +1,32 @@
-<p>reports works!</p>
+<div class=" d-flex justify-content-center" style="min-height: 27rem;">
+    <div>
+
+        <div class="col-lg-4 col-md-5 col-sm-5 col-xs-12 request" id="container" *ngFor="let item of items">
+            <main class="profile-page" *ngIf="!item.isRequestAccepted && !item.isRequestRejected">
+                <div class="profile-container">
+                    <div class="d-flex justify-content-between">
+                        <div class="profile-header d-flex">
+                            <div class="profile-image">
+                                <img src="{{backend_url+'/'+item.mentorImgUrl}}" alt="Profile Image"
+                                    class="rounded-circle profile-picture">
+                            </div>
+                            <div class="profile-info">
+                                <h6 class="name d-flex align-items-center m-3">{{ item.mentorName | titlecase}}</h6>
+                            </div>
+                        </div>
+                        <div style="padding-top: 3px;">
+                            <button (click)="acceptRequest(item)"style="border: none; background-color: #EDFFF6; border-radius: 8px;" class="btn"><span class="view-text d-flex justify-content-between "><mat-icon style="color: #1FAB89;"class="btnn">check_circle</mat-icon> Transfare Money</span></button>
+                        </div>
+                    </div>
+                    <p class="">{{ formateDate(item.startDate) }}</p>
+                    <div class="profile-links">
+                        {{ item.details }}
+                    </div>
+                    <div>
+                        {{item.price| currency}}
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>

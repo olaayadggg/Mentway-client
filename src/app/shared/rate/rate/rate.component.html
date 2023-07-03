@@ -17,7 +17,7 @@
             <span class="user-name">{{ row?.name }}</span>
           </div>
         </td>
-        <td>
+        <td class="w-25">
           <div class="">
             <span class="golden-star" *ngFor="let _ of getRange(row.rate)"><mat-icon class="golden-star">star</mat-icon></span>
             <span class="white-star" *ngFor="let _ of getRange(5 - row.rate)"><mat-icon class="white-star">star</mat-icon></span>

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 // import { AgoraService } from 'src/app/services/agora.service';
-import { SessionService  } from '../../service/session.service';
+import { SessionService } from '../../service/session.service';
 import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import AgoraRTC, { IAgoraRTCClient, IAgoraRTCRemoteUser } from 'agora-rtc-sdk-ng';
@@ -9,7 +9,7 @@ import AgoraRTC, { IAgoraRTCClient, IAgoraRTCRemoteUser } from 'agora-rtc-sdk-ng
   templateUrl: './session.component.html',
   styleUrls: ['./session.component.css']
 })
-export class SessionComponent implements OnInit,AfterViewInit {
+export class SessionComponent implements OnInit, AfterViewInit {
 
 
   // main div that will contain local remote video
@@ -25,10 +25,11 @@ export class SessionComponent implements OnInit,AfterViewInit {
   // channel and user id  form url prams
   channel: any;
   userId: any;
-  
+
   // user
-  user:any 
- sessionData:any
+  user: any
+  sessionData: any
+  userRole: any
   // timer and call duration
   time: number = 0;
   hours: number = 0;
@@ -56,13 +57,14 @@ export class SessionComponent implements OnInit,AfterViewInit {
     private agoraService: SessionService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private authService:AuthService,
+    private authService: AuthService,
   ) {
     this.mainDiv = document.getElementById('main')
     this.options.channel = this.activatedRoute.snapshot.paramMap.get('channel')!;
     this.options.uid = this.authService.getloggedUserId();
-    this.user=this.authService.getloggedUser()
-    this.sessionData= this.router.getCurrentNavigation()?.extras.state
+    this.user = this.authService.getloggedUser();
+    this.userRole=this.authService.getloggedUserRole();
+    this.sessionData = this.router.getCurrentNavigation()?.extras.state
 
   }
 
@@ -169,7 +171,7 @@ export class SessionComponent implements OnInit,AfterViewInit {
         // clear interval in leave fun
         // clearInterval(this.timerInterval);
         // console.log(this.client.connectionState)
-        this.router.navigate(['/']);
+        // this.router.navigate(['/']);
 
       }
     }, 1000);
@@ -216,7 +218,13 @@ export class SessionComponent implements OnInit,AfterViewInit {
 
     });
     await this.client.leave();
-    this.router.navigate(['/']);
+    if(this.userRole=="MENTOR"){
+
+      this.router.navigate([`/mentor/dashboard`]);
+    }else{
+
+      this.router.navigate([`/mentee/add-rate/${this.sessionData?.application?.applicationId}`]);
+    }
 
   }
 
@@ -249,10 +257,10 @@ export class SessionComponent implements OnInit,AfterViewInit {
     localPlayerContainerName.classList.add('position-absolute', 'top-0', 'end-0', 'px-2', 'lead')
     localPlayerContainerName.textContent = `${this.user.name}`;
     localPlayerContainer.append(localPlayerContainerName);
-    if(this.client.remoteUsers){
+    if (this.client.remoteUsers) {
 
       localPlayerContainer.classList.add('local', 'm-2', 'w-50', 'position-relative', 'rounded-5')
-    }else{
+    } else {
       localPlayerContainer.classList.add('local', 'm-2', 'w-100', 'position-relative', 'rounded-5')
 
     }

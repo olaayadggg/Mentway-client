@@ -6,6 +6,7 @@ import { MenteesComponent } from "./components/mentees/mentees.component";
 import { MentorsComponent } from "./components/mentors/mentors.component";
 import { ReportsComponent } from "./components/reports/reports.component";
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { MatIconModule } from "@angular/material/icon";
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    MatIconModule,
     RouterModule.forRoot(routes),
   ],
 })

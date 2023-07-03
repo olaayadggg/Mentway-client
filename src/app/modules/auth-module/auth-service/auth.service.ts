@@ -66,8 +66,13 @@ export class AuthService {
     }
 
   }
-  register(registerData: any) {
-    return this.http.post(`${this.baseUrl}/register`, registerData);
+  registerMentor(registerData: any) {
+    return this.http.post(`${this.baseUrl}/register/mentor`, registerData);
+  }
+
+
+  registerMentee(registerData: any) {
+    return this.http.post(`${this.baseUrl}/register/mentee`, registerData);
   }
 
   logout() {
