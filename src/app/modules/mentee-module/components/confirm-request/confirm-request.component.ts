@@ -12,7 +12,7 @@ export class ConfirmRequestComponent {
   id: number = 0;
   MyData: any | null = null;
   service: any
-
+  showData: boolean = false;
   constructor(
     private router: Router,
     private bService: BusinessServiceService,
@@ -22,8 +22,8 @@ export class ConfirmRequestComponent {
     this.MyData = this.router.getCurrentNavigation()?.extras.state
     if (this.MyData) {
       this.bService.getServicebyId(this.MyData?.serviceId).subscribe({
-        next:(res:any)=>{
-          this.service=res
+        next: (res: any) => {
+          this.service = res
         }
 
       })
@@ -43,24 +43,25 @@ export class ConfirmRequestComponent {
   }
 
 
-submit(){
-  this.bService.applyForService(this.MyData?.serviceId,{
-    'startDate': this.MyData?.startDate,
-    'applicationDetails': this.MyData?.applicationDetails,
-  }).subscribe({next:(res:any)=>{
-    console.log(res)
-    
-      alert("success")
-      setTimeout(()=>{
-        this.router.navigate(['/mentee/dashboard'])
-        
-      },3000)
-    
-  },error:(err)=>{
-    console.log(err)
-    alert(err.error.details.date)
+  submit() {
+    this.bService.applyForService(this.MyData?.serviceId, {
+      'startDate': this.MyData?.startDate,
+      'applicationDetails': this.MyData?.applicationDetails,
+    }).subscribe({
+      next: (res: any) => {
+        console.log(res)
+
+        this.showData = true;
+        setTimeout(() => {
+          this.router.navigate(['/mentee/dashboard'])
+
+        }, 3000)
+
+      }, error: (err) => {
+        console.log(err)
+        alert(err.error.details.date)
+      }
+    })
   }
-})
-}
 
 }

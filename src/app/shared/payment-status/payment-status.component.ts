@@ -15,6 +15,7 @@ export class PaymentStatusComponent implements OnInit {
   data: string = '';
   color: string = '';
   role: string = '';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -56,7 +57,8 @@ export class PaymentStatusComponent implements OnInit {
         })
         this.data = 'Success! Payment received.'
         this.color = 'success'
-        // console.log("Success! Payment received.")
+        this.authService.setValidPayment()
+       
 
       } else if (myIntent?.paymentIntent?.status === 'processing') {
         this.data = "Payment processing.We'll update you when payment is received."
@@ -72,7 +74,6 @@ export class PaymentStatusComponent implements OnInit {
         this.color = 'danger'
         // console.log("worng")
       }
-      this.authService.setValidPayment()
       setTimeout(() => {
 
         this.router.navigate([`/${this.role.toLocaleLowerCase()}/dashboard`])

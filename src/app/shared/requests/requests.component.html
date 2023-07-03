@@ -10,42 +10,47 @@
                 </div>
                 <div class="profile-info">
                   <h6 class="name d-flex align-items-center m-3">{{ item.name }}</h6>
-                  <p class="country ml-3">{{ item.bank }}</p>
+                  <!-- <p class="country ml-3">{{ formateDate(item.startDate) }}</p> -->
                 </div>
               </div>
               <div style="padding-top: 3px;">
                 <button (click)="acceptRequest(item)" style="border: none; background-color: #EDFFF6; border-radius: 8px;" class="btn"><span class="view-text d-flex justify-content-between "><mat-icon style="color: #1FAB89;" class="btnn">check_circle</mat-icon> Accept</span></button>
                 <button (click)="rejectRequest(item)" style="border: none; background-color: lightcoral; border-radius: 8px;" class="btn"><span class="view-text d-flex justify-content-between "><mat-icon style="color: white; "class="btnn">cancel</mat-icon>
                   Reject</span></button>
+                </div>
               </div>
-            </div>
-            <div class="profile-links">
-              {{ item.coverLetter }}
+              <p class="">{{ formateDate(item.startDate) }}</p>
+              <div class="profile-links">
+              {{ item.applicationDetails }}
             </div>
           </div>
         </main>
     </div>
 </div>
 
-<table class="custom-table bottom-border-radius" *ngIf="role === 'MENTEE'">
+<table class="custom-table bottom-border-radius w-100" *ngIf="role === 'MENTEE'">
     <thead>
         <tr >
         <th *ngFor="let header of headers">{{header}}</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let row of menteeData">
+      <tr *ngFor="let row of menteeData">
+          <td>{{ row.title }}</td>
         <td class="user-cell">
             <div class="user-info">
             <img [src]="row['profile-pic']" alt="User Image" class="user-image">
-            <span class="user-name">{{ row.mentor }}</span>
+            <span class="user-name">{{ row.mentorName }}</span>
             </div>
         </td>
-        <td>{{ row.scheduledDate1 }}</td>
-        <td><div class="date">{{ row.scheduledDate2 }}</div></td>
+        <td>{{ formateDate(row.startDate) }}</td>
+        <td><div class="date">{{ row.duration }}h</div></td>
+        <td>{{ row.price|currency }}</td>
         <td><button  style="border: none; background-color: yellow; border-radius: 8px;"><span class="view-text"> Pending  </span></button></td>
         </tr>
     </tbody>
     </table>
 
-    <app-pagination [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage" (pageChanged)="onPageChanged($event)"></app-pagination>
+
+  <app-pagination *ngIf="totalItems>itemsPerPage" [totalItems]="totalItems" [currentPage]="currentPage" [itemsPerPage]="itemsPerPage" (pageChanged)="onPageChanged($event)"></app-pagination>
+

@@ -4,6 +4,7 @@ import { SessionService } from 'src/app/modules/session-module/service/session.s
 import { environment } from 'src/environments/environment';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-upcoming-sessions',
   templateUrl: './upcoming-sessions.component.html',
@@ -18,7 +19,8 @@ export class UpcomingSessionsComponent implements OnInit {
   constructor(
     private sessionService: SessionService,
     private authService: AuthService,
-    private dialogModel: MatDialog
+    private dialogModel: MatDialog,
+    private router: Router,
   ) {
     // this.authService.setloggedUser()
     this.id = this.authService.getloggedUserId();
@@ -114,7 +116,7 @@ export class UpcomingSessionsComponent implements OnInit {
   dialog() {
     this.simpleDialog = this.dialogModel.open(DialogComponent);
   }
-  joinSession(serviceId: number, sessionDate: any, duration: any) {
+  joinSession(serviceId: number, sessionDate: any, duration: any, row: any) {
     console.log(sessionDate)
     const sessionStartTime = new Date(sessionDate);
 
@@ -126,6 +128,11 @@ export class UpcomingSessionsComponent implements OnInit {
     // Step 4: Check if the current time is between the session start time and the session end time
     if (now >= sessionStartTime && now <= sessionEndTime) {
       console.log("You can join the session.");
+      this.router.navigate([`/session/${row.meetingUrl}`], {
+        state: {
+          'application': row,
+        }
+      })
     } else {
       console.log("The session has already ended or has not started yet.");
       this.dialog()

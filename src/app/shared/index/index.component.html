@@ -15,13 +15,13 @@
         <div class="profile-container col-sm-12">
           <div class="profile-header d-flex justify-content-space-between gap-3">
             <div class="profile-image">
-              <img src="./assets/img/theme/team-4-800x800.jpg" alt="Profile Image"
+              <img src='./assets/img/theme/team-1-800x800.jpg' alt="Profile Image"
                 class="rounded-circle profile-picture" />
             </div>
             <div class="profile-info">
-              <h2 class="name">Samira Samir</h2>
-              <p class="job">DevOps Designer</p>
-              <p class="country">Egypt</p>
+              <h2 class="name">{{user?.name|titlecase}}</h2>
+              <p *ngIf="role=='MENTOR'" class="job">{{user.categoryId|titlecase}}</p>
+              <p class="country mt-2">Egypt</p>
             </div>
           </div>
           <div class="profile-links">
@@ -30,7 +30,7 @@
               class="is-active">Upcoming Session</a>
             <a [class.is-active]="currentLink === 'reviews'" *ngIf="role === 'MENTOR'"
               (click)="showDiv('reviews', 'Reviews')">Reviews</a>
-            <a [class.is-active]="currentLink === 'services'"  *ngIf="role === 'MENTOR'"
+            <a [class.is-active]="currentLink === 'services'" *ngIf="role === 'MENTOR'"
               (click)="showDiv('services', 'My Services')">My Services</a>
           </div>
         </div>

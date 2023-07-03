@@ -28,8 +28,24 @@ export class BusinessServiceService {
     return this.http.post(`${this.baseUrl}/services/apply/${serviceId}`, request)
   }
 
-  acceptRequest(updatedMentor: any) {
-    return this.http.put(`${this.baseUrl}/`, updatedMentor)
+  acceptOrRejectRequest(applicationId: number,status:string) {
+    return this.http.patch(`${this.baseUrl}/services/application/${applicationId}?status=${status}`,{})
+  }
+
+  getMenteePendeningApplications(page = 0, size = 5) {
+
+    let params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString());
+    return this.http.get(`${this.baseUrl}/services/applications/mentee`, { params: params })
+  }
+
+  getMentorApplications(page = 0, size = 5) {
+
+    let params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString());
+    return this.http.get(`${this.baseUrl}/services/applications/mentor`, { params: params })
   }
   getServiceByMentorId(mentorId: number, page = 0, size = 5) {
     let params = new HttpParams()

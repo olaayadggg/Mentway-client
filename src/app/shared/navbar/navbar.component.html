@@ -68,9 +68,8 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
                  
-                      <li><a [routerLink]="['/payment']"
-                          class="dropdown-item">Payment</a></li>
-               
+                      <li><a [routerLink]="['/payment']"class="dropdown-item">Payment</a></li>
+                <li *ngIf="loggedUserRole==='MENTOR'"><a [routerLink]="['/mentor/add-service']" class="dropdown-item">Add Service</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>

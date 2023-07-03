@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 // import { AgoraService } from 'src/app/services/agora.service';
 import { SessionService  } from '../../service/session.service';
+import { AuthService } from 'src/app/modules/auth-module/auth-service/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import AgoraRTC, { IAgoraRTCClient, IAgoraRTCRemoteUser } from 'agora-rtc-sdk-ng';
 @Component({
@@ -24,7 +25,10 @@ export class SessionComponent implements OnInit,AfterViewInit {
   // channel and user id  form url prams
   channel: any;
   userId: any;
-
+  
+  // user
+  user:any 
+ sessionData:any
   // timer and call duration
   time: number = 0;
   hours: number = 0;
@@ -51,11 +55,15 @@ export class SessionComponent implements OnInit,AfterViewInit {
   constructor(
     private agoraService: SessionService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService:AuthService,
   ) {
     this.mainDiv = document.getElementById('main')
     this.options.channel = this.activatedRoute.snapshot.paramMap.get('channel')!;
-    this.options.uid = Number(this.activatedRoute.snapshot.paramMap.get('id'))!;
+    this.options.uid = this.authService.getloggedUserId();
+    this.user=this.authService.getloggedUser()
+    this.sessionData= this.router.getCurrentNavigation()?.extras.state
+
   }
 
   async ngOnInit(): Promise<any> {
@@ -84,7 +92,7 @@ export class SessionComponent implements OnInit,AfterViewInit {
 
         const remotePlayerContainerName = document.createElement('p')
         remotePlayerContainerName.classList.add('position-absolute', 'top-0', 'end-0', 'px-2', 'lead')
-        remotePlayerContainerName.textContent = `remote ${user.uid}`;
+        remotePlayerContainerName.textContent = `${this.sessionData?.application?.name}`;
         remotePlayerContainer.append(remotePlayerContainerName);
 
         //  change style of local video
@@ -239,7 +247,7 @@ export class SessionComponent implements OnInit,AfterViewInit {
     localPlayerContainer.id = this.options.uid.toString();
     const localPlayerContainerName = document.createElement('p');
     localPlayerContainerName.classList.add('position-absolute', 'top-0', 'end-0', 'px-2', 'lead')
-    localPlayerContainerName.textContent = `local ${this.options.uid}`;
+    localPlayerContainerName.textContent = `${this.user.name}`;
     localPlayerContainer.append(localPlayerContainerName);
     if(this.client.remoteUsers){
 

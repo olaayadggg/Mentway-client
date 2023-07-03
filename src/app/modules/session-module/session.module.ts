@@ -11,7 +11,7 @@ const routes: Routes = [
     path: "session",
     canActivate: [AuthGuard],
     children: [
-      { path: ":channel/:id", component: SessionComponent },
+      { path: ":channel", component: SessionComponent },
 
     ],
   },
