@@ -1,4 +1,4 @@
-<div class="w-100 d-flex justify-content-center">
+<!-- <div class="w-100 d-flex justify-content-center">
 <div class="card p-5 w-75 m-5" style="background: white; height: 24rem;">
   <div class="card-body ">
     <div class="row justify-content-between gap-2">
@@ -20,5 +20,40 @@
       {{ service?.details }}
     </p>
   </div>
+</div> -->
+<div class="container card px-2 shadow base">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-6">
+        <h3 class="mb-3 mt-2 text-capitalize">
+          {{ service?.title || "title" }}
+        </h3>
+      </div>
+      <div class="col-lg-6">
+        <button
+          *ngIf="userRole === 'MENTEE'"
+          class="btn"
+          routerLink="/mentee/date-pick/{{ serviceId }}"
+        >
+          Request Service
+        </button>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="deuration d-flex px-4">
+        <mat-icon>av_timer</mat-icon>
+        <p class="ms-2">{{ service?.duration }} hours</p>
+      </div>
+      <div class="price d-flex">
+        <mat-icon> attach_money</mat-icon>
+        <p class="ms-2">{{ service?.price | currency }} $</p>
+      </div>
+    </div>
+    <span>Service_Details </span>
+    <p class="mt-2 ms-4">
+      {{ service?.details }}
+    </p>
+  </div>
 </div>
-<!-- </div> -->
+
+

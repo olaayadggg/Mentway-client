@@ -1,4 +1,4 @@
-<section>
+<!-- <section>
     <div class="container main">
         <div class="row">
             <div class="col-lg-10">
@@ -33,19 +33,70 @@
                         </div>
                     </div>
                     <div class="container second shadow my-3">
+                      <div class="d-flex justify-content-center mx-5" >
+                        <app-list-services [id]="id"></app-list-services>
+                    </div>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-</section>
-<section class="w-100 d-flex justify-content-center">
+</section> -->
+<!-- <section class="w-100 d-flex justify-content-center">
 
-    <!-- <div class=""> -->
+     <div class=""> -->
 
-    <div class="w-100 m-2 d-flex justify-content-center m-5" style="width: 100%;">
-        <app-list-services [id]="id"></app-list-services>
+
+    <!-- </div>
+</section> -->
+
+
+
+
+<section>
+  <div class="container main">
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="container">
+          <div class="container first shadow my-3 p-4">
+            <div class="row ifno">
+              <div class="col-lg-8 d-flex">
+                <div class="img">
+                  <img
+                    src=" https://images.pexels.com/photos/17168343/pexels-photo-17168343/free-photo-of-hot-air-balloon-flying-over-man-riding-on-horse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="" class="img-fluid rounded-circle" />
+                </div>
+                <div class="nameRate">
+                  <div class="name">{{mentor?.name||'Ahemd Nagy'}}</div>
+                  <div class="title mt-3">{{(mentor?.categoryName )||'Ux / UI Designer' |titlecase}}</div>
+                  <div class="rate mt-1">
+                    <mat-icon>star_border</mat-icon>
+                    <mat-icon>star_border</mat-icon>
+                    <mat-icon>star_border</mat-icon>
+                    <mat-icon>star_border</mat-icon>
+                    <mat-icon>star_border</mat-icon>
+                  </div>
+                </div>
+              </div>
+              <p class="myp mt-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quisquam esse voluptatum repudiandae
+                quaerat vitae natus laboriosam culpa! Corrupti corporis rerum eveniet necessitatibus sunt possimus illo
+                qui provident minima nisi.
+              </p>
+            </div>
+          </div>
+          <div>
+            <p class="mentorService d-flex"> Services </p>
+          </div>
+          <div class="container second d-flex shadow my-3">
+            <div class="service pb-5">
+              <app-list-services [id]="id"></app-list-services>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <!-- </div> -->
+  </div>
 </section>
